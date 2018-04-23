@@ -1,0 +1,79 @@
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\begin{feynman}
+	\vertex [magenta](i1){\(d\)};
+	\vertex [magenta,right=3cm of i1](a);
+	\vertex [above right=0.75cm and 1.5cm of a] (b){ISR};
+	\vertex [magenta,below right=0.75cm and 1.5cm of a] (c);
+
+	\vertex [magenta,above=2em of i1](i1a){\(u\)};
+	\vertex [magenta,above=1em of i1](i1b){\(u\)};
+	\vertex [magenta,right=3cm of i1a](i1ai);
+	\vertex [magenta,right=3cm of i1b](i1bi);
+	\vertex [magenta,above right=0.75cm and 1.5cm of i1ai] (i1aii);
+	\vertex [magenta,above right=0.75cm and 1.5cm of i1bi] (i1bii);
+
+	\vertex [magenta,right=1cm of i1a](g1);
+	\vertex [magenta,right=2cm of i1a](g2);
+
+	\vertex [magenta,below=5em of i1](i2){\(u\)};
+	\vertex [magenta,right=1.5cm of i2] (d);
+	\vertex [magenta,above right=0.75cm and 1.5cm of d] (e);
+	\vertex [magenta,below right=0.75cm and 1.5cm of d] (f);
+	\vertex [magenta,below right=0.75cm and 1.5cm of e] (g);
+	\vertex [magenta,above right=0.75cm and 1.5cm of e] (h);
+
+	\vertex [magenta,below=1em of i2](i2a){\(u\)};
+	\vertex [magenta,below=2em of i2](i2b){\(d\)};
+	\vertex [magenta,right=1.5cm of i2a](i2ai);
+	\vertex [magenta,right=1.5cm of i2b](i2bi);
+	\vertex [magenta,below right=0.75cm and 1.5cm of i2ai] (i2aii);
+	\vertex [magenta,below right=0.75cm and 1.5cm of i2bi] (i2bii);
+
+	\vertex [magenta,right=2cm of h] (i);
+	\vertex [magenta,above right=1.5cm and 1.5cm of i] (j);
+	\vertex [magenta,below right=1.5cm and 1.5cm of i] (k);
+	\vertex [magenta,above right=1.2cm and 1.5cm of j] (j1);
+	\vertex [magenta,below right=1.2cm and 1.5cm of j] (j2);
+	\vertex [magenta,above right=1.2cm and 1.5cm of k] (k1);
+	\vertex [magenta,below right=1.2cm and 1.5cm of k] (k2);
+
+	\vertex [above right=0.5cm and 1.5cm of j1] (l1){\(\ell\)};
+	\vertex [below right=0.5cm and 1.5cm of j1] (l2){\(\overline \nu_\ell\)};
+	\vertex [above right=0.5cm and 1.5cm of k1] (m1){\(q\)};
+	\vertex [below right=0.5cm and 1.5cm of k1] (m2){\(\overline q'\)};
+	\vertex [above right=0.5cm and 1.5cm of k2] (o1){\(\overline b\)};
+	\vertex [below right=0.5cm and 1.5cm of k2] (o2){FSR};
+
+	\diagram* {
+	(i1) -- [very thick, magenta,fermion] (a) -- [very thick, magenta,fermion, edge label=\(q\)] (h),
+	(g1) -- [very thick,magenta,gluon, half left] (g2),
+	(a) -- [gluon] (b),
+	(i2) -- [very thick, magenta,fermion] (d) -- [very thick, magenta,gluon] (e),
+	(d) -- [fermion] (f),
+	(e) -- [very thick, magenta,fermion] (g),
+	(h) -- [very thick, magenta,fermion, edge label=\(\overline q\)] (e),
+	(h) -- [gluon] (i),
+	(i) -- [fermion, edge label=\(t\)] (j),
+	(k) -- [fermion, edge label=\(\overline t\)] (i),
+	(j) -- [boson, edge label=\(W^+\)] (j1),
+	(j) -- [fermion, edge label=\(b\)] (j2),
+	(k) -- [boson, edge label=\(W^-\)] (k1),
+	(k2) -- [fermion, edge label=\(\overline b\)] (k),
+	(j1) -- [fermion] (l1),
+	(l2) -- [fermion] (j1),
+	(k1) -- [fermion] (m1),
+	(m2) -- [fermion] (k1),
+	(o1) -- [fermion] (k2),
+	(k2) -- [gluon] (o2),
+	(i1a) -- [very thick, magenta,fermion] (i1ai) -- [fermion] (i1aii),
+	(i1b) -- [very thick, magenta,fermion] (i1bi) -- [fermion] (i1bii),
+	(i2a) -- [very thick, magenta,fermion] (i2ai) -- [fermion] (i2aii),
+	(i2b) -- [very thick, magenta,fermion] (i2bi) -- [fermion] (i2bii),
+	};
+\end{feynman}
+\end{tikzpicture}
+\caption[An example Feynman diagram. Generated using TODO.]{An example Feynman diagram. Generated using \cite{feyntikz}. }
+\label{fig:feyn-pdf}
+\end{figure}

@@ -1,0 +1,88 @@
+\chapter{Modelling the interactions}
+\label{ch:MC}
+
+For any measurement in particle physics, a set of MC samples has to be generated in order to compare the experimental data to theoretical models.  These models include well known decay processes such as \ttbar{} production in the \SM{}, through to a multitude of theoretical predications. 
+% WHICH ONES? DM, SUSY, ETC
+% The following sections describe in more detail the generators and showerers used in this analysis
+Any interaction can be modelled as a combination of discrete steps.
+Firstly, the hard scattering process is generated at \LO{}, or if possible \NLO{}, to form short lived resonances which decay into the final state.
+Additional parton interactions can be included at \LO{} and soft radiation included in the inital and final states.
+All partons are then hadronised into colourless states and decayed (\textit{parton shower}), with the proton remnants forming the underlying event.
+Finally, the interaction can be smeared depending on the effects of the detector being used.
+Figure\,\ref{fig:GenEvent} shows diagrammatically an example simulated collision, where the hard scattering process is shown in red, the soft radiative processes in blue, the additional parton interactions in purple, the hadronisation in light green and parton shower in dark green.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=\textwidth]{Figures/Generator_Event}
+	\caption[ ]{  Figure taken from\,\cite{Gen:Event}.}
+	\label{fig:GenEvent}
+\end{figure}
+
+\section{Hard interaction} % (fold)
+\label{sub:hard_interaction}
+The hard scattering process describes the interaction of two partons in the collider and the subsequent final state. 
+It is modelled though Eq\,\ref{eq:pdf}, with the \PDF{}s being taken from data convoluted with the partonic cross section.
+The partonic cross section is calculated from the \textit{matrix-element} of the interaction, directly taken from the Feynman diagrams through the Feynman rules.
+% section hard_interaction (end)
+
+\section{Underlying event} % (fold)
+\label{sub:underlying_event}
+\begin{itemize}
+	\item Soft processes
+	\item MPI
+\end{itemize}
+% section underlying_event (end)
+
+
+\section{Colour reconnection} % (fold)
+\label{sub:colour_reconnection}
+% section colour_reconnection (end)
+
+\section{Hadronisation} % (fold)
+\label{sub:hadronisation}
+
+The hadronisation process first introduce in Section TODO, models the colourless particles produced from the final state partons.
+One model used is the Bowler-Lund parameterisation.
+This involves
+
+Because of the self interactions between gluons the strong field between two quarks can be represented by a confined tube of dimension $1+1$, otherwise known as a string. 
+As the quarks move apart the potential energy in the string increases linearly by 1\GeV{}\fminv{}.
+At some point the colour field contains enough potential energy that it is favourable to pair-produce quarks, which form two new colourless particles, breaking the string.
+This broken string model is known as the \textit{Lund string model} TODO REF and is represented in Fig.\,\ref{fig:Lund}.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/Generator_Lund}
+	\caption[ ]{ oscillation can be lorentz boosted, shown in rectangles. Figure taken from talk by Torbj\"orn Sj\"ostrand in \cite{Gen:Lund}.}
+	\label{fig:Lund}
+\end{figure}
+As time evolves, if \qqbar{} pairs do not have enough potential in the colour field to pair-produce they end up oscillating around each other, forming the colourless mesons of the final state.
+Additionally, \qqqbarqbar{} may be produced instead of \qqbar{} with the end result being the formation of baryons in the final state.
+
+This approach is used in \pythia{}.
+\begin{equation}
+	\frac{dP}{d\pt} \propto \kappa (e^{\frac{\pi m_{\mathrm{T}}^2}{\kappa}})
+\end{equation}
+% section hadronisation (end)
+
+\section{Parton shower} % (fold)
+\label{sub:parton_shower}
+TODO MOVE TO GENERATOR SECTION?
+The final state particles, which can include additional partons that have been radiated from both the initial and final states (ISR and FSR), are represented by open lines.
+As stated in Section\,\ref{sub:confinement}, these bare quarks rapidly hadronise, producing sprays of colourless particles.
+% section parton_shower (end)
+
+
+
+
+\section{Detector modelling} % (fold)
+\label{sub:detector_modelling}
+
+% section detector_modelling (end)
+
+
+\input{Chapters/GeneratorSimulation/01_ttGenerators.tex}
+\input{Chapters/GeneratorSimulation/02_backgroundGenerators.tex}
+
+\begin{itemize}
+	\item TODO: LUND MESON-BARYON RATIO
+	\item TODO: MATRIX ELEMENT DEF HERE OR PREV CHAP
+\end{itemize}

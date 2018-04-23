@@ -1,0 +1,66 @@
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}{.49\textwidth}
+		\centering
+		\begin{tikzpicture}
+		\begin{feynman}
+			\vertex [black](i1){\(g\)};
+			\vertex [black,right=1.5cm of i1](a);
+			\vertex [black,above right=0.75cm and 1.5cm of a](f1){\(t\)};
+			\vertex [black,below right=0.75cm and 1.5cm of a](b);
+			\vertex [black,right=1.5cm of b](f2);
+			\vertex [black,above right=0.75cm and 1.5cm of f2](f2a){\(t\)};
+			\vertex [black,below right=0.75cm and 1.5cm of f2](f2b){\(\overline{t}\)};
+			\vertex [black,below=1.5cm of i1](i2){\(g\)};
+			\vertex [black,right=1.5cm of i2](c);
+			\vertex [black,below right=0.75cm and 1.5cm of c] (f3){\(\overline{t}\)};
+
+			\diagram* {
+			(i1) -- [black,gluon] (a)
+			(a) -- [black,fermion] (f1),
+			(a) -- [black,anti fermion] (b),
+			(b) -- [black,gluon] (f2),
+			(f2) -- [black,fermion] (f2a),
+			(f2) -- [black,anti fermion] (f2b),
+			(i2) -- [black,gluon] (c),
+			(c) -- [black,fermion] (b),
+			(c) -- [black,anti fermion] (f3),
+			};
+		\end{feynman}
+		\end{tikzpicture}
+	\end{subfigure}
+	\begin{subfigure}{.49\textwidth}
+		\centering
+		\begin{tikzpicture}
+		\begin{feynman}
+			\vertex [black](i1){\(g\)};
+			\vertex [black,right=1.5cm of i1](a);
+			\vertex [black,above right=0.75cm and 1.5cm of a](f1){\(\overline{t}\)};
+			\vertex [black,below right=0.75cm and 1.5cm of a](c);
+			\vertex [black,above right=0.75cm and 1.5cm of b](f2){\(t\)};
+
+			\vertex [black,below=2.5cm of i1](i2){\(g\)};
+			\vertex [black,right=1.5cm of i2](b);
+			\vertex [black,above right=0.75cm and 1.5cm of b](d);
+			\vertex [black,below right=0.75cm and 1.5cm of b](f3){\(t\)};
+			\vertex [black,below right=0.75cm and 1.5cm of d](f4){\(\overline{t}\)};
+
+			\diagram* {
+			(i1) -- [black,gluon] (a)
+			(a) -- [black,anti fermion] (f1),
+			(a) -- [black,fermion] (c),
+			(c) -- [black,fermion] (f2),
+			
+			(c) -- [black,gluon] (d),
+
+			(i2) -- [black,gluon] (b)
+			(b) -- [black,fermion] (f3),
+			(b) -- [black,anti fermion] (d),
+			(d) -- [black,anti fermion] (f4),
+			};
+		\end{feynman}
+		\end{tikzpicture}
+	\end{subfigure}
+	\caption[Feynman diagrams for the production of four top quarks. The mediating boson is predominantly a gluon, however photons, \Zboson{} bosons and \Hboson{} bosons can also mediate.]{Feynman diagrams for the production of four top quarks. The mediating boson is predominantly a gluon, however photons, \Zboson{} bosons and \Hboson{} bosons can also mediate. }
+	\label{fig:feyn-tttt}
+\end{figure}

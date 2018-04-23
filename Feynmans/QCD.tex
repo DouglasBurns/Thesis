@@ -1,0 +1,79 @@
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\begin{feynman}
+	\vertex [red!50](i1){\(d\)};
+	\vertex [red!50,right=3cm of i1](a);
+	\vertex [red!50,above right=0.75cm and 1.5cm of a] (b){ISR};
+	\vertex [red!50,below right=0.75cm and 1.5cm of a] (c);
+
+	\vertex [red!50,above=2em of i1](i1a){\(u\)};
+	\vertex [red!50,above=1em of i1](i1b){\(u\)};
+	\vertex [black!50,right=3cm of i1a](i1ai);
+	\vertex [black!50,right=3cm of i1b](i1bi);
+	\vertex [black!50,above right=0.75cm and 1.5cm of i1ai] (i1aii);
+	\vertex [black!50,above right=0.75cm and 1.5cm of i1bi] (i1bii);
+
+	\vertex [right=1cm of i1a](g1);
+	\vertex [right=2cm of i1a](g2);
+
+	\vertex [red!50,below=5em of i1](i2){\(u\)};
+	\vertex [red!50,right=1.5cm of i2] (d);
+	\vertex [red!50,above right=0.75cm and 1.5cm of d] (e);
+	\vertex [red!50,below right=0.75cm and 1.5cm of d] (f);
+	\vertex [red!50,below right=0.75cm and 1.5cm of e] (g);
+	\vertex [red!50,above right=0.75cm and 1.5cm of e] (h);
+
+	\vertex [red!50,below=1em of i2](i2a){\(u\)};
+	\vertex [red!50,below=2em of i2](i2b){\(d\)};
+	\vertex [black!50,right=1.5cm of i2a](i2ai);
+	\vertex [black!50,right=1.5cm of i2b](i2bi);
+	\vertex [black!50,below right=0.75cm and 1.5cm of i2ai] (i2aii);
+	\vertex [black!50,below right=0.75cm and 1.5cm of i2bi] (i2bii);
+
+	\vertex [red!50,right=2cm of h] (i);
+	\vertex [red!50,above right=1.5cm and 1.5cm of i] (j);
+	\vertex [red!50,below right=1.5cm and 1.5cm of i] (k);
+	\vertex [red!50,above right=1.2cm and 1.5cm of j] (j1);
+	\vertex [red!50,below right=1.2cm and 1.5cm of j] (j2);
+	\vertex [red!50,above right=1.2cm and 1.5cm of k] (k1);
+	\vertex [red!50,below right=1.2cm and 1.5cm of k] (k2);
+
+	\vertex [black!50,above right=0.5cm and 1.5cm of j1] (l1){\(\ell\)};
+	\vertex [black!50,below right=0.5cm and 1.5cm of j1] (l2){\(\overline \nu_\ell\)};
+	\vertex [black!50,above right=0.5cm and 1.5cm of k1] (m1){\(q\)};
+	\vertex [black!50,below right=0.5cm and 1.5cm of k1] (m2){\(\overline q'\)};
+	\vertex [red!50,above right=0.5cm and 1.5cm of k2] (o1){\(\overline b\)};
+	\vertex [red!50,below right=0.5cm and 1.5cm of k2] (o2){FSR};
+
+	\diagram* {
+	(i1) -- [red!50,fermion] (a) -- [red!50,fermion, edge label=\(q\)] (h),
+	(g1) -- [red!50,gluon, half left] (g2),
+	(a) -- [red!50,gluon] (b),
+	(i2) -- [red!50,fermion] (d) -- [red!50,gluon] (e),
+	(d) -- [red!50,fermion] (f),
+	(e) -- [red!50,fermion] (g),
+	(h) -- [red!50,fermion, edge label=\(\overline q\)] (e),
+	(h) -- [very thick,red,gluon] (i),
+	(i) -- [very thick,red,fermion, edge label=\(t\)] (j),
+	(k) -- [very thick,red,fermion, edge label=\(\overline t\)] (i),
+	(j) -- [black!50,boson, edge label=\(W^+\)] (j1),
+	(j) -- [black!50,fermion, edge label=\(b\)] (j2),
+	(k) -- [black!50,boson, edge label=\(W^-\)] (k1),
+	(k2) -- [red!50,fermion, edge label=\(\overline b\)] (k),
+	(j1) -- [black!50,fermion] (l1),
+	(l2) -- [black!50,fermion] (j1),
+	(k1) -- [black!50,fermion] (m1),
+	(m2) -- [black!50,fermion] (k1),
+	(o1) -- [red!50,fermion] (k2),
+	(k2) -- [red!50,gluon] (o2),
+	(i1a) -- [red!50,fermion] (i1ai) -- [red!50,fermion] (i1aii),
+	(i1b) -- [red!50,fermion] (i1bi) -- [red!50,fermion] (i1bii),
+	(i2a) -- [red!50,fermion] (i2ai) -- [red!50,fermion] (i2aii),
+	(i2b) -- [red!50,fermion] (i2bi) -- [red!50,fermion] (i2bii),
+	};
+\end{feynman}
+\end{tikzpicture}
+\caption[A Feynman diagram showing the \ttbar{} pair production and decay. An example QCD interaction is shown in bold red. Other QCD interactions are shown in light red.]{A Feynman diagram showing the \ttbar{} pair production and decay. An example QCD interaction is shown in bold red. Other QCD interactions are shown in light red.}
+\label{fig:feyn-qcd}
+\end{figure}

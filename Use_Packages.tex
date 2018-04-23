@@ -1,0 +1,48 @@
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{xfrac}
+\usepackage{lscape}
+\usepackage[toc,page]{appendix}
+\usepackage{url}
+\usepackage{rotating}
+%
+\usepackage[sorting=none,style=numeric-comp]{biblatex}
+\addbibresource{Thesis.bib}
+
+\usepackage{subcaption}
+
+\usepackage{slashed}
+
+\usepackage{lineno}
+\usepackage{siunitx}
+\usepackage{xspace}
+
+\usepackage{tikz}
+\usepackage{tikz-feynman}
+\tikzfeynmanset{
+	compat=1.1.0,
+	warn luatex=false,
+}
+
+\usepackage{environ}
+\newsavebox\mybox
+\newenvironment{resizedtikzpicture}[1]{%
+  \def\mywidth{#1}%
+  \begin{lrbox}{\mybox}%
+  \begin{tikzpicture}
+}{%
+  \end{tikzpicture}%
+  \end{lrbox}%
+  \resizebox{\mywidth}{!}{\usebox\mybox}%
+}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\sloppy
+% \linenumbers

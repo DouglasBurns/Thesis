@@ -1,0 +1,81 @@
+\begin{landscape}
+\begin{figure*}
+\centering
+\begin{resizedtikzpicture}{0.9\linewidth}
+\begin{feynman}
+	\vertex (i1) {\(d\)};
+	\vertex [right=3cm of i1](a);
+	\vertex [above right=0.75cm and 1.5cm of a] (b){ISR};
+	\vertex [below right=0.75cm and 1.5cm of a] (c);
+
+	\vertex [above=2em of i1](i1a){\(u\)};
+	\vertex [above=1em of i1](i1b){\(u\)};
+	\vertex [right=3cm of i1a](i1ai);
+	\vertex [right=3cm of i1b](i1bi);
+	\vertex [above right=0.75cm and 1.5cm of i1ai] (i1aii);
+	\vertex [above right=0.75cm and 1.5cm of i1bi] (i1bii);
+
+	\vertex [right=1cm of i1a](g1);
+	\vertex [right=2cm of i1a](g2);
+
+	\vertex [below=5em of i1](i2){\(u\)};
+	\vertex [right=1.5cm of i2] (d);
+	\vertex [above right=0.75cm and 1.5cm of d] (e);
+	\vertex [below right=0.75cm and 1.5cm of d] (f);
+	\vertex [below right=0.75cm and 1.5cm of e] (g);
+	\vertex [above right=0.75cm and 1.5cm of e] (h);
+
+	\vertex [below=1em of i2](i2a){\(u\)};
+	\vertex [below=2em of i2](i2b){\(d\)};
+	\vertex [right=1.5cm of i2a](i2ai);
+	\vertex [right=1.5cm of i2b](i2bi);
+	\vertex [below right=0.75cm and 1.5cm of i2ai] (i2aii);
+	\vertex [below right=0.75cm and 1.5cm of i2bi] (i2bii);
+
+	\vertex [right=2cm of h] (i);
+	\vertex [above right=1.5cm and 1.5cm of i] (j);
+	\vertex [below right=1.5cm and 1.5cm of i] (k);
+	\vertex [above right=1.2cm and 1.5cm of j] (j1);
+	\vertex [below right=1.2cm and 1.5cm of j] (j2);
+	\vertex [above right=1.2cm and 1.5cm of k] (k1);
+	\vertex [below right=1.2cm and 1.5cm of k] (k2);
+
+	\vertex [above right=0.5cm and 1.5cm of j1] (l1){\(\ell\)};
+	\vertex [below right=0.5cm and 1.5cm of j1] (l2){\(\overline \nu_\ell\)};
+	\vertex [above right=0.5cm and 1.5cm of k1] (m1){\(q\)};
+	\vertex [below right=0.5cm and 1.5cm of k1] (m2){\(\overline q'\)};
+	\vertex [above right=0.5cm and 1.5cm of k2] (o1){\(\overline b\)};
+	\vertex [below right=0.5cm and 1.5cm of k2] (o2){FSR};
+
+	\diagram* {
+	(i1) -- [fermion] (a) -- [fermion, edge label=\(q\)] (h),
+	(g1) -- [gluon, half left] (g2),
+	(a) -- [gluon] (b),
+	(i2) -- [fermion] (d) -- [gluon] (e),
+	(d) -- [fermion] (f),
+	(e) -- [fermion] (g),
+	(h) -- [fermion, edge label=\(\overline q\)] (e),
+	(h) -- [gluon] (i),
+	(i) -- [fermion, edge label=\(t\)] (j),
+	(k) -- [fermion, edge label=\(\overline t\)] (i),
+	(j) -- [boson, edge label=\(W^+\)] (j1),
+	(j) -- [fermion, edge label=\(b\)] (j2),
+	(k) -- [boson, edge label=\(W^-\)] (k1),
+	(k2) -- [fermion, edge label=\(\overline b\)] (k),
+	(j1) -- [fermion] (l1),
+	(l2) -- [fermion] (j1),
+	(k1) -- [fermion] (m1),
+	(m2) -- [fermion] (k1),
+	(o1) -- [fermion] (k2),
+	(k2) -- [gluon] (o2),
+	(i1a) -- [fermion] (i1ai) -- [fermion] (i1aii),
+	(i1b) -- [fermion] (i1bi) -- [fermion] (i1bii),
+	(i2a) -- [fermion] (i2ai) -- [fermion] (i2aii),
+	(i2b) -- [fermion] (i2bi) -- [fermion] (i2bii),
+	};
+\end{feynman}
+\end{resizedtikzpicture}
+\caption[A Feynman diagram showing the \ttbar{} pair production by quark-anti-quark annihilation and decay into the single lepton final state (See Section\,\ref{sub:top_quark_decay}). Also shown are soft radiative processes in both the initial (ISR) and final state (FSR). Within the proton, there are also many \QCD{} interactions occuring, such that the colliding partons in the initial state are governed by the parton distribution function (See Section\,\ref{sub:top_quark_production}). All Feynman diagrams have been created using the feyntikz package.]{A Feynman diagram showing the \ttbar{} pair production by quark-anti-quark annihilation and decay into the single lepton final state (See Section\,\ref{sub:top_quark_decay}). Also shown are soft radiative processes in both the initial (ISR) and final state (FSR). Within the proton, there are also many \QCD{} interactions occuring, such that the colliding partons in the initial state are governed by the parton distribution function (See Section\,\ref{sub:top_quark_production}). All Feynman diagrams have been created using the feyntikz package \cite{feyntikz}. }
+\label{fig:feyn-eg}
+\end{figure*}
+\end{landscape}
