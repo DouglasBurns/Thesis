@@ -1,0 +1,60 @@
+\begin{figure}[h!]
+	\centering
+	\begin{resizedtikzpicture}{0.45\linewidth}
+		\begin{feynman}
+			\vertex [draw,circle,red,fill](A);
+			\vertex [above left=0.75cm and 1.5cm of A] (ai) {};
+			\vertex [below left=0.75cm and 1.5cm of A] (aii) {};
+
+			\vertex [right=1.5cm of A, draw,circle,red,fill] (B) {};
+			\vertex [above right=0.9cm and 1.65cm of B] (bi) {};
+			\vertex [below right=0.9cm and 1.65cm of B] (bii) {};
+			\diagram*{
+			(ai) -- [fermion] (A),
+			(aii) -- [anti fermion] (A),
+			(A) -- [gluon](B)
+			(B) -- [fermion] (bi),
+			(B) -- [anti fermion] (bii),
+			};
+
+		\end{feynman}
+	\end{resizedtikzpicture}
+	\hspace{0.5cm}
+	\begin{resizedtikzpicture}{0.45\linewidth}
+		\begin{feynman}
+			\vertex [draw,circle,red,fill](A) {};
+			\vertex [above left=0.4cm and 2.4cm of A] (ai) {};
+			\vertex [above right=0.4cm and 2.4cm of A] (aii) {};
+
+			\vertex [below=1.0cm of A] (B);
+			\vertex [below left=0.25cm and 2.25cm of B] (bi) {};
+			\vertex [below right=0.25cm and 2.25cm of B] (bii) {};
+
+			\diagram*{
+			(ai) -- [gluon] (A) ,
+			(aii) -- [anti fermion] (A),
+			(A) -- [anti fermion] (B),
+			(B) -- [gluon] (bi),
+			(B) -- [anti fermion] (bii),
+			};
+		\end{feynman}
+	\end{resizedtikzpicture} \\
+	\vspace{1.0cm}
+	\begin{resizedtikzpicture}{0.45\linewidth}
+		\begin{feynman}
+			\vertex [draw,circle,red,fill](A) {};
+			\vertex [above left=0.9cm and 2.4 of A] (ai) {};
+			\vertex [below left=0.9cm and 2.4 of A] (aii) {};
+			\vertex [above right=0.9cm and 2.4 of A] (aiii) {};
+			\vertex [below right=0.9cm and 2.4 of A] (aiv) {};
+			\diagram*{
+			(ai) -- [gluon](A),
+			(aii) -- [gluon] (A),
+			(A) -- [fermion] (aiii),
+			(A) -- [anti fermion] (aiv),
+			};
+		\end{feynman}
+		\end{resizedtikzpicture}
+	\caption[The upper two panels show the Feynman diagrams for the modified $\mathrm{t\overline{t}g}$ vertices and the lower panel the additional $\mathrm{t\overline{t}gg}$ vertex from the inclusion of the \OTG{} operator. The red dot indicates the effective vertex.]{The upper two panels show the Feynman diagrams for the modified $\mathrm{t\overline{t}g}$ vertices and the lower panel the additional $\mathrm{t\overline{t}gg}$ vertex from the inclusion of the \OTG{} operator. The red dot indicates the effective vertex.}
+	\label{fig:feyn-eft}
+\end{figure}

@@ -1,35 +1,97 @@
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{graphicx}
+
+% \usepackage{nonfloat}
+
 \usepackage{multicol}
 \usepackage{xcolor}
+\definecolor{electricgreen}{rgb}{0.0, 1.0, 0.0}
+
 \usepackage{xfrac}
 \usepackage{lscape}
-\usepackage[toc,page]{appendix}
+
+% \usepackage[toc,page]{appendix}
+\usepackage[toc]{appendix}
+
 \usepackage{url}
+\usepackage{cite}
 \usepackage{rotating}
-%
-\usepackage[sorting=none,style=numeric-comp]{biblatex}
-\addbibresource{Thesis.bib}
 
+\usepackage{bibentry}
+\nobibliography*
+
+% \usepackage{caption}
 \usepackage{subcaption}
-
 \usepackage{slashed}
-
 \usepackage{lineno}
 \usepackage{siunitx}
 \usepackage{xspace}
-
 \usepackage{tikz}
+\usepackage{fancyhdr}
+
+\usepackage{arydshln}
+
+% Continuous figure/table numbers
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+% Use shaped lines
+\makeatletter
+\pgfkeys{
+	/tikz/sharp arrow angle/.code={%
+    	\pgfsetarrowoptions{sharp left}{#1}
+    	\pgfsetarrowoptions{sharp right}{#1}
+  	},
+	/tikz/sharp left arrow angle/.code={%
+	    \pgfsetarrowoptions{sharp left}{#1}
+	},
+	/tikz/sharp right arrow angle/.code={%
+	    \pgfsetarrowoptions{sharp right}{#1}
+	}
+}
+\tikzset{
+	sharp arrow angle=30
+}
+\pgfarrowsdeclare{sharp left}{sharp left}{%
+	  \pgfmathsetlength{\pgf@xa}{.5*\pgflinewidth * tan(\pgfgetarrowoptions{sharp left})}
+	  \pgfarrowsleftextend{\pgf@xa}
+	  \pgfarrowsrightextend{\pgf@xa}
+}{%
+  \pgfmathsetlength{\pgf@xa}{\pgflinewidth * tan(\pgfgetarrowoptions{sharp left})}
+  \pgfpathmoveto{\pgfqpoint{-.1\pgflinewidth}{-.5\pgflinewidth}}
+  \pgfpathlineto{\pgfqpoint{0pt}{-.5\pgflinewidth}}
+  \pgfpathlineto{\pgfqpoint{\pgf@xa}{.5\pgflinewidth}}
+  \pgfpathlineto{\pgfqpoint{-.1\pgflinewidth}{.5\pgflinewidth}}
+  \pgfusepathqfill
+}
+\pgfarrowsdeclare{sharp right}{sharp right}{%
+  \pgfmathsetlength{\pgf@xa}{.5*\pgflinewidth * tan(\pgfgetarrowoptions{sharp right})}
+  \pgfarrowsleftextend{\pgf@xa}
+  \pgfarrowsrightextend{\pgf@xa}
+}{%
+  \pgfmathsetlength{\pgf@xa}{\pgflinewidth * tan(\pgfgetarrowoptions{sharp right})}
+  \pgfpathmoveto{\pgfqpoint{-.1\pgflinewidth}{.5\pgflinewidth}}
+  \pgfpathlineto{\pgfqpoint{0pt}{.5\pgflinewidth}}
+  \pgfpathlineto{\pgfqpoint{\pgf@xa}{-.5\pgflinewidth}}
+  \pgfpathlineto{\pgfqpoint{-.1\pgflinewidth}{-.5\pgflinewidth}}
+  \pgfusepathqfill
+}
+\makeatother
+
+% Use Feyman
 \usepackage{tikz-feynman}
 \tikzfeynmanset{
 	compat=1.1.0,
 	warn luatex=false,
 }
 
+% Resize tikz picture
 \usepackage{environ}
 \newsavebox\mybox
 \newenvironment{resizedtikzpicture}[1]{%
@@ -41,8 +103,33 @@
   \end{lrbox}%
   \resizebox{\mywidth}{!}{\usebox\mybox}%
 }
+
+% \renewcommand{\chaptername}{\textsc{Chapter}}
+\usepackage[Bjornstrup, Sonny]{fncychap}
+\makeatletter
+  \ChNameVar{\Large\rm} % sets the style for name
+  \ChNumVar{\Huge} % sets the style for digit
+  \ChTitleVar{\Huge\rm\bfseries} % sets the style for title
+  \ChRuleWidth{4pt} % Set RW=4pt
+  \ChNameUpperCase % Make name uppercase
+  \renewcommand{\DOCH}{%
+    \CNV\FmN{\@chapapp}\space \CNoV\thechapter\par\nobreak
+    \vskip 30\p@}
+  \renewcommand{\DOTI}[1]{%
+    \mghrulefill{1pt}\par\nobreak
+    \vskip 11\p@
+    \CTV\FmTi{#1}\par\nobreak
+    \mghrulefill{1pt}\par\nobreak
+    \vskip 50\p@}
+  \renewcommand{\DOTIS}[1]{%
+    \mghrulefill{1pt}\par\nobreak
+    \vskip 11\p@
+    \CTV\FmTi{#1}\par\nobreak
+    \mghrulefill{1pt}\par\nobreak
+    \vskip 50\p@}
+\makeatother
+
 \usepackage{hyperref}
 \usepackage{cleveref}
-
 \sloppy
 % \linenumbers

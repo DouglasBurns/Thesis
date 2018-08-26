@@ -1,0 +1,83 @@
+\begin{figure}[h!]
+\centering
+\begin{resizedtikzpicture}{0.4\linewidth}
+	\begin{feynman}
+		\vertex (A);
+		\vertex [right=1cm of A](C);
+		\vertex [above=1.5cm of C](Ci);
+		\vertex [below=0.05cm of C](C_quiet){\(V_{2}\)};
+		\vertex [right=2.0cm of C](D);
+		\vertex [above=0.05cm of D](D_quiet){\(Q_{max}\)};
+		\vertex [right=2.5cm of D](F);
+		\vertex [below=1.5cm of F](Fi);
+		\vertex [left=0.05cm of Fi](F_quiet){\(V_{3}\)};
+		\vertex [above right=0.75 cm and 1.5cm of Fi](Fii);
+		\vertex [below right=0.75 cm and 1.5cm of Fi](Fiii);
+		\vertex [right=1.5cm of F](G);
+
+		\vertex [below=3cm of A](B);
+		\vertex [right=3cm of B](E);
+		\vertex [below=0.05cm of E](E_quiet){\(Q_{max}\)};
+		\vertex [right=1.5cm of E](H);
+		\vertex [above=0.05cm of H](H_quiet){\(V_{1}\)};
+		\vertex [below=1.5cm of H](Hi);
+		\vertex [right=2.5cm of H](I);
+
+		\diagram* {
+		(A) -- [fermion] (C),
+		(C) -- [gluon] (Ci),
+		(C) -- [fermion] (D),
+		(D) -- [fermion] (F),
+		(F) -- [gluon] (Fi),
+		(Fi) -- [fermion] (Fii),
+		(Fi) -- [anti fermion] (Fiii),
+		(F) -- [fermion] (G),
+
+		(B) -- [fermion] (E),
+		(E) -- [fermion] (H),
+		(H) -- [gluon] (Hi),
+		(H) -- [fermion] (I),
+
+		(D) -- [gluon] (E),
+		};
+	\end{feynman}
+\end{resizedtikzpicture}
+\hspace{0.4cm}
+\begin{resizedtikzpicture}{0.56\linewidth}
+	\begin{feynman}
+		\vertex (A);
+		\vertex [right=0.5cm of A](A_quiet){\(\theta_{max}\)};
+		\vertex [left=1.5cm of A](Aminus);
+		\vertex [below right=1.5cm and 1.5cm of A](A2);
+		\vertex [above right=1.5cm and 1.5cm of A](B);
+		\vertex [above right=0.2cm and 0.2cm of B](B_quiet){\(\theta_{1}\)};
+		\vertex [above=1.5cm of B](C);
+		\vertex [right=2.25cm of B](D);
+		\vertex [right=0.5cm of D](D_quiet){\(\theta_{2}\)};
+		\vertex [above right=1.25cm and 2.25cm of D](E);
+		\vertex [above right=0.5cm and 1.25cm of E](E_quiet){\(\theta_{3}\)};
+		\vertex [below right=1.25cm and 2.25cm of D](F);
+		\vertex [below right=0.5cm and 1.25cm of F](F_quiet){\(\theta_{4}\)};
+		\vertex [above right=1.5cm and 1.75cm of E](G);
+		\vertex [above right=0.5cm and 2.25cm of E](H);
+		\vertex [below right=1.5cm and 1.75cm of F](I);
+		\vertex [below right=0.5cm and 2.25cm of F](J);
+
+		\diagram* {
+		(Aminus) -- [gluon] (A),
+		(A) -- [anti fermion] (A2),
+		(A) -- [fermion] (B),
+		(B) -- [gluon] (C),
+		(B) -- [fermion] (D),
+		(D) -- [gluon] (E),
+		(D) -- [fermion] (F),
+		(E) -- [fermion] (G),
+		(E) -- [anti fermion] (H),
+		(F) -- [fermion] (I),
+		(F) -- [gluon] (J),
+		};
+	\end{feynman}
+\end{resizedtikzpicture}
+\caption[The left panel shows parton shower ordering by \ktsq{} where the splitting strength $V_{i}(\ktsq)$ is ordered $V_1 > V_2 > V_3$. The right panel shows shower ordering by angle such that the opening angle decreases for every consecutive splitting $\theta_{max} > \theta_{1} > \theta_{2} > \theta_{3, 4}$.]{The left panel shows parton shower ordering by \ktsq{} where the splitting strength $V_{i}(\ktsq)$ is ordered $V_1 > V_2 > V_3$. The right panel shows shower ordering by angle such that the opening angle decreases for every consecutive splitting $\theta_{max} > \theta_{1} > \theta_{2} > \theta_{3, 4}$.}
+\label{fig:feyn-ordering}
+\end{figure}

@@ -1,14 +1,113 @@
 \begin{table}
 	\centering
-	\footnotesize
-	\caption{TODO}
-	\label{tb:Gen}
-	\begin{tabular}{lllll}
-		\textbf{Name} 	& \textbf{Generator}	& \textbf{Tune}	& \textbf{Parton showerer and hadroniser} 	& \textbf{Events} \\
-		\hline
-		\powhegpythia{} & \powheg{} (v2)		& \CUET{}		& \pythia{} (v8.212)						& \textbf{Events} \\
-		\powhegherwig{} & \powheg{} (v2)		& \herwigtune{}	& \herwig{} (v2.7.1)						& \textbf{Events} \\
-		\mgamcLO{} 		& \mgamc{}  (v2.1.2)	& \CUETold{}	& \pythia{} (v8.212)					 	& \textbf{Events} \\
-		\mgamcNLO{} 	& \mgamc{}  (v2.1.2)	& \CUETold{}	& \pythia{} (v8.212)					 	& \textbf{Events} \\
-	\end{tabular}
+		\caption{The set of simulated samples used in this thesis. They include four different signal \ttbar{} production samples and samples for the background production. The backgrounds are single top quark production, vector boson production in association with jets and multijet \QCD{}. }
+		\label{tb:Gen}
+		\resizebox{\linewidth}{!}{%
+		\begin{tabular}{llllccc}
+			 	& \textbf{Matrix}	& \textbf{Parton} & \textbf{Tune}	& \textbf{Cross section} 	  			& \textbf{Events}  	& \textbf{Luminosity} 	\\
+			 	& \textbf{element}	& \textbf{shower} &  				& \textbf{(\pb{})} 	&  	\textbf{(\ten{6})}	& \textbf{(\fbinv{})} 	\\
+			\multicolumn{7}{l}{\textbf{Models of \ttbar{} production}} \\
+			\hline
+			\vspace*{0.02cm}
+			\powhegpythia{} & \powheg{} & \pythia{} & \CUET{}		& 831.76 & 154.9 & 186.3 \\ 
+			\powhegherwig{} & \powheg{} & \herwig{} & \herwigtune{}	& 831.76 & 59.2  & 77.1 \\ 
+			\mgamcLO{} 		& \mgamc{}	& \pythia{} & \CUETold{}  	& 831.76 & 10.1  & 12.2 \\ 
+			\mgamcNLO{} 	& \mgamc{}	& \pythia{} & \CUETold{}  	& 831.76 & 30.4  & 36.6 \\ 
+
+			\vspace*{0.02cm} \\
+			\multicolumn{7}{l}{\textbf{Models of single top background production}} \\
+			\hline
+			\vspace*{0.02cm}
+			Single top $t$-channel 			& \powheg{} 			& \pythia{} &	\CUETold{}  & 136.02	  & 66.9  & 492.0 \\ 
+			Single anti-top $t$-channel	 	& \powheg{} 			& \pythia{} &	\CUETold{}  & 80.95	  	  & 38.8  & 479.4 \\ 
+			Single top $tW$-channel 		& \powheg{} (v1)		& \pythia{} &	\CUETold{}  & 35.6		  & 7.9   & 223.2 \\ 
+			Single anti-top $tW$-channel 	& \powheg{} (v1)		& \pythia{} &	\CUETold{}  & 35.6		  & 7.9   & 222.8 \\ 
+			Single top/anti-top $s$-channel & \mgamc{} 				& \pythia{} &	\CUETold{}  & 6.35		  & 0.6    & 98.1 \\ 
+
+			\vspace*{0.02cm} \\
+			\multicolumn{7}{l}{\textbf{Models of vector boson background production}} \\
+			\hline 
+			\vspace*{0.01cm}
+			Drell-Yan + 1 jet 			& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	1016		  &  62.6  & 61.6 \\ 
+			Drell-Yan + 2 jets  		& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	331.4		  &  20.0  & 60.3 \\ 
+			Drell-Yan + 3 jets  		& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	96.36		  &  5.9   & 60.8 \\ 
+			Drell-Yan + 4 jets  		& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	51.4		  &  4.2   & 81.7 \\ 
+			\Wboson{} boson + 1 jet 	& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	9493		  &  45.4  & 4.8 \\ 
+			\Wboson{} boson + 2 jets 	& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	3120		  &  60.2  & 19.3 \\ 
+			\Wboson{} boson + 3 jets 	& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	942.3		  &  59.1  & 62.7 \\ 
+			\Wboson{} boson + 4 jets 	& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	524.2		  &  30.0  & 57.2 \\ 
+
+			\vspace*{0.02cm} \\
+			\multicolumn{7}{l}{\textbf{Models of multijet \QCD{} background production}} \\
+			\hline 
+			\vspace*{0.02cm}
+			Muon enriched \QCD (20-30) 			& \pythia{}			& \pythia{} &	\CUETold{}	 & 	558528000 * 0.0053		  &  30.6  & 0.01 \\ 
+			Muon enriched \QCD (30-50) 			& \pythia{}			& \pythia{} &	\CUETold{}	 & 	139803000 * 0.01182		  &  30.0  & 0.02 \\ 
+			Muon enriched \QCD (50-80) 			& \pythia{}			& \pythia{} &	\CUETold{}	 & 	19222500 * 0.02276		  &  19.8  & 0.04 \\ 
+			Muon enriched \QCD (80-120) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	2758420 * 0.03844		  &  23.6  & 0.2 \\ 
+			Muon enriched \QCD (120-170) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	469797 * 0.05362		  &  8.0  & 0.3 \\ 
+			Muon enriched \QCD (170-300) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	117989 * 0.07335		  &  17.4  & 2.0 \\ 
+			Muon enriched \QCD (300-470) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	7820.25 * 0.10196		  &  49.0  & 61.4 \\ 
+			Muon enriched \QCD (470-600) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	645.528 * 0.12242		  &  19.0  & 240.1 \\ 
+			Muon enriched \QCD (600-800) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	187.109 * 0.13412		  &  10.0  & 397.7 \\ 
+			Muon enriched \QCD (800-1000) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	32.3486 * 0.14552		  &  19.8  & 4199.3 \\ 
+			Muon enriched \QCD (1000-Inf) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	10.4305 * 0.15544		  &  13.4  & 8264.9 \\
+
+			Electron enriched \QCD (20-30) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 557600000 * 0.0096		  & 9.2  & 0.002 \\ 
+			Electron enriched \QCD (30-50) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 136000000 * 0.073		  & 6.8  & 0.0007 \\ 
+			Electron enriched \QCD (50-80) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 19800000 * 0.146			  & 45.2  & 0.02 \\ 
+			Electron enriched \QCD (80-120) 	& \pythia{}			& \pythia{} &	\CUETold{}	 & 2800000 * 0.125			  & 76.5  & 0.2 \\ 
+			Electron enriched \QCD (120-170) 	& \pythia{}			& \pythia{} &	\CUETold{}	 & 477000 * 0.132			  & 77.8  & 1.2 \\ 
+			Electron enriched \QCD (170-300) 	& \pythia{}			& \pythia{} &	\CUETold{}	 & 114000 * 0.165			  & 11.5  & 0.6 \\ 
+			Electron enriched \QCD (300-Inf) 	& \pythia{}			& \pythia{} &	\CUETold{}	 & 9000 * 0.15			 	  & 7.4  & 54.6 \\ 
+			
+			bc to E \QCD (30-80) 				& \pythia{}			& \pythia{} &	\CUETold{}	 & 	159068000 * 0.00255 & 15.3   & 0.04 \\ 
+			bc to E \QCD (80-170) 				& \pythia{}			& \pythia{} &	\CUETold{}	 & 	3221000 * 0.01183  	& 14.9   & 0.4 \\ 
+			bc to E \QCD (170-250) 				& \pythia{}			& \pythia{} &	\CUETold{}	 & 	105771 * 0.02492  	& 9.7   & 3.9 \\ 
+			bc to E \QCD (250-Inf) 				& \pythia{}			& \pythia{} &	\CUETold{}	 & 	21094.1 * 0.03375 	& 9.8   & 13.7 \\ 
+		\end{tabular}%
+	}
 \end{table}
+
+			% \powhegpythia{} & \powheg{} & \pythia{} & \CUET{}		& 831.76 & 154948894 & 186.3 \\ 
+			% \powhegherwig{} & \powheg{} & \herwig{} & \herwigtune{}	& 831.76 & 59174465  & 77.1 \\ 
+			% \mgamcLO{} 		& \mgamc{}	& \pythia{} & \CUETold{}  	& 831.76 & 10139950  & 12.2 \\ 
+			% \mgamcNLO{} 	& \mgamc{}	& \pythia{} & \CUETold{}  	& 831.76 & 30414083  & 36.6 \\ 
+			% Single top $t$-channel 			& \powheg{} 			& \pythia{} &	\CUETold{}  & 136.02	  & 66928232  & 492.0 \\ 
+			% Single anti-top $t$-channel	 	& \powheg{} 			& \pythia{} &	\CUETold{}  & 80.95	  	  & 38811017  & 479.4 \\ 
+			% Single top $tW$-channel 		& \powheg{} (v1)		& \pythia{} &	\CUETold{}  & 35.6		  & 7944854   & 223.2 \\ 
+			% Single anti-top $tW$-channel 	& \powheg{} (v1)		& \pythia{} &	\CUETold{}  & 35.6		  & 7931370   & 222.8 \\ 
+			% Single top/anti-top $s$-channel & \mgamc{} 				& \pythia{} &	\CUETold{}  & 6.35		  & 622990    & 98.1 \\ 
+			% Drell-Yan + 1 jet 			& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	1016		  &  62627174  & 61.6 \\ 
+			% Drell-Yan + 2 jets  		& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	331.4		  &  19970551  & 60.3 \\ 
+			% Drell-Yan + 3 jets  		& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	96.36		  &  5856110   & 60.8 \\ 
+			% Drell-Yan + 4 jets  		& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	51.4		  &  4197868   & 81.7 \\ 
+			% \Wboson{} boson + 1 jet 	& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	9493		  &  45367044  & 4.8 \\ 
+			% \Wboson{} boson + 2 jets 	& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	3120		  &  60197766  & 19.3 \\ 
+			% \Wboson{} boson + 3 jets 	& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	942.3		  &  59067548  & 62.7 \\ 
+			% \Wboson{} boson + 4 jets 	& \mgamc{}			& \pythia{} &	\CUETold{}	 & 	524.2		  &  29995313  & 57.2 \\ 
+			% Muon enriched \QCD (20-30) 			& \pythia{}			& \pythia{} &	\CUETold{}	 & 	558528000 * 0.0053		  &  30613738  & 0.01 \\ 
+			% Muon enriched \QCD (30-50) 			& \pythia{}			& \pythia{} &	\CUETold{}	 & 	139803000 * 0.01182		  &  29954815  & 0.02 \\ 
+			% Muon enriched \QCD (50-80) 			& \pythia{}			& \pythia{} &	\CUETold{}	 & 	19222500 * 0.02276		  &  19806915  & 0.04 \\ 
+			% Muon enriched \QCD (80-120) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	2758420 * 0.03844		  &  23584215  & 0.2 \\ 
+			% Muon enriched \QCD (120-170) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	469797 * 0.05362		  &  8042721  & 0.3 \\ 
+			% Muon enriched \QCD (170-300) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	117989 * 0.07335		  &  17350231  & 2.0 \\ 
+			% Muon enriched \QCD (300-470) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	7820.25 * 0.10196		  &  48995686  & 61.4 \\ 
+			% Muon enriched \QCD (470-600) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	645.528 * 0.12242		  &  18976018  & 240.1 \\ 
+			% Muon enriched \QCD (600-800) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	187.109 * 0.13412		  &  9981311  & 397.7 \\ 
+			% Muon enriched \QCD (800-1000) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	32.3486 * 0.14552		  &  19767439  & 4199.3 \\ 
+			% Muon enriched \QCD (1000-Inf) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 	10.4305 * 0.15544		  &  13400031  & 8264.9 \\
+			% Electron enriched \QCD (20-30) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 557600000 * 0.0096		  & 9218954  & 0.002 \\ 
+			% Electron enriched \QCD (30-50) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 136000000 * 0.073		  & 6768384  & 0.0007 \\ 
+			% Electron enriched \QCD (50-80) 		& \pythia{}			& \pythia{} &	\CUETold{}	 & 19800000 * 0.146			  & 45156163  & 0.02 \\ 
+			% Electron enriched \QCD (80-120) 	& \pythia{}			& \pythia{} &	\CUETold{}	 & 2800000 * 0.125			  & 76489397  & 0.2 \\ 
+			% Electron enriched \QCD (120-170) 	& \pythia{}			& \pythia{} &	\CUETold{}	 & 477000 * 0.132			  & 77771316  & 1.2 \\ 
+			% Electron enriched \QCD (170-300) 	& \pythia{}			& \pythia{} &	\CUETold{}	 & 114000 * 0.165			  & 11540163  & 0.6 \\ 
+			% Electron enriched \QCD (300-Inf) 	& \pythia{}			& \pythia{} &	\CUETold{}	 & 9000 * 0.15			 	  & 7373633  & 54.6 \\ 
+			% bc to E \QCD (30-80) 				& \pythia{}			& \pythia{} &	\CUETold{}	 & 	159068000 * 0.00255 & 15328096   & 0.04 \\ 
+			% bc to E \QCD (80-170) 				& \pythia{}			& \pythia{} &	\CUETold{}	 & 	3221000 * 0.01183  	& 14976689   & 0.4 \\ 
+			% bc to E \QCD (170-250) 				& \pythia{}			& \pythia{} &	\CUETold{}	 & 	105771 * 0.02492  	& 9720760   & 3.9 \\ 
+			% bc to E \QCD (250-Inf) 				& \pythia{}			& \pythia{} &	\CUETold{}	 & 	21094.1 * 0.03375 	& 9773617   & 13.7 \\ 
+
+
+

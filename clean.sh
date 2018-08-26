@@ -1,0 +1,12 @@
+rm Thesis.lot
+rm Thesis.bbl
+rm Thesis.aux
+rm Thesis.blg
+rm Thesis.fls
+rm Thesis.lof
+rm Thesis.log
+rm Thesis.lot
+rm Thesis.out
+rm Thesis.toc
+rm Thesis.run.xml
+rm Thesis.fdb_latexmk

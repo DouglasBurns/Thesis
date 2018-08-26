@@ -1,0 +1,135 @@
+\begin{figure}[h!]
+	\centering
+	\begin{resizedtikzpicture}{0.45\linewidth}
+		\begin{feynman}
+			\vertex (A);
+			\vertex [above=0.015cm of A] (aup);
+			\vertex [below=0.015cm of A] (adown);
+
+			\vertex [right=1.5cm of A] (B);
+			\vertex [above=0.015cm of B] (bup);
+			\vertex [below=0.015cm of B] (bdown);
+
+			\vertex [above right=0.75cm and 1.5cm of B] (C);
+			\vertex [above=0.015cm of C] (cup);
+			\vertex [below=0.015cm of C] (cdown);
+			\vertex [below right=0.75cm and 1.5cm of B] (D);
+			\vertex [above=0.015cm of D] (dup);
+			\vertex [below=0.015cm of D] (ddown);
+
+			\diagram*{
+			% (bup) -- [red,thick,edge label=\(\overline{r}\)] (dup),
+			% (ddown) -- [electricgreen,thick,edge label=\(g\)] (bdown),
+			% (B) -- [red,very thick,edge label=\(r\)] (C),
+			% (A) -- [electricgreen,very thick,edge label=\(g\)] (B),
+			(bup) -- [red,thick] (dup),
+			(ddown) -- [electricgreen,thick] (bdown),
+			(B) -- [red,very thick] (C),
+			(A) -- [electricgreen,very thick] (B),
+			(A) -- [fermion] (B),
+			(B) -- [fermion] (C),
+			(B) -- [gluon] (D),
+			};
+		\end{feynman}
+		\end{resizedtikzpicture}
+		\hspace{0.5cm}
+		\begin{resizedtikzpicture}{0.45\linewidth}
+		\begin{feynman}
+			\vertex (A);
+			\vertex [above=0.015cm of A] (aup);
+			\vertex [below=0.015cm of A] (adown);
+
+			\vertex [right=1.5cm of A] (B);
+			\vertex [above=0.015cm of B] (bup);
+			\vertex [below=0.015cm of B] (bdown);
+
+			\vertex [above right=0.75cm and 1.5cm of B] (C);
+			\vertex [above=0.015cm of C] (cup);
+			\vertex [below=0.015cm of C] (cdown);
+			\vertex [below right=0.75cm and 1.5cm of B] (D);
+			\vertex [above=0.015cm of D] (dup);
+			\vertex [below=0.015cm of D] (ddown);
+
+			\diagram*{
+			(aup) -- [red,thick] (bup),
+			(adown) -- [electricgreen,thick] (bdown),
+			(B) -- [red,very thick] (C),
+			(B) -- [electricgreen,very thick] (D),
+
+			(A) -- [gluon] (B),
+			(B) -- [fermion] (C),
+			(B) -- [anti fermion] (D),
+			};
+		\end{feynman}
+		\end{resizedtikzpicture} \\
+		\vspace{0.5cm}
+		\begin{resizedtikzpicture}{0.45\linewidth}
+		\begin{feynman}
+			\vertex (A);
+			\vertex [above=0.015cm of A] (aup);
+			\vertex [below=0.015cm of A] (adown);
+
+			\vertex [right=1.5cm of A] (B);
+			\vertex [above=0.015cm of B] (bup);
+			\vertex [below=0.015cm of B] (bdown);
+			\vertex [right=0.025cm of B] (bright);
+			\vertex [above=0.015cm of bright] (brightup);
+			\vertex [below=0.015cm of bright] (brightdown);
+
+			\vertex [above right=0.75cm and 1.5cm of B] (C);
+			\vertex [above=0.015cm of C] (cup);
+			\vertex [below=0.015cm of C] (cdown);
+			\vertex [below right=0.75cm and 1.5cm of B] (D);
+			\vertex [above=0.015cm of D] (dup);
+			\vertex [below=0.015cm of D] (ddown);
+
+			\diagram*{
+			(bup) -- [red,thick] (cup),
+			(bdown) -- [electricgreen,thick] (ddown),
+			(bright) -- [blue,thick,sharp arrow angle=60,sharp right-] (cdown),
+			(bright) -- [blue,thick,sharp arrow angle=60,sharp left-] (dup)
+			(aup) -- [red,thick,sharp arrow angle=45,-sharp right] (brightup),
+			(adown) -- [electricgreen,thick,sharp arrow angle=45,-sharp left] (brightdown),
+			(A) -- [gluon] (B),
+			(B) -- [gluon] (C),
+			(B) -- [gluon] (D),
+			};
+		\end{feynman}
+		\end{resizedtikzpicture}
+		\hspace{0.5cm}
+		\begin{resizedtikzpicture}{0.45\linewidth}
+		\begin{feynman}
+			\vertex (A);
+			\vertex [above=0.015cm of A] (aup);
+			\vertex [below=0.015cm of A] (adown);
+
+			\vertex [right=1.5cm of A] (B);
+			\vertex [above=0.015cm of B] (bup);
+			\vertex [below=0.015cm of B] (bdown);
+			\vertex [right=0.025cm of B] (bright);
+			\vertex [above=0.015cm of bright] (brightup);
+			\vertex [below=0.015cm of bright] (brightdown);
+
+			\vertex [above right=0.75cm and 1.5cm of B] (C);
+			\vertex [above=0.015cm of C] (cup);
+			\vertex [below=0.015cm of C] (cdown);
+			\vertex [below right=0.75cm and 1.5cm of B] (D);
+			\vertex [above=0.015cm of D] (dup);
+			\vertex [below=0.015cm of D] (ddown);
+
+			\diagram*{
+			(bright) -- [red,thick,sharp arrow angle=60,sharp left-] (dup),
+			(bright) -- [electricgreen,thick,sharp arrow angle=60,sharp right-] (cdown),
+			(bup) -- [blue,thick] (cup),
+			(bdown) -- [blue,thick] (ddown),
+			(aup) -- [red,thick,sharp arrow angle=45,-sharp right] (brightup),
+			(adown) -- [electricgreen,thick,sharp arrow angle=45,-sharp left] (brightdown),
+			(A) -- [gluon] (B),
+			(B) -- [gluon] (C),
+			(B) -- [gluon] (D),
+			};
+		\end{feynman}
+		\end{resizedtikzpicture}
+	\caption[The four possible processes to strongly split a parton in the parton shower. The top left panel shows gluon emission, the top right shows \qqbar{} pair production and the bottom two panels the colour configurations of gluon splitting. In addition, photon brehmsstrahlung from the quarks can occur but is not considered here.]{The four possible processes to strongly split a parton in the parton shower. The top left panel shows gluon emission, the top right shows \qqbar{} pair production and the bottom two panels the colour configurations of gluon splitting. In addition, photon brehmsstrahlung from the quarks can occur but is not considered here. }
+	\label{fig:feyn-ps}
+\end{figure}

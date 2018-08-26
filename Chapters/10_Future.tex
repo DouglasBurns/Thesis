@@ -1,0 +1,158 @@
+\chapter{Conclusions, prospects and outlook}
+\label{ch:outlook}
+
+Conclusions HERE
+
+The measurements presented in this analysis have reached what is known as the \textit{systematic wall}.
+This means without the input of the theory community, improvements...
+These improvements in the systematic uncertainties are being for example in refTODO
+
+It makes sense then to go beyond the bounds of the current analysis into regions that are no longer dominated by the systematic uncertainty.
+This could be in the form of double or even triple differential cross sections.
+The ability to compare a model to two or three different variables simultaneously is an ideal prospect of this analysis for the \ttbar{} generator modelling and tuning community.
+Important distributions, for example the $(\ptTop\,,\,\abs{\eta^{\mathrm{top}}})$ and $(\ptTop\,,\,M_{\ttbar})$ distributions have already been studied by analyses such as TODO.
+These allow for comparisons to the full kinematic properties of the top quark as well as information on the discrepancies seen between the top \pt{} spectrum and that of the mass of the \ttbar{} system.
+This analysis could provide useful additional distributions with respect to the number of additional jets or missing \pt{} of the system.
+
+Another option is to go beyond the current kinematic event variables used in this thesis.
+The could include additional variables such as the angular separation between the two \bquark{} jets with the highest CSV discriminant, the angular separation between the lepton and closest \bquark{} jet or the \pt{} of additional jets.
+% add jet good for qcd
+New and novel event variables, for example the n-jettiness or sphericity of the event TODOREF, could be measured. 
+Of course, all the event variables currently measured can also be extrapolated to the full phase space and parton level, although perhaps more interesting and useful would be to extend them into the boosted regime, \ie{} the regime where the top decay products become highly collimated due to being produced at high energy.
+
+Finally, an option is to reinterpret the analysis as a part of an effective field theory.
+An effective field theory assumes that any new physics is at an energy scale inaccessible to the standard model and as such is a low energy approximation.
+Any new physics would then be introduced by deviations in the tails of the distributions caused by the interference between the standard model and effective field theory.
+The RIVET toolkit is a powerful tool in the reinterpretation of analyses.
+
+\section{Double differential cross sections} % (fold)
+\label{sec:double_differential_cross_sections}
+
+Very basic examples for the double differential cross sections are shown in Figs.~\ref{fig:ST_NJET} and~\ref{fig:LPT_LETA}, which show the distributions with respect to \ST{} and \NJET{}, and \LPT{} and \LETA{} respectively.
+Further distributions for \ST{} and \ptmiss{}, and \ptmiss{} and \NJET{} are shown in Figs.~\ref{fig:ST_MET} and~\ref{fig:MET_NJET} in App.~\ref{ch:DD}.
+Firstly, the top two panels of each figure show the data-simulation comparison for the \eJets{} and \muJets{} channels.
+The binning scheme for each variable has been chosen arbitrarily and the yield from multijet \QCD{} measured from simulation.
+The \ttbar{} yield is extracted using the background subtraction method, as for the single differential cross section measurements.
+
+The response matrices used in the unfolding of the \ttbar{} yields are created using the \powhegpythia{} sample and use four times the number of bins at reconstruction level than at generator level, achieved by splitting the binning schemes in two for each variable under study.
+The central two panels of each figure show the response matrices used in unfolding the \eJets{} and \muJets{} channels.
+They have been recombined into the bins used at generator level for ease of viewing.
+The \ttbar{} yields are unfolded without regularisation and so an unknown amount of bias may be present.
+% A measure of the correlation between the two variables can be seen in these matrices from the strength of the offset diagonals from the leading one.
+
+The unfolded \ttbar{} yields are used to calculate the normalised and absolute cross sections presented in the lower two panels of each figure.
+A comparison to the \powhegpythia{} \ttbar{} model is also shown.
+At no point have any systematic uncertainties been introduced or unfolding checks performed.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_NJets/plots/Normalisation_electron.png} \\
+	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_NJets/plots/Normalisation_muon.png} \\
+	\vspace{0.8cm}
+	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_NJets/unfolding/electron_ProbMatrix.pdf}
+	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_NJets/unfolding/muon_ProbMatrix.pdf} \\
+	\vspace{0.8cm}
+	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_NJets/plots/normalised_XSection_combined.png} \\
+	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_NJets/plots/absolute_XSection_combined.png} \\
+	\vspace{0.4cm}
+	\caption[Double differential \ttbar{} production cross section measurements with respect to \ST{} and \NJET{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the response matrices in terms of global bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.]{Double differential \ttbar{} production cross section measurements with respect to \ST{} and \NJET{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the response matrices in terms of global bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.}
+	\label{fig:ST_NJET}
+\end{figure}
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/lepton_pt_abs_lepton_eta/plots/Normalisation_electron.png} \\
+	\includegraphics[width=\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/lepton_pt_abs_lepton_eta/plots/Normalisation_muon.png} \\
+	\vspace{0.8cm}
+	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/lepton_pt_abs_lepton_eta/unfolding/electron_ProbMatrix.pdf}
+	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/lepton_pt_abs_lepton_eta/unfolding/muon_ProbMatrix.pdf} \\
+	\vspace{0.8cm}
+	\includegraphics[width=\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/lepton_pt_abs_lepton_eta/plots/normalised_XSection_combined.png} \\
+	\includegraphics[width=\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/lepton_pt_abs_lepton_eta/plots/absolute_XSection_combined.png} \\
+	\vspace{0.4cm}
+	\caption[Double differential \ttbar{} production cross section measurements with respect to \LPT{} and \LETA{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the response matrices in terms of global bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.]{Double differential \ttbar{} production cross section measurements with respect to \LPT{} and \LETA{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the response matrices in terms of global bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.}
+	\label{fig:LPT_LETA}
+\end{figure}
+
+
+\section{Additional event variables} % (fold)
+\label{sec:additional_event_variables}
+
+Some simple comparisons for the data-simulation agreement for new variables can be seen in Fig.~TODO.
+They include the angle of the \bquark{} quark to the lepton, the 
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/electron_M3_2orMoreBtags_with_ratio.png}
+	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/electron_M_bl_2orMoreBtags_with_ratio.png}
+	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/electron_angle_bl_2orMoreBtags_with_ratio.png} \\
+	\vspace{0.4cm}
+	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/electron_tau1_2orMoreBtags_with_ratio.png}
+	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/electron_tau2_2orMoreBtags_with_ratio.png} \\
+	\vspace{0.4cm}
+	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/electron_tau3_2orMoreBtags_with_ratio.png}
+	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/electron_tau4_2orMoreBtags_with_ratio.png} \\
+	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Control/Ref_selection/WithQCDFromControl/electron_JetPt3_2orMoreBtags_with_ratio.png}
+	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Control/Ref_selection/WithQCDFromControl/electron_JetPt4_2orMoreBtags_with_ratio.png} 
+	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Control/Ref_selection/WithQCDFromControl/electron_JetPtAdd_2orMoreBtags_with_ratio.png}\\
+	\caption[]{}
+	\label{fig:LPT_LETA}
+\end{figure}
+% section additional_event_variables (end)
+
+\section{Effective field theory} % (fold)
+\label{sec:effective_field_theory}
+
+The \SM{} is largely assumed to be a valid effective theory up until an energy scale at which new physics is introduced \NP{}.
+At this point any new field theory describing must satisfy three conditions, namely: The \SM{} gauge group $SU(3)_{C} \otimes SU(2)_{L} \otimes U(1)_{Y}}$ should be contained in the new gauge group, all the degrees of freedom of the \SM{} should still be present and at low energies it should reduce into the \SM{}.
+This reduction is likely believed to originate from the decoupling of the massive new particles at \NP{}.
+
+% The new physics is then only expected to contribute virtually to standard model processes and can be modelled perturbatively as higher-dimensional operators $O$, constructed out of \SM{} fields, suppressed by \NP{}.
+
+The new physics can be added to the \SM{} Lagrangian by adding higher-dimensional operators $\mathcal{O}_{i}$, constructed only out of \SM{} fields which maintains gauge invariance and their associated Wilson coefficients $C_{i}$, which describe the strength of the new physics.
+\begin{equation*}
+	\Lagr_{\mathrm{EFT}} = \Lagr_{\mathrm{SM}} + \sum_{d=5}^{\infty}\frac{1}{\NP^{d-4}}\sum_{i}C^{d}_{i}\mathcal{O}^{d}_{i} 
+\end{equation*}
+\begin{equation*}
+	\Lagr_{\mathrm{EFT}} = \Lagr_{\mathrm{SM}} + \frac{1}{\NP}C^{(5)}_{1}\mathcal{O}^{(5)}_{1} + \frac{1}{\NP^{2}}\sum_{i}C^{(6)}_{i}\mathcal{O}^{(6)}_{i} + h.c. + \dots
+\end{equation*}
+The higher-dimensional terms are suppressed by $\NP^{d-4}$, where $d$ is the dimension.
+The dimension 5 operator only contains one operator after gauge symmetry constraints have been applied which violates lepton number and has no relation to top physics.
+It is not considered further.
+At dimension 6 however, there are 16 operators which are relevant for top quark production and decay~\cite{Future:TopEFT}.
+These operators can alter the normalisation and/or shape of various distributions measured in relation to the top quark.
+One particular operator of interest is \OTG{} which modifies the $\mathrm{t\overline{t}g}$ vertex and introduces a new $\mathrm{t\overline{t}gg}$ vertex as shown in Fig.~\ref{fig:feyn-eft} and results in a modification to the \ttbar{} production cross section.
+\input{Feynmans/EFT.tex}
+
+A \LO{} model for the \SM{} and top quark related EFT operators is provided including the \OTG{} operator and is described in detail in~\cite{Future:dim6top}.
+The parameter $\sfrac{C_{\mathrm{tG}}}{\NP}$ is calculated following prescriptions given in~\cite{Future:TOP17014,Future:dim6top}.
+
+Events are generated using \mgamc{} (v2.6.2) interfaced with \pythia{} (v8.238), however, it is not reasonable or feasible to generate $N$ different samples depending on $N$ different input values of $\sfrac{C_{\mathrm{tG}}}{\NP}$.
+Instead, the interference contributions can be scaled to the desired value of  $\sfrac{C_{\mathrm{tG}}}{\NP}$ using the following method.
+The \ttbar{} production cross section can be written as a perturbative expansion in terms of $\sfrac{C_{\mathrm{tG}}}{\NP}$
+\begin{equation}
+	\sigma_{\ttbar} = \sigma_{\ttbar}^{\SM} + \frac{C_{\mathrm{tG}}}{\NP}\,.\,\beta_{1} + \left(\frac{C_{\mathrm{tG}}}{\NP}\right)^{2}\,.\,\beta_{2},
+\end{equation}
+where the $\beta$ terms are \OTG{} contributions to the cross section from linear and quadratic perturbations of $\sfrac{C_{\mathrm{tG}}}{\NP}$.
+By taking arbitrary values for this perturbation at $\pm X$ this reduces to
+\begin{equation}
+	\beta_{1} = \frac{\sigma_{\ttbar}(+X) - \sigma_{\ttbar}(-X)}{2X},
+\end{equation}
+which is the interference contribution for the Feynman diagrams containing one \SM{} vertex and one \OtG{} vertex which can be scaled to the desired $\sfrac{C_{\mathrm{tG}}}{\NP}$ and added to the \SM{} prediction ($X=0$) for the final prediction.
+The quadratic contributions to the total \ttbar{} production cross section are negligible for $\sfrac{C_{\mathrm{tG}}}{\NP} < 1\TeV^{-2}$~\cite{Future:CTGNLO}. 
+Thus three simulations are created using $\sfrac{C_{\mathrm{tG}}}{\NP} = +2,\,0,\,-2$, the outcomes of which are shown in Fig.~TODO, which shows a comparison of all three variations to the unfolded data as seen in this thesis.
+This is done using the RIVET plugin.
+
+The $\sfrac{C_{\mathrm{tG}}}{\NP}$ parameter can then be extracted from a fit of \chisq{} goodness-of-fit tests between the unfolded cross sections and predictions for a given a range of $\sfrac{C_{\mathrm{tG}}}{\NP}$.
+The goodness-of-fit tests proceed in an identical manner as in Sec.~\ref{sec:the_goodness_of_fit_tests}.
+
+
+% The standard model as an effective field theory assumes new physics is introduced at an energy scale \NP, inaccessible at current colliders, from $\sim1\TeV$.
+
+
+
+
+% section effective_field_theory (end)
+
+
+
+% section double_differential_cross_sections (end)

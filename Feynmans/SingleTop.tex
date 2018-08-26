@@ -1,6 +1,6 @@
 \begin{figure}[h!]
 	\centering
-	\begin{subfigure}{.32\textwidth}
+	\begin{subfigure}{.3\textwidth}
 		\centering
 		\begin{tikzpicture}
 		\begin{feynman}
@@ -22,7 +22,8 @@
 		\end{feynman}
 		\end{tikzpicture}
 	\end{subfigure}
-	\begin{subfigure}{.32\textwidth}
+	\hspace{0.45cm}
+	\begin{subfigure}{.3\textwidth}
 		\centering
 		\begin{tikzpicture}
 		\begin{feynman}
@@ -46,31 +47,54 @@
 		\end{feynman}
 		\end{tikzpicture}
 	\end{subfigure}
-	\begin{subfigure}{.32\textwidth}
+	\hspace{0.45cm}
+	\begin{subfigure}{.3\textwidth}
 		\centering
 		\begin{tikzpicture}
 		\begin{feynman}
-			\vertex [black](i1){\(g\)};
-			\vertex [black,right=1.5cm of i1](a);
-			\vertex [black,above right=0.75cm and 1.5cm of a](f1){\(t\)};
-			\vertex [black,below right=0.75cm and 1.5cm of a](b);
-			\vertex [black,right=1.5cm of b](f2){\(W^{-}\)};
-			\vertex [black,below=1.5cm of i1](i2){\(g\)};
-			\vertex [black,right=1.5cm of i2](c);
-			\vertex [black,below right=0.75cm and 1.5cm of c] (f3){\(\overline{b}\)};
+			\vertex (A);
+			\vertex [above left=0.75cm and 1.5cm of A] (ai) {\(b\)};
+			\vertex [below left=0.75cm and 1.5cm of A] (aii) {\(g\)};
 
-			\diagram* {
-			(i1) -- [black,gluon] (a)
-			(a) -- [black,fermion] (f1),
-			(a) -- [black,anti fermion] (b),
-			(b) -- [black,boson] (f2),
-			(i2) -- [black,gluon] (c),
-			(c) -- [black,fermion] (b),
-			(c) -- [black,anti fermion] (f3),
+			\vertex [right=1.5cm of A] (B);
+			\vertex [above right=0.75cm and 1.5cm of B] (bi) {\(W^{-}\)};
+			\vertex [below right=0.75cm and 1.5cm of B] (bii) {\(t\)};
+			\diagram*{
+			(ai) -- [fermion] (A),
+			(aii) -- [gluon] (A),
+			(A) -- [fermion] (B),
+			(B) -- [boson] (bi),
+			(B) -- [fermion] (bii),
 			};
 		\end{feynman}
 		\end{tikzpicture}
 	\end{subfigure}
-	\caption[Feynman diagrams for the production of single top quarks. On the left, via the s-channel, in the middle via the t-channel and on the right via the tW channel.]{Feynman diagrams for the production of single top quarks. On the left, via the s-channel, in the middle via the t-channel and on the right via the tW channel. }
+	% \hspace{0.45cm}
+	% \begin{subfigure}{.32\textwidth}
+	% 	\centering
+	% 	\begin{tikzpicture}
+	% 	\begin{feynman}
+	% 		\vertex [black](i1){\(g\)};
+	% 		\vertex [black,right=1.5cm of i1](a);
+	% 		\vertex [black,above right=0.75cm and 1.5cm of a](f1){\(t\)};
+	% 		\vertex [black,below right=0.75cm and 1.5cm of a](b);
+	% 		\vertex [black,right=1.5cm of b](f2){\(W^{-}\)};
+	% 		\vertex [black,below=1.5cm of i1](i2){\(g\)};
+	% 		\vertex [black,right=1.5cm of i2](c);
+	% 		\vertex [black,below right=0.75cm and 1.5cm of c] (f3){\(\overline{b}\)};
+
+	% 		\diagram* {
+	% 		(i1) -- [black,gluon] (a)
+	% 		(a) -- [black,fermion] (f1),
+	% 		(a) -- [black,anti fermion] (b),
+	% 		(b) -- [black,boson] (f2),
+	% 		(i2) -- [black,gluon] (c),
+	% 		(c) -- [black,fermion] (b),
+	% 		(c) -- [black,anti fermion] (f3),
+	% 		};
+	% 	\end{feynman}
+	% 	\end{tikzpicture}
+	% \end{subfigure}
+	\caption[Feynman diagrams for the production of single top quarks. The left panel shows single top quark production via the s-channel, the central panel by the t-channel and the right panel in association with a \Wboson{} boson.]{Feynman diagrams for the production of single top quarks. The left panel shows single top quark production via the s-channel, the central panel by the t-channel and the right panel in association with a \Wboson{} boson.}
 	\label{fig:feyn-t}
 \end{figure}

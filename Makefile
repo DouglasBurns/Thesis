@@ -10,7 +10,7 @@ CONTINUOUS=-pvc
 MAIN=Thesis
 
 # Chapters of Report
-SOURCES=$(MAIN).tex Makefile Chapters/*.tex Tables/*.tex PlotCollections/*.tex TableCollections/*.tex Feynmans/*.tex
+SOURCES=$(MAIN).tex Makefile Chapters/*.tex PlotCollections/*.tex TableCollections/*.tex Feynmans/*.tex
 
 # Figures of End_of_year_report
 FIGURES := $(shell find Figures/* Plots/* -type f)

@@ -1,0 +1,92 @@
+\chapter{Results}
+\label{ch:xsection}
+
+As stated previously, measurements of the normalised and absolute cross sections are performed to particle level in a visible phase space.
+Normalised cross section measurements have greater precision due to the cancellation of some systematics, whereas the absolute measurements contain all information available.
+They are presented to particle level in order to be useful in comparisons to future models and results from other experiments.
+It allows models to be compared without wasting valuable computational resources and time on the simulation of the detector and avoids the influence of large theoretical uncertainties introduced extrapolating the results to parton level (or a full phase space). 
+These measurements are presented here along with the results of \chisq{} goodness-of-fit tests.
+Additional studies with respect to the theoretical uncertainties in the \ttbar{} model and the effects of non-regularised unfolding are also shown.
+
+\section{Cross section measurements} % (fold)
+\label{sec:cross_section_measurements}
+
+Figure~\ref{fig:combXSecNorm1} shows the normalised differential cross sections with respect to the \NJET{}, \HT{} and \ST{} event variables and Fig.~\ref{fig:combXSecNorm2} with respect to the \ptmiss{}, \WPT{}, \LPT{} and \LETA{} variables respectively.
+Figures~\ref{fig:combXSecAbs1} and~\ref{fig:combXSecAbs2} show the relevant plots for the absolute cross section measurements.
+The cross section measurements are compared to four combinations of the matrix-element and parton shower: \powhegpythia{}, \powhegherwig{}, \mgamcFxFxpythia{} and \mgamcMLMpythia{}.
+In the lower panels, the ratio of the model cross section to the measured cross section is shown overlaid onto the grey statistical uncertainty band and the gold systematic band.
+By eye, good agreement can already be seen for the \NJET{} variable between the measured cross sections and the \powhegpythia{} and \mgamcFxFxpythia{} models.
+The trend in the modelling of the \pt{} of the top quark can easily be seen in all the hadronically based variables, which are is softer in data than simulation.
+Figures~\ref{fig:combXSecSysNorm1},~\ref{fig:combXSecSysNorm2},~\ref{fig:combXSecSysAbs1} and~\ref{fig:combXSecSysAbs2} show the normalised and absolute cross section measurements compared to three variations of the \powhegpythia{} simulation.
+These are variations of the shower scales, variations of the \hdamp{} matching parameter and a variation with the application of reweighting to the quark top \pt{}.
+In the latter case, the slope seen in the ratio is much less pronounced as expected.
+% ratio gold band is systematic (x-xup/x)... lines are just x/xup
+% section cross_section_measurements (end)
+
+While useful information can be inferred from these plots, absolute statements cannot be made regarding how well a simulation models the data.
+This is due to correlations of the uncertainties between bins.
+A \chisq{} goodness-of-fit test needs to be performed between each model and the data.
+
+
+\section{The \chisq goodness-of-fit tests} % (fold)
+\label{sec:the_goodness_of_fit_tests}
+
+The \chisq{} goodness-of-fit test is defined by 
+\begin{equation*}
+	\chisq = u_{i} . \mathbf{V}^{-1}_{ij} . u^{T}_{j},
+\end{equation*}
+where $u$ is a vector of the differences between the measured cross section and the model per bin $u_{i}=(x_i^{\mathrm{meas}}-x_i^{\mathrm{model}})$ and $u^{T}$ is the transpose of this vector.
+The correlations between the bins are taken into account by the full covariance matrix $\mathbf{V}$.
+The full covariance matrix is created by adding together all the covariance matrices for all statistical and systematic uncertainties. 
+Each measurement has a number of degrees of freedom equal to its number of bins.
+This is reduced by one for the normalised cross section measurements because of the additional constraint from the normalisation.
+A \pvalue{} can be obtained for each \chisndf{}.
+A second \chisq{} test is performed between the measured cross sections and the \powhegpythia{} model where the theoretical uncertainties in the model as well as in the unfolded data are taken into account.
+The correlations between the uncertainties in the prediction of the model and the measured cross section are included.
+All \chisndf{} and \pvalues{} are shown per \ttbar{} model in Tabs.~\ref{tb:Chi2_normalised} and~\ref{tb:Chi2_absolute} for the normalised and absolute cross section measurements respectively.
+
+The predictions of the \ST{}, \ptmiss{} and \LPT{} kinematic event distributions by the \powhegpythia{} model are consistent with the measured cross sections.
+The \NJET{} variable is well described by the \powhegpythia{} generator with \chisndf{} of $2.0/5$ and $2.2/6$ for the normalised and absolute cross section measurements respectively.
+The tune \cuettune{} used in the \powhegpythia{} model is derived using jet multiplicity measurements from 8\TeV{}, as seen in Fig.~\ref{fig:8TeVTuning} and the good description measured here confirms the tune describes well the data for a larger data set at higher \sqrts{}.
+Tensions are seen in the \ST{}, \WPT{} and \LETA{} distributions.
+The results of the \chisq{} tests with the inclusion of the theoretical uncertainties in the \powhegpythia{} model show that any tensions observed are covered.
+ % in the phase space analysed.
+
+The \powhegherwig{} model is broadly consistent with the cross section measurements, particularly for the \ptmiss{}, \LPT{} and \WPT{} event variables, however large tensions are seen for the \NJET{} distributions.
+Tension is also seen for the \LETA{} variable.
+The \mgamcFxFxpythia{} model is consistent with all the kinematic event variables measured, with the exception of \LETA{}.
+If the theoretical uncertainties are applied it is expected that it would cover some of the tensions seen in both the \powhegherwig{} and \mgamcFxFxpythia{} models.
+Without considering the theoretical uncertainties in the \mgamcMLMpythia{} model, there is no consistency with measured data for any variable. 
+
+No model is consistent for all the cross section measurements without taking the theoretical uncertainties in the model into account.
+The \NLO{} models are more consistent with the data than the \LO{} model.
+When taking into account model theoretical uncertainties the tensions are reduced.
+The \LETA{} event variable causes tensions in all models studied.
+% section the_goodness_of_fit_tests (end)
+
+
+\section{Effects of regularisation} % (fold)
+\label{sec:effects_of_regularisation}
+
+A study on the effects of the regularisation in the unfolding on the \chisndf{} calculation is performed.
+A lack of regularisation can lead to non-physical effects present in the unfolded distributions, however too much regularisation and the unfolded data is biased towards the input simulation.
+
+Tables~\ref{tb:Chi2_normalised_noReg} and~\ref{tb:Chi2_absolute_noReg} show the \chisndf{} produced when regularisation is not used.
+Typically only small changes are seen between the regularised and unregularised measurements.
+The largest changes are, as expected, linked to event variables which have a low experimental resolution.
+One of the largest changes in the \chisndf{} is seen in the \ptmiss{} distribution of the \powhegpythia{} simulation with model theoretical uncertainties where it decreases from $2.9/5$ to $2.1/5$.
+Another is for the \HT{} distribution in the \mgamcFxFxpythia{} model where it increases from $11/12$ to $12/12$.
+The \chisndf{} does not change significantly for most other event variables and not at all for \LPT{} and \LETA{}.
+This implies that regularisation is not needed in the case of variables with a high experimental resolution. 
+% section effects_of_regularisation (end)
+
+
+\input{PlotCollections/XSections.tex}
+\input{PlotCollections/XSectionsSystematics.tex}
+
+\input{TableCollections/ChiSq/Chi2XSections.tex}
+\input{TableCollections/ChiSq/Chi2XSectionsNoReg.tex}
+
+% \begin{itemize}
+% 	\item TODO: TOP PT SOMEWHERE
+% \end{itemize}

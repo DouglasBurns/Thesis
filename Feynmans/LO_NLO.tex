@@ -1,0 +1,181 @@
+\begin{figure}
+\centering
+\begin{resizedtikzpicture}{0.45\linewidth}
+\begin{feynman}
+	\vertex (A);
+	\vertex [below=3cm of A](B);
+	\vertex [below right=1.5cm and 3cm of A](C);
+
+	\vertex [right=1cm of C](D1);
+	\vertex [right=2cm of C](D2);
+	\vertex [right=3cm of C](D3);
+	\vertex [above right=0.375cm and 0.75cm of D3] (E1);
+	\vertex [above right=0.75cm and 1.5cm of D3] (E2);
+	\vertex [above right=1.5cm and 3cm of D3] (E3);
+	\vertex [above right=0.375cm and 0.75cm of D3] (F1);
+	\vertex [below right=0.75cm and 1.5cm of D3] (F2);
+	\vertex [below right=1.5cm and 3cm of D3] (F3);
+
+	\diagram* {
+	(A) -- [fermion] (C),
+	(B) -- [anti fermion] (C),
+
+	(C) -- [gluon] (D3),
+	(D3) -- [fermion] (E3),
+	(D3) -- [anti fermion] (F3),
+	};
+\end{feynman}
+\end{resizedtikzpicture}
+\hspace{0.5cm}
+\begin{resizedtikzpicture}{0.45\linewidth}
+\begin{feynman}
+	\vertex (A);
+	\vertex [below=3cm of A](B);
+	\vertex [below right=1.5cm and 3cm of A](C);
+	\vertex [below right=0.75cm and 1.5cm of A](A1);
+	\vertex [above right=0.75cm and 1.5cm of A1](A2);
+
+	\vertex [right=1cm of C](D1);
+	\vertex [right=2cm of C](D2);
+	\vertex [right=3cm of C](D3);
+	\vertex [above right=0.375cm and 0.75cm of D3] (E1);
+	\vertex [above right=0.75cm and 1.5cm of D3] (E2);
+	\vertex [above right=1.5cm and 3cm of D3] (E3);
+	\vertex [above right=0.375cm and 0.75cm of D3] (F1);
+	\vertex [below right=0.75cm and 1.5cm of D3] (F2);
+	\vertex [below right=1.5cm and 3cm of D3] (F3);
+	\vertex [below right=0.75cm and 1.5cm of E2] (G);
+
+	\diagram* {
+	(A) -- [fermion] (C),
+	(B) -- [anti fermion] (C),
+
+	(C) -- [gluon] (D1),
+	(D1) -- [gluon, half left] (D2),
+	(D2) -- [gluon, half left] (D1),
+	(D2) -- [gluon] (D3),
+	(D3) -- [fermion] (E3),
+	(D3) -- [anti fermion] (F3),
+	};
+\end{feynman}
+\end{resizedtikzpicture} \\
+\vspace{0.5cm}
+\begin{resizedtikzpicture}{0.45\linewidth}
+\begin{feynman}
+	\vertex (A);
+	\vertex [below=3cm of A](B);
+	\vertex [below right=1.5cm and 3cm of A](C);
+
+	\vertex [right=1cm of C](D1);
+	\vertex [right=2cm of C](D2);
+	\vertex [right=3cm of C](D3);
+	\vertex [above right=0.375cm and 0.75cm of D3] (E1);
+	\vertex [above right=0.75cm and 1.5cm of D3] (E2);
+	\vertex [above right=1.5cm and 3cm of D3] (E3);
+	\vertex [above right=0.375cm and 0.75cm of D3] (F1);
+	\vertex [below right=0.75cm and 1.5cm of D3] (F2);
+	\vertex [below right=1.5cm and 3cm of D3] (F3);
+
+	\diagram* {
+	(A) -- [fermion] (C),
+	(B) -- [anti fermion] (C),
+
+	(C) -- [gluon] (D3),
+	(D3) -- [fermion] (E3),
+	(D3) -- [anti fermion] (F3),
+	(D2) -- [gluon, half left] (E1),
+	};
+\end{feynman}
+\end{resizedtikzpicture}
+\hspace{0.5cm}
+\begin{resizedtikzpicture}{0.45\linewidth}
+\begin{feynman}
+	\vertex (A);
+	\vertex [below=3cm of A](B);
+	\vertex [below right=1.5cm and 3cm of A](C);
+
+	\vertex [right=1cm of C](D1);
+	\vertex [right=2cm of C](D2);
+	\vertex [right=3cm of C](D3);
+	\vertex [above right=0.375cm and 0.75cm of D3] (E1);
+	\vertex [above right=0.75cm and 1.5cm of D3] (E2);
+	\vertex [above right=1.5cm and 3cm of D3] (E3);
+	\vertex [above right=0.375cm and 0.75cm of D3] (F1);
+	\vertex [below right=0.75cm and 1.5cm of D3] (F2);
+	\vertex [below right=1.5cm and 3cm of D3] (F3);
+
+	\diagram* {
+	(A) -- [fermion] (C),
+	(B) -- [anti fermion] (C),
+
+	(C) -- [gluon] (D3),
+	(D3) -- [fermion] (E3),
+	(D3) -- [anti fermion] (F3),
+	(E2) -- [gluon, half left] (F2),
+	};
+\end{feynman}
+\end{resizedtikzpicture} \\
+\vspace{0.5cm}
+\begin{resizedtikzpicture}{0.45\linewidth}
+\begin{feynman}
+	\vertex (A);
+	\vertex [below=3cm of A](B);
+	\vertex [below right=1.5cm and 3cm of A](C);
+	\vertex [below right=0.75cm and 1.5cm of A](A1);
+	\vertex [above right=0.75cm and 1.5cm of A1](A2);
+
+	\vertex [right=1cm of C](D1);
+	\vertex [right=2cm of C](D2);
+	\vertex [right=3cm of C](D3);
+	\vertex [above right=0.375cm and 0.75cm of D3] (E1);
+	\vertex [above right=0.75cm and 1.5cm of D3] (E2);
+	\vertex [above right=1.5cm and 3cm of D3] (E3);
+	\vertex [above right=0.375cm and 0.75cm of D3] (F1);
+	\vertex [below right=0.75cm and 1.5cm of D3] (F2);
+	\vertex [below right=1.5cm and 3cm of D3] (F3);
+
+	\diagram* {
+	(A) -- [fermion] (C),
+	(B) -- [anti fermion] (C),
+
+	(C) -- [gluon] (D3),
+	(D3) -- [fermion] (E3),
+	(D3) -- [anti fermion] (F3),
+	(A1) -- [gluon] (A2),
+	};
+\end{feynman}
+\end{resizedtikzpicture}
+\hspace{0.5cm}
+\begin{resizedtikzpicture}{0.45\linewidth}
+\begin{feynman}
+	\vertex (A);
+	\vertex [below=3cm of A](B);
+	\vertex [below right=1.5cm and 3cm of A](C);
+	\vertex [below right=0.75cm and 1.5cm of A](A1);
+	\vertex [above right=0.75cm and 1.5cm of A1](A2);
+
+	\vertex [right=1cm of C](D1);
+	\vertex [right=2cm of C](D2);
+	\vertex [right=3cm of C](D3);
+	\vertex [above right=0.375cm and 0.75cm of D3] (E1);
+	\vertex [above right=0.75cm and 1.5cm of D3] (E2);
+	\vertex [above right=1.5cm and 3cm of D3] (E3);
+	\vertex [above right=0.375cm and 0.75cm of D3] (F1);
+	\vertex [below right=0.75cm and 1.5cm of D3] (F2);
+	\vertex [below right=1.5cm and 3cm of D3] (F3);
+	\vertex [below right=0.75cm and 1.5cm of E2] (G);
+
+	\diagram* {
+	(A) -- [fermion] (C),
+	(B) -- [anti fermion] (C),
+
+	(C) -- [gluon] (D3),
+	(D3) -- [fermion] (E3),
+	(D3) -- [anti fermion] (F3),
+	(E2) -- [gluon] (G),
+	};
+\end{feynman}
+\end{resizedtikzpicture} \\
+\caption[A set of Feynman diagrams showing \LO{} and \NLO{} processes. In the top left panel, the leading order diagram is shown. The top right panel shows a gluon-loop in the propagator. These loops are responsible for the running strong coupling constant. The two middle panels show \NLO loops providing virtual particles to the diagrams and corrections in the renormalisation scale. Finally, the bottom two panels show the real additional partons that can be seen in the final state due to \NLO{} matrix-element calculations.]{A set of Feynman diagrams showing \LO{} and \NLO{} processes. In the top left panel, the leading order diagram is shown. The top right panel shows a gluon-loop in the propagator. These loops are responsible for the running strong coupling constant. The two middle panels show \NLO loops providing virtual particles to the diagrams and corrections in the renormalisation scale. Finally, the bottom two panels show the real additional partons that can be seen in the final state due to \NLO{} matrix-element calculations.}
+\label{fig:feyn-nlo}
+\end{figure}
