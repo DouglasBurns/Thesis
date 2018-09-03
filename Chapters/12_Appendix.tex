@@ -1,68 +1,301 @@
-\chapter{Bias in alternate models} % (fold)
-\label{sec:bias_in_alternate_models}
+\chapter{Reweighting the top quark $\mathbf{\mathit{p}_{\mathrm{T}}}$} % (fold)
+\label{ch:pt_reweight}
+
+The top quark \pt{} in the \powhegpythia{} model is reweighted up and down to cover the differences between data and simulation in order to provide a basis for the bias tests.
+Figures~\ref{fig:Reweighte} and~\ref{fig:Reweightmu} show the reweighted kinematic event distributions in the \eJets{} and \muJets{} channels respectively.
 
 \begin{figure*}[htpb]
 	\centering
-	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/closure_test/normalised_xsection_electron_closure_test_for_NJets_generator.pdf} 
-	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/closure_test/normalised_xsection_electron_closure_test_for_HT_generator.pdf} 
-	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/closure_test/normalised_xsection_electron_closure_test_for_ST_generator.pdf} \\
-	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/closure_test/normalised_xsection_electron_closure_test_for_MET_generator.pdf} 
-	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/closure_test/normalised_xsection_electron_closure_test_for_WPT_generator.pdf} \\
-	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/closure_test/normalised_xsection_electron_closure_test_for_lepton_pt_generator.pdf} 
-	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/closure_test/normalised_xsection_electron_closure_test_for_abs_lepton_eta_coarse_generator.pdf} \\
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_electron_NJets.png} 
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_electron_HT.png} 
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_electron_ST.png} \\
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_electron_MET.png} 
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_electron_WPT.png} \\
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_electron_lepton_pt.png} 
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_electron_abs_lepton_eta_coarse.png} \\
+	\caption[The kinematic event distributions given by the \powhegpythia{} sample (green) with the top quark \pt{} reweighted up (red) and down (blue) to cover differences to data (magenta) in the \eJets{} channel. The distributions are normalised to one.]{The kinematic event distributions given by the \powhegpythia{} sample (green) with the top quark \pt{} reweighted up (red) and down (blue) to cover differences to data (magenta) in the \eJets{} channel. The distributions are normalised to one.}
+	\label{fig:Reweighte}
+\end{figure*}
+\begin{figure*}[htpb]
+	\centering
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_muon_NJets.png} 
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_muon_HT.png} 
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_muon_ST.png} \\
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_muon_MET.png} 
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_muon_WPT.png} \\
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_muon_lepton_pt.png} 
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_muon_abs_lepton_eta_coarse.png} \\
+	\caption[The kinematic event distributions given by the \powhegpythia{} sample (green) with the top quark \pt{} reweighted up (red) and down (blue) to cover differences to data (magenta) in the \muJets{} channel. The distributions are normalised to one.]{The kinematic event distributions given by the \powhegpythia{} sample (green) with the top quark \pt{} reweighted up (red) and down (blue) to cover differences to data (magenta) in the \muJets{} channel. The distributions are normalised to one.}
+	\label{fig:Reweightmu}
+\end{figure*}
+
+
+\chapter{Bias in alternate models} % (fold)
+\label{ch:bias_in_alternate_models}
+
+Additional bias tests on the unfolding procedure are performed by unfolding \ttbar{} events generated from an alternative model and comparing to the true values.
+These are shown in Figs.~\ref{fig:ClosureBiase2} and~\ref{fig:ClosureBiasmu2} in the \eJets{} and \muJets{} channels respectively.
+For the most part, they lie comfortably within the systematic uncertainties, shown as the grey band in the ratio plots.
+\begin{figure*}[htpb]
+	\centering
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/closure_test/normalised_xsection_electron_closure_test_for_NJets_generator.pdf} 
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/closure_test/normalised_xsection_electron_closure_test_for_HT_generator.pdf} 
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/closure_test/normalised_xsection_electron_closure_test_for_ST_generator.pdf} \\
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/closure_test/normalised_xsection_electron_closure_test_for_MET_generator.pdf} 
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/closure_test/normalised_xsection_electron_closure_test_for_WPT_generator.pdf} \\
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/closure_test/normalised_xsection_electron_closure_test_for_lepton_pt_generator.pdf} 
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/closure_test/normalised_xsection_electron_closure_test_for_abs_lepton_eta_coarse_generator.pdf} \\
 	\caption[The cross sections for the alternate \ttbar{} production models unfolded using the \powhegpythia{} derived response matrix compared to the true model cross sections are shown for all event variables in the \eJets{} channel in the upper panels. The lower panels give the ratio of the two cross sections known as the bias.]{The cross sections for the alternate \ttbar{} production models unfolded using the \powhegpythia{} derived response matrix compared to the true model cross sections are shown for all event variables in the \eJets{} channel in the upper panels. The lower panels give the ratio of the two cross sections known as the bias.}
 	\label{fig:ClosureBiase2}
 \end{figure*}
 \begin{figure*}[htpb]
 	\centering
-	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/closure_test/normalised_xsection_muon_closure_test_for_NJets_generator.pdf}
-	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/closure_test/normalised_xsection_muon_closure_test_for_HT_generator.pdf}
-	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/closure_test/normalised_xsection_muon_closure_test_for_ST_generator.pdf} \\
-	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/closure_test/normalised_xsection_muon_closure_test_for_MET_generator.pdf} 
-	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/closure_test/normalised_xsection_muon_closure_test_for_WPT_generator.pdf} \\
-	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/closure_test/normalised_xsection_muon_closure_test_for_lepton_pt_generator.pdf} 
-	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/closure_test/normalised_xsection_muon_closure_test_for_abs_lepton_eta_coarse_generator.pdf} \\
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/closure_test/normalised_xsection_muon_closure_test_for_NJets_generator.pdf}
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/closure_test/normalised_xsection_muon_closure_test_for_HT_generator.pdf}
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/closure_test/normalised_xsection_muon_closure_test_for_ST_generator.pdf} \\
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/closure_test/normalised_xsection_muon_closure_test_for_MET_generator.pdf} 
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/closure_test/normalised_xsection_muon_closure_test_for_WPT_generator.pdf} \\
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/closure_test/normalised_xsection_muon_closure_test_for_lepton_pt_generator.pdf} 
+	\includegraphics[width=0.32\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/closure_test/normalised_xsection_muon_closure_test_for_abs_lepton_eta_coarse_generator.pdf} \\
 	\caption[The cross sections for the alternate \ttbar{} production models unfolded using the \powhegpythia{} derived response matrix compared to the true model cross sections are shown for all event variables in the \muJets{} channel in the upper panels. The lower panels give the ratio of the two cross sections known as the bias.]{The cross sections for the alternate \ttbar{} production models unfolded using the \powhegpythia{} derived response matrix compared to the true model cross sections are shown for all event variables in the \muJets{} channel in the upper panels. The lower panels give the ratio of the two cross sections known as the bias.}
 	\label{fig:ClosureBiasmu2}
 \end{figure*}
 
+\chapter{Residual distributions}
+\label{ch:Res}
+
+Figures~\ref{fig:ResHT},~\ref{fig:ResST},~\ref{fig:ResMET},~\ref{fig:ResWPT},~\ref{fig:ResLPT} and~\ref{fig:ResLETA} show the comparisons of the bin widths and the resolutions (calculated from the residual distributions) in each bin for all event variables except \NJET{}.
+The residual distributions are calculated using simulated events from the \powhegpythia{} model where the events from the \eJets{} and \muJets{} channels have been combined.
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_HT_0_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_HT_1_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_HT_2_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_HT_3_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_HT_4_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_HT_5_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_HT_6_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_HT_7_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_HT_8_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_HT_9_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_HT_10_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_HT_11_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_HT_12_Residual.pdf}
+	\caption[The set of residual distributions for the \HT{} event variable calculated using the \powhegpythia{} simulation. Overlaid is the bin width (red) and the resolution (blue)]{The set of residual distributions for the \HT{} event variable calculated using the \powhegpythia{} simulation. Overlaid is the bin width (red) and the resolution (blue)}
+	\label{fig:ResHT}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_ST_0_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_ST_1_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_ST_2_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_ST_3_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_ST_4_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_ST_5_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_ST_6_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_ST_7_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_ST_8_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_ST_9_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_ST_10_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_ST_11_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_ST_12_Residual.pdf}
+	\caption[The set of residual distributions for the \ST{} event variable calculated using the \powhegpythia{} simulation. Overlaid is the bin width (red) and the resolution (blue)]{The set of residual distributions for the \ST{} event variable calculated using the \powhegpythia{} simulation. Overlaid is the bin width (red) and the resolution (blue)}
+	\label{fig:ResST}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_MET_0_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_MET_1_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_MET_2_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_MET_3_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_MET_4_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_MET_5_Residual.pdf} \\
+	\caption[The set of residual distributions for the \ptmiss{} event variable calculated using the \powhegpythia{} simulation. Overlaid is the bin width (red) and the resolution (blue)]{The set of residual distributions for the \ptmiss{} event variable calculated using the \powhegpythia{} simulation. Overlaid is the bin width (red) and the resolution (blue)}
+	\label{fig:ResMET}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_WPT_0_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_WPT_1_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_WPT_2_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_WPT_3_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_WPT_4_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_WPT_5_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_WPT_6_Residual.pdf} \\
+	\caption[The set of residual distributions for the \WPT{} event variable calculated using the \powhegpythia{} simulation. Overlaid is the bin width (red) and the resolution (blue)]{The set of residual distributions for the \WPT{} event variable calculated using the \powhegpythia{} simulation. Overlaid is the bin width (red) and the resolution (blue)}
+	\label{fig:ResWPT}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_0_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_1_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_2_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_3_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_4_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_5_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_6_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_7_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_8_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_9_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_10_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_11_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_12_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_13_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_14_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_15_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_lepton_pt_16_Residual.pdf}
+	\caption[The set of residual distributions for the \LPT{} event variable calculated using the \powhegpythia{} simulation. Overlaid is the bin width (red) and the resolution (blue)]{The set of residual distributions for the \LPT{} event variable calculated using the \powhegpythia{} simulation. Overlaid is the bin width (red) and the resolution (blue)}
+	\label{fig:ResLPT}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_abs_lepton_eta_0_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_abs_lepton_eta_1_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_abs_lepton_eta_2_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_abs_lepton_eta_3_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_abs_lepton_eta_4_Residual.pdf} 
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_abs_lepton_eta_5_Residual.pdf} \\
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_abs_lepton_eta_6_Residual.pdf}
+	\includegraphics[width=0.24\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/residuals/combined_abs_lepton_eta_7_Residual.pdf} \\
+	\caption[The set of residual distributions for the \LETA{} event variable calculated using the \powhegpythia{} simulation. Overlaid is the bin width (red) and the resolution (blue)]{The set of residual distributions for the \LETA{} event variable calculated using the \powhegpythia{} simulation. Overlaid is the bin width (red) and the resolution (blue)}
+	\label{fig:ResLETA}
+\end{figure}
+
+
+
+\chapter{Extracted $\mathbf{t\overline{t}}$ yields} % (fold)
+\label{ch:extracted_ttbar}
+Table~\ref{tb:ttyields} shows the extracted \ttbar{} yield per bin for each kinematic event variable.
+They are estimated by subtracting of the single top quark, \Vjets{} and data-driven multijet \QCD{} backgrounds from data.
+The yields are shown for the \eJets{} and \muJets{} channels together with a combined yield.
+The difference in total \ttbar{} yield between variables originates from the differences in the predictions of the \QCD{} background in each variable.
+\input{TableCollections/Data/TTYield.tex}
+% section extracted_ttbar (end)
+
+\chapter{Largest systematic uncertainties} % (fold)
+\label{ch:systApp}
+
+Figures~\ref{fig:Systnorm1} and~\ref{fig:Systnorm2} portray the relative systematic uncertainties in every bin for each variable for the normalised cross section measurements.
+Similarly, Figs.~\ref{fig:Systabs1} and~\ref{fig:Systabs2} show the uncertainty compositions for the absolute cross section measurements.
+The gold band indicates the total systematic uncertainty and the grey band the total statistical uncertainty.
+Shown in bold are the systematic uncertainties which are the leading or subleading contributions to any bin.
+\input{PlotCollections/Systematics.tex} 
+
+
 \chapter{Additional double differential distributions} % (fold)
 \label{ch:DD}
+Figures~\ref{fig:ST_MET} and~\ref{fig:MET_NJET} show the basic double differential cross section measurements for two additional combinations beyond (\ST{}, \NJET{}) and (\LPT{}, \LETA{}).
+These are (\ST{}, \MET{}) and (\MET{}, \NJET{}) respectively.
+The first gives a comparison for how well the total activity of a \ttbar{} event is modelled depending on the missing \pt{} and the second how well the missing \pt{} is modelled for different jet multiplicities.
+
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_MET/plots/Normalisation_electron.png} \\
 	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_MET/plots/Normalisation_muon.png} \\
 	\vspace{0.8cm}
-	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_MET/unfolding/electron_ProbMatrix.pdf}
-	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_MET/unfolding/muon_ProbMatrix.pdf} \\
+	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_MET/unfolding/electron_Response.pdf}
+	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_MET/unfolding/muon_Response.pdf} \\
 	\vspace{0.8cm}
 	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_MET/plots/normalised_XSection_combined.png} \\
 	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_MET/plots/absolute_XSection_combined.png} \\
 	\vspace{0.4cm}
-	\caption[Double differential \ttbar{} production cross section measurements with repect to \ST{} and \ptmiss{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the response matrices in terms of global bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.]{Double differential \ttbar{} production cross section measurements with repect to \ST{} and \ptmiss{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the response matrices in terms of global bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.}
+	\caption[Double differential \ttbar{} production cross section measurements with repect to \ST{} and \ptmiss{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the migration in terms of the bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.]{Double differential \ttbar{} production cross section measurements with repect to \ST{} and \ptmiss{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the migration in terms of the bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.}
 	\label{fig:ST_MET}
 \end{figure}
-
-
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/MET_NJets/plots/Normalisation_electron.png} \\
 	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/MET_NJets/plots/Normalisation_muon.png} \\
 	\vspace{0.8cm}
-	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/MET_NJets/unfolding/electron_ProbMatrix.pdf}
-	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/MET_NJets/unfolding/muon_ProbMatrix.pdf} \\
+	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/MET_NJets/unfolding/electron_Response.pdf}
+	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/MET_NJets/unfolding/muon_Response.pdf} \\
 	\vspace{0.8cm}
 	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/MET_NJets/plots/normalised_XSection_combined.png} \\
 	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/MET_NJets/plots/absolute_XSection_combined.png} \\
 	\vspace{0.4cm}
-	\caption[Double differential \ttbar{} production cross section measurements with repect to \ptmiss{} and \NJET{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the response matrices in terms of global bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.]{Double differential \ttbar{} production cross section measurements with repect to \ptmiss{} and \NJET{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the response matrices in terms of global bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.}
+	\caption[Double differential \ttbar{} production cross section measurements with repect to \ptmiss{} and \NJET{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the migration in terms of the bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.]{Double differential \ttbar{} production cross section measurements with repect to \ptmiss{} and \NJET{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the migration in terms of the bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.}
 	\label{fig:MET_NJET}
+\end{figure}
+
+% section bias_in_alternate_models (end)
+
+\chapter{EFT studies}
+\label{ch:eft}
+Figures~\ref{fig:eftNJET},~\ref{fig:eftST},~\ref{fig:eftMET},~\ref{fig:eftWPT},~\ref{fig:eftLPT} and~\ref{fig:eftLETA} show the predictions using a \LO{} EFT theory model simulated with \mgamcLO{} and \pythia{} compared to the absolute differential \ttbar{} cross sections with respect to \NJET{}, \ST{}, \ptmiss{}, \WPT{}, \LPT{} and \LETA{} in the left panels and the corresponding nominal fit for the $\Delta$ \chisq{} as a function of \CTG{} strength in the right panels.
+Also shown in the right panels are the best fit value for the \CTG{} strength together with the 68\% and 95\% confidence intervals.
+A summary of the 95\% confidence intervals obtained with each event variable is shown in Tab.~\ref{tb:eft}.
+\begin{table}[h!]
+	\centering
+	\caption{The 95\% confidence intervals reached for each event variable}
+	\label{tb:eft}
+	\begin{tabular}{cc}
+		\textbf{Event Variable}		& \textbf{95\% CI} \rule{0pt}{1.0em}\\	
+		\hline
+		\rule{0pt}{1.0em}\NJET{}	&	$ -1.79 < \CTG < -0.29 $ \\
+		\HT{}						&	$ -1.76 < \CTG < 0.28 $ \\
+		\ST{}						&	$ -1.47 < \CTG < 0.62 $ \\
+		\ptmiss{}					&	$ -1.31 < \CTG < 0.35 $ \\
+		\WPT{}						&	$ -1.54 < \CTG < 0.07 $ \\
+		\LPT{}						&	$ -1.86 < \CTG < 0.10 $ \\
+		\LETA{} 					&	$ -1.27 < \CTG < 0.92 $ \\
+	\end{tabular}%
+\end{table}
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/EFT/CreateSets/RivetPlots/EFTComp/CMS_2018_I1662081/d08-x01-y01.pdf}
+	\includegraphics[width=0.435\textwidth]{/Users/db0268/Mount/SoolinScratch/EFT/CreateSets/RivetPlots/eftChi2/NJets_Chi2.pdf}
+	\caption[The left panel shows the predictions of EFT simulations using \CTG{} strengths of -2, 0 and +2 for the \NJET{} event variable. The right panel shows nominal fit of the $\Delta \chisq{}$ value between the prediction and the absolute \ttbar{} cross section for differing \CTG{} strengths.]{The left panel shows the predictions of EFT simulations using \CTG{} strengths of -2, 0 and +2 for the \NJET{} event variable. The right panel shows nominal fit of the $\Delta \chisq{}$ value between the prediction and the absolute \ttbar{} cross section for differing \CTG{} strengths.}
+	\label{fig:eftNJET}
+\end{figure}
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/EFT/CreateSets/RivetPlots/EFTComp/CMS_2018_I1662081/d10-x01-y01.pdf}
+	\includegraphics[width=0.435\textwidth]{/Users/db0268/Mount/SoolinScratch/EFT/CreateSets/RivetPlots/eftChi2/ST_Chi2.pdf}
+	\caption[The left panel shows the predictions of EFT simulations using \CTG{} strengths of -2, 0 and +2 for the \ST{} event variable. The right panel shows nominal fit of the $\Delta \chisq{}$ value between the prediction and the absolute \ttbar{} cross section for differing \CTG{} strengths.]{The left panel shows the predictions of EFT simulations using \CTG{} strengths of -2, 0 and +2 for the \ST{} event variable. The right panel shows nominal fit of the $\Delta \chisq{}$ value between the prediction and the absolute \ttbar{} cross section for differing \CTG{} strengths.}
+	\label{fig:eftST}
+\end{figure}
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/EFT/CreateSets/RivetPlots/EFTComp/CMS_2018_I1662081/d11-x01-y01.pdf}
+	\includegraphics[width=0.435\textwidth]{/Users/db0268/Mount/SoolinScratch/EFT/CreateSets/RivetPlots/eftChi2/MET_Chi2.pdf}
+	\caption[The left panel shows the predictions of EFT simulations using \CTG{} strengths of -2, 0 and +2 for the \ptmiss{} event variable. The right panel shows nominal fit of the $\Delta \chisq{}$ value between the prediction and the absolute \ttbar{} cross section for differing \CTG{} strengths.]{The left panel shows the predictions of EFT simulations using \CTG{} strengths of -2, 0 and +2 for the \ptmiss{} event variable. The right panel shows nominal fit of the $\Delta \chisq{}$ value between the prediction and the absolute \ttbar{} cross section for differing \CTG{} strengths.}
+	\label{fig:eftMET}
+\end{figure}
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/EFT/CreateSets/RivetPlots/EFTComp/CMS_2018_I1662081/d12-x01-y01.pdf}
+	\includegraphics[width=0.435\textwidth]{/Users/db0268/Mount/SoolinScratch/EFT/CreateSets/RivetPlots/eftChi2/WPT_Chi2.pdf}
+	\caption[The left panel shows the predictions of EFT simulations using \CTG{} strengths of -2, 0 and +2 for the \WPT{} event variable. The right panel shows nominal fit of the $\Delta \chisq{}$ value between the prediction and the absolute \ttbar{} cross section for differing \CTG{} strengths.]{The left panel shows the predictions of EFT simulations using \CTG{} strengths of -2, 0 and +2 for the \WPT{} event variable. The right panel shows nominal fit of the $\Delta \chisq{}$ value between the prediction and the absolute \ttbar{} cross section for differing \CTG{} strengths.}
+	\label{fig:eftWPT}
+\end{figure}
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/EFT/CreateSets/RivetPlots/EFTComp/CMS_2018_I1662081/d13-x01-y01.pdf}
+	\includegraphics[width=0.435\textwidth]{/Users/db0268/Mount/SoolinScratch/EFT/CreateSets/RivetPlots/eftChi2/lepton_pt_Chi2.pdf}
+	\caption[The left panel shows the predictions of EFT simulations using \CTG{} strengths of -2, 0 and +2 for the \LPT{} event variable. The right panel shows nominal fit of the $\Delta \chisq{}$ value between the prediction and the absolute \ttbar{} cross section for differing \CTG{} strengths.]{The left panel shows the predictions of EFT simulations using \CTG{} strengths of -2, 0 and +2 for the \LPT{} event variable. The right panel shows nominal fit of the $\Delta \chisq{}$ value between the prediction and the absolute \ttbar{} cross section for differing \CTG{} strengths.}
+	\label{fig:eftLPT}
+\end{figure}
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/EFT/CreateSets/RivetPlots/EFTComp/CMS_2018_I1662081/d14-x01-y01.pdf}
+	\includegraphics[width=0.435\textwidth]{/Users/db0268/Mount/SoolinScratch/EFT/CreateSets/RivetPlots/eftChi2/abs_lepton_eta_coarse_Chi2.pdf}
+	\caption[The left panel shows the predictions of EFT simulations using \CTG{} strengths of -2, 0 and +2 for the \LETA{} event variable. The right panel shows nominal fit of the $\Delta \chisq{}$ value between the prediction and the absolute \ttbar{} cross section for differing \CTG{} strengths.]{The left panel shows the predictions of EFT simulations using \CTG{} strengths of -2, 0 and +2 for the \LETA{} event variable. The right panel shows nominal fit of the $\Delta \chisq{}$ value between the prediction and the absolute \ttbar{} cross section for differing \CTG{} strengths.}
+	\label{fig:eftLETA}
 \end{figure}
 
 
 
 
-% section bias_in_alternate_models (end)
+
+
+
 
 % \subsection{Local Gauge Transformation}
 % Free Dirac Equation:

@@ -1,7 +1,7 @@
 \chapter{Removing the CMS thumbprint}
 \label{ch:unfolding}
 
-The \CMS{} detector naturally smears the kinematic properties of the particles it detects, the effects of which are known as the response of the detector.
+The \acrshort{cms} detector naturally smears the kinematic properties of the particles it detects, the effects of which are known as the response of the detector.
 When comparing to measurements from other experiments or to simulations without the modelling of the detector, the detector response, derived from simulation, needs to be removed.
 This process is known as unfolding.
 There are two common approaches to the level of unfolding.
@@ -10,7 +10,6 @@ This has large theoretical uncertainties stemming from the modelling of the part
 In addition, these measurements are usually also extrapolated to the full kinematic phase space.
 The second option is to present the results to particle level, \ie{} with respect to the stable particles produced after the shower modelling where stable particles are for this purpose defined as particles with a lifetime longer than \particleLifetime{}.
 
-
 \section{Particle level measurement} % (fold)
 \label{sec:particle_level}
 
@@ -18,7 +17,7 @@ This thesis presents measurements at particle level in a phase space chosen to c
 Particle-level objects are used to define the phase space which is identical for both the \eJets{} and \muJets{} channels which allows for a consistent combination after unfolding.
 Particle-level objects used to define the phase space are constructed from stable particles produced in simulation by the event generator but before the detector interactions are modelled.
 
-The generator-level descriptions of the particles are based on the \RIVET{} framework~\cite{Unfold:Rivet} following prescriptions given in~\cite{Unfold:pseudoTop}.
+The generator-level descriptions of the particles are based on the Robust Independent Validation of Experiment and Theory (\acrshort{rivet}) framework~\cite{Unfold:Rivet}, following prescriptions given in~\cite{Unfold:pseudoTop}.
 Simulated electrons and muons not originating from a hadron or a quark are used to define electrons and muons at particle level.  
 Photons close to the lepton are assumed to have radiated from the lepton, and are clustered with it using the anti-\kt algorithm with $\DR=0.1$.  
 Particle-level jets are constructed by clustering all stable particles, excluding those used in defining the leptons, with the anti-\kt algorithm with $\DR=0.4$.
@@ -45,8 +44,8 @@ In particular, there are contributions from events where one top quark decays to
 \section{Choice of bins} % (fold)
 \label{sec:choice_of_bins}
 
-Events can migrate between bins of the measurement because of the finite resolution of the \CMS{} detector, \ie{} the reconstructed variable can have a different value and so can be in a different bin compared to the particle-level variable.  
-The choice of binning can be used to minimise migrations.
+Events can migrate between bins of the measurement because of the finite resolution of the \acrshort{cms} detector, \ie{} the reconstructed variable can have a different value and so can be in a different bin compared to the particle-level variable.  
+The choice of binning used in the \textit{migration matrix} between the reconstructed distributions and the particle-level distributions can be used to minimise the migrations.
 The binning scheme for each of the event variables, with the exception of the jet multiplicity whose binning is naturally defined, is created by iteratively adding together fine bins of that variable until a set of binning criteria is met.
 
 The primary criteria to reduce the level of migration can be represented by the purity $p$ and stability $s$ of the bin which are defined as
@@ -57,7 +56,7 @@ and
 \begin{equation*}
 s^{i} = \frac{N^{i}_{\mathrm{rec\&gen}}}{N^{i}_{\mathrm{gen}}},
 \end{equation*}
-where $N^{i}_{\mathrm{rec\&gen}}$ is the number of events generated and reconstructed in bin $i$ and $N^{i}_{\mathrm{rec}}$($N^{i}_{\mathrm{gen}}$) is the number of events reconstructed(generated) in bin $i$.  
+where $N^{i}_{\mathrm{rec\&gen}}$ is the number of events generated and reconstructed in bin $i$ and $N^{i}_{\mathrm{rec}}$ ($N^{i}_{\mathrm{gen}}$) is the number of events reconstructed (generated) in bin $i$.  
 Purity measures the effect of migrations into bins and stability migrations out of bins.
 By requiring $p^{i}$ and $s^{i}>0.6$ an acceptable balance between the minimisation of the migration of events between bins and the retention of information is obtained.
 % No migration in fewer bins - but less differential information
@@ -67,37 +66,34 @@ Figure~\ref{fig:PurityStability1} shows the purity and stability of bins in the 
 
 On top of purity and stability, a few other restrictions are required for the choice of binning.
 The width of the bins must be at least as wide as the typical resolution of the variable in that bin. 
-The resolution is calculated as the standard deviation of the distribution of the residuals $(\abs{\mathrm{Reco}-\mathrm{Gen}})$.
+The resolution is calculated, using the \powhegpythia{} simulation, as the standard deviation of the distribution of the residuals $(\abs{\mathrm{Reco}-\mathrm{Gen}})$.
 Figure~\ref{fig:exampleRes} shows an example of the resolution, as calculated from the one-sided residual distribution, compared to the bin width.
 The left panel shows the \eJets{} channel and the right panel the \muJets{} channel for the \HT{} bin spanning $220-275\GeV$.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/binning/residuals/electron_HT_1_Residual.pdf}
 	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/binning/residuals/muon_HT_1_Residual.pdf}
-	\caption[The residual distribution for the \HT{} event variable in the eJets{} channel on the left and the \muJets{} channel on the right. The standard deviation of the half-gaussian, which is the resolution, is given as the vertical red line and compared to the bin width given as the vertical blue line.]{The residual distribution for the \HT{} event variable in the eJets{} channel on the left and the \muJets{} channel on the right. The standard deviation of the half-gaussian, which is the resolution, is given as the vertical red line and compared to the bin width given as the vertical blue line.}
+	\caption[The residual distribution for the \HT{} event variable in the \eJets{} channel on the left and the \muJets{} channel on the right. The standard deviation of the half-gaussian, which is the resolution, is given as the vertical red line and compared to the bin width given as the vertical blue line.]{The residual distribution for the \HT{} event variable in the \eJets{} channel on the left and the \muJets{} channel on the right. The standard deviation of the half-gaussian, which is the resolution, is given as the vertical red line and compared to the bin width given as the vertical blue line.}
 	\label{fig:exampleRes}
 \end{figure}
-Tables~\ref{tb:binning_electron} and~\ref{tb:binning_muon} show the resolution and bin width comparisons for each bin of each variable in the \eJets{} and \muJets{} channels respectively.
-% The complete set of residual distributions are shown in Appendix.TODO.
-
-The number of reconstructed \ttbar{} events in each bin as estimated from simulation needs to be at least 500, which corresponds to a maximum statistical uncertainty of $\approx5\%$.
+Tables~\ref{tb:binning_electron} and~\ref{tb:binning_muon} show the resolution and bin width comparisons for each bin of each variable in the \eJets{} and \muJets{} channels respectively and the complete set of residual distributions are shown in App.~\ref{ch:Res}.
+The number of reconstructed \ttbar{} events in each bin, as estimated from simulation, needs to be at least 500, which corresponds to a maximum statistical uncertainty of $\approx5\%$.
 If the final bin contains less than 500 events it is merged with the previous bin.
-This requirement is to ensure the response matrices used in the unfolding do not introduce bias based on the statistical fluctuations of simulation.
+This requirement is to ensure the migration matrices used in the unfolding procedure do not introduce bias based on the statistical fluctuations of simulation.
 % For well reconstructed variables, a minimum bin width requirement is imposed.
 % Realistically this only effects the leptonic variables and is $<0.3$ for \LETA{} and $>$
 
-Figure~\ref{fig:finebinHT} shows an example of the fine bin mapping between the reconstructed distribution and the particle-level distribution for the \HT{} event variable in the \eJets{} channel on the left panel and \muJets{} channel on the right panel.
+Figure~\ref{fig:finebinHT} shows an example of the fine bin migration matrix between the reconstructed distribution and the particle-level distribution for the \HT{} event variable in the \eJets{} channel on the left panel and \muJets{} channel on the right panel.
 The best binning scheme calculated is overlaid in red.
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.49\textwidth]{Figures/electron_HT_FineBinResponse.pdf}
-	\includegraphics[width=0.49\textwidth]{Figures/muon_HT_FineBinResponse.pdf}
+	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/response/electron_HT_FineBinResponse.pdf}
+	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/binning/response/muon_HT_FineBinResponse.pdf}
 	\caption[The left panel shows the mapping between the reconstructed and particle-level distributions of the \HT{} event variable in the \eJets{} channel and the right panel in the \muJets{} channel. The chosen common binning scheme passing all criteria is overlaid in red.]{The left panel shows the mapping between the reconstructed and particle-level distributions of the \HT{} event variable in the \eJets{} channel and the right panel in the \muJets{} channel. The chosen common binning scheme passing all criteria is overlaid in red.}
 	\label{fig:finebinHT}
 \end{figure}
-
-The response matrices for the \eJets{} and \muJets{} channels, calculated using the common binning scheme are shown in Figs.~\ref{fig:ResponseMatricesE} and~\ref{fig:ResponseMatricesMU} respectively.
-The binning requirements result in a close-to-diagonal response matrix with an acceptable statistical uncertainty.
+The migration matrices for the \eJets{} and \muJets{} channels, calculated using the common binning scheme are shown in Figs.~\ref{fig:ResponseMatricesE} and~\ref{fig:ResponseMatricesMu} respectively.
+The binning requirements result in close-to-diagonal migration matrices with an acceptable statistical uncertainty.
 
 % section choice_of_bins (end)
 \input{TableCollections/Data/ResponseMatrices.tex}
@@ -112,7 +108,7 @@ The binning requirements result in a close-to-diagonal response matrix with an a
 The unfolding is performed using the TUnfold algorithm~\cite{Unfold:TUnfold}. 
 A schematic of the unfolding process is shown in Fig.~\ref{fig:migration}.
 It shows the relation between the true distribution $\vec{x}$ and the measured distribution $\vec{y}$.
-The matrix of probabilities $\mathbf{A}$ describes the migrations from a bin of the true distribution into any of the reconstructed bins.
+The migration matrix $\mathbf{A}$ describes the migrations from a bin of the true distribution into any of the reconstructed bins.
 The average expected count of events $\overtilde{y}$ differs from the observed event counts due to statistical fluctuations.
 \begin{figure}[htpb]
 	\centering
@@ -122,7 +118,7 @@ The average expected count of events $\overtilde{y}$ differs from the observed e
 \end{figure}
 
 The TUnfold algorithm uses a least squares method of estimating the true distribution $\vec{x}$ from the reconstructed distribution $\vec{y}$.
-Statistical fluctuations are smoothed using Tikhonov regularisation. 
+Statistical fluctuations are smoothed using Tikhonov regularisation~\cite{Unfold:Tikh1, Unfold:Tikh2}. 
 The algorithm works to minimise 
 \begin{equation*}
 \Lagr(x) = \Lagr_{1}+\Lagr_{2}
@@ -138,25 +134,31 @@ and
 
 $\Lagr_{1}$ represents the least squares minimisation and $\Lagr_{2}$ describes the regularisation. 
 $\Lagr_{1}$ involves the measured observable distribution $\vec{y}$ composed of $m$ bins and the inverse of its covariance matrix $\mathbf{V}_{yy}^{-1}$.
-The covariance matrix is diagonal and holds the square of the statistical uncertainty. 
-The response matrix $\mathbf{A}$ is derived from the simulated \powhegpythia{} sample.
+The covariance matrix is diagonal and holds the square of the statistical uncertainties in $\vec{y}$.
+The migration matrix $\mathbf{A}$ is derived from the simulated \powhegpythia{} sample.
 
 $\Lagr_{2}$ damps fluctuations in $\vec{x}$ stemming from statistical fluctuations in $\vec{y}$. 
-The parameter $\tau^2$ defines the strength of the regularisation.
-If it is too small then the unfolding often yields results with large fluctuations leading to large negative correlations between neighbouring bins.
-If it is too large then the result will be biased towards the input model $\vec{x}_{0}$.
+The parameter $\tau$ defines the strength of the regularisation.
+If it is too small then the unfolding often yields bias independent results with large fluctuations leading to large negative correlations between neighbouring bins.
+If it is too large then the result will be biased towards the input model $\vec{x}_{0}$, calculated from the migration matrix.
 The parameter $f_{b}$ decides whether to use a bias distribution based on a model ($f_{b} = 1$), suppressing differences between unfolded data and model, or to suppress the differences between the unfolded data and 0 ($f_{b} = 0$). 
 This thesis sets $f_{b}=1$.
-Regularisation can be done by suppressing the differences between either the size, the derivative or the curvature (second derivative) of the unfolded distribution. 
-These are given by the choice of $\mathbf{L}$.
-This thesis regularises by curvature, approximated by $(x_{i+1}-x_i) - (x_i - x_{i-1})$ leading to an $\mathbf{L}$ matrix of order $(m-2) \times m$, where non-zero elements are present in elements $L_{i,i} = 1$, $L_{i,i+1} = -2$, $L_{i,i+2} = 1$. 
 
-The regularisation parameter $\tau^2$ is found by minimising the average global correlation coefficient. 
+The regularisation can be done by suppressing the differences in size, the derivative or the curvature (second derivative) of $\vec{x}-\vec{x}_{0}$.
+When regularising by derivative or curvature there are generally some positive correlations introduced between measurement bins.
+This is useful as it will cancel some of the negative correlations introduced by the unregularised unfolding term $\Lagr_{1}$, and for some value of $\tau$ the total correlation between bins of the measurement will be minimal.
+% Size one bin % Derivative 2 bins % Curvature 3 bins
+The choice of regularisation is given by the $\mathbf{L}$ matrix.
+This thesis regularises by curvature, approximated by $(x_{i+1}-x_i) - (x_i - x_{i-1})$ leading to an $\mathbf{L}$ matrix of order $(m-2) \times m$, where non-zero elements are present in elements $L_{i,i} = 1$, $L_{i,i+1} = -2$, $L_{i,i+2} = 1$. 
+% Regularising by size however, introduces no correlation and so does not work so well with ave glob corr coeff.
+% response matrix % probability matrix % migration matrix
+
+The regularisation parameter $\tau$ is calculated by minimising the average global correlation coefficient. 
 The components of the global correlation coefficient, $\rho_{i}$, are taken from the covariance matrix $\mathbf{V}_{xx}$
 \begin{equation*}
-\rho_{i} = \sqrt{1-\frac{1}{(\mathbf{V}_{xx}^{-1})_{ii}(\mathbf{V}_{xx})_{ii}}}.
+\rho_{i} = \sqrt{1-\frac{1}{(\mathbf{V}_{xx}^{-1})_{ii}(\mathbf{V}_{xx})_{ii}}}
 \end{equation*}
-The average global correlation is defined by 
+ and the average global correlation is defined by 
 \begin{equation*}
 	\sum_{i}\frac{\rho_{i}}{n},
 \end{equation*}
@@ -178,9 +180,9 @@ A pull is defined as the ratio of the difference between number of unfolded even
 \begin{equation*}
 \mathrm{Pull}^{i}=\frac{|x^{i}_{\mathrm{truth}}-x^{i}_{\mathrm{unf}}|}{\sigma^{i}_{\mathrm{unf}}}.
 \end{equation*}
-The measured and truth distributions for 5000 pseudo experiments are generated by taking variations from the profile of the \powhegpythia{} response matrix.
-Each pseudo experiment is unfolded using another varied response matrix and the pull calculated for each bin.
-An example pull distribution in the \eJets{} channel for the \HT{} event variable in shown in Fig.~\ref{fig:pullExample}.
+The measured and truth distributions for 5000 pseudo experiments are generated by taking variations from the profile of the \powhegpythia{} migration matrix.
+Each pseudo experiment is unfolded using another varied migration matrix and the pull calculated for each bin.
+An example pull distribution in the \eJets{} channel for the \HT{} event variable is shown in Fig.~\ref{fig:pullExample}.
 \begin{figure*}[htpb]
 	\centering
 	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/pulls/new/HT_electron_PullDist.pdf}
@@ -189,7 +191,7 @@ An example pull distribution in the \eJets{} channel for the \HT{} event variabl
 	\label{fig:pullExample}
 \end{figure*}
 The resulting mean and width of the pull distribution are close to zero and one respectively, so the normalisation and statistical uncertainties of the unfolded distributions are treated correctly by the unfolding.
-Figures~\ref{fig:Pullse} and~\ref{fig:Pullsmu}, show the means and widths of the pull distributions for each bin of the global event variables, which also show correct treatment of the normalisation and statistical uncertainties.
+Figures~\ref{fig:Pullse} and~\ref{fig:Pullsmu} show the means and widths of the pull distributions in each bin of the global event variables and show that the normalisation and statistical uncertainties are treated correctly.
 \input{PlotCollections/Pulls.tex}
 % subsection checking_the_uncertainties (end)
 
@@ -202,14 +204,13 @@ Figures~\ref{fig:Pullse} and~\ref{fig:Pullsmu}, show the means and widths of the
 \subsection{Checking for bias} % (fold)
 \label{sub:checking_for_bias}
 
-The response matrix is model dependent because it is constructed directly from a simulated \ttbar{} model.
-A model which poorly describes the data could introduce a bias in the unfolded distributions. 
+The migration matrices are model dependent because they are constructed directly from a simulated \ttbar{} model and a model which poorly describes the data could introduce a bias in the unfolded distributions. 
 To test the size of any bias that could be introduced, the top \pt{} spectrum in the simulated \powhegpythia{} sample is reweighted up and down to cover any discrepancy between the \powhegpythia{} model and the data.
 The reweighting is applied according to
 \begin{equation*}
 w(t/\overline{t})=1+(p_{T}^{t/\overline{t}} \pm 100) \times 0.001.
 \end{equation*}
-Figure~\ref{fig:reweightExample} shows an example reweighting in the \eJets{} channel for the \HT{} event variable and the full sets of reweighted distributions are listed in App.~TODO.
+Figure~\ref{fig:reweightExample} shows an example reweighting in the \eJets{} channel for the \HT{} event variable and the full sets of reweighted distributions are listed in App.~\ref{ch:pt_reweight}.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.65\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/reweighting_check/Reweighting_check_electron_HT.png}
@@ -217,14 +218,14 @@ Figure~\ref{fig:reweightExample} shows an example reweighting in the \eJets{} ch
 	\label{fig:reweightExample}
 \end{figure}
 
-Unfolding the reweighted distributions using the original response matrix will reveal any bias that is introduced.
+Unfolding the reweighted distributions using the original migration matrix will reveal any bias that is introduced.
 The bias is defined as the ratio of the unfolded cross sections to the model cross section.
 The cross section measurements are discussed in Ch.~\ref{ch:xsection}.
 Figures~\ref{fig:ClosureBiase1} and~\ref{fig:ClosureBiasmu1} show the unfolded model cross sections for the reweighted distributions compared against the true model cross sections.
-The ratios show the bias introduced by using the \powhegpythia{} model in the response matrix, compared to the total systematic uncertainty shown as the grey band.
+The ratios show the bias introduced by using the \powhegpythia{} model in the migration matrix, compared to the total systematic uncertainty shown as the grey band.
 The systematic uncertainties are described in detail in Ch.~\ref{ch:uncertainty}.
 Any bias seen is small compared to the total systematic uncertainty for the reweighted samples.
-Bias measurements when unfolding samples of alternate models \ttbar{} production are shown in Figs.~\ref{fig:ClosureBiase2} and~\ref{fig:ClosureBiasmu2} of App.~\ref{sec:bias_in_alternate_models}.
+Bias measurements when unfolding samples of alternate models \ttbar{} production are shown in Figs.~\ref{fig:ClosureBiase2} and~\ref{fig:ClosureBiasmu2} of App.~\ref{ch:bias_in_alternate_models}.
 \input{PlotCollections/Closures.tex}
 % \input{PlotCollections/Reweightings.tex}
 % subsection checking_for_bias (end)

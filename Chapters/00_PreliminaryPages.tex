@@ -1,7 +1,6 @@
-\begin{titlepage}
-\thispagestyle{empty}
-\addtocounter{page}{-1}
+\pagenumbering{gobble}
 
+\begin{titlepage}
 \vspace*{13mm}
 \begin{center}
 \rule[0.5ex]{\linewidth}{2pt}\vspace*{-\baselineskip}\vspace*{3.2pt}
@@ -10,7 +9,8 @@
 \vspace*{4pt}
 {\Huge  production cross sections as a function of }\\
 \vspace*{4pt}
-{\Huge kinematic event variables at 13 TeV at CMS}\\[4mm]}\\
+{\Huge kinematic event variables at 13 TeV at CMS} \\
+\vspace{4mm}
 \rule[0.5ex]{\linewidth}{1pt}\vspace*{-\baselineskip}\vspace{3.2pt}
 \rule[0.5ex]{\linewidth}{2pt}\\
 \vspace{6.5mm}
@@ -26,8 +26,8 @@
 \vspace{1mm}
 \textsc{University of Brussels}}\\
 \vspace{12mm}
-\includegraphics[width=0.3\textwidth]{Figures/UOB.png}
-\includegraphics[width=0.25\textwidth]{Figures/VUB.png} \\
+\includegraphics[width=0.3\textwidth]{Figures/UOB}
+\includegraphics[width=0.25\textwidth]{Figures/VUB} \\
 \vspace{16mm}
 \begin{minipage}{15cm}
 A dissertation submitted to the University of Bristol and Vrije Universiteit Brussel in accordance with the requirements of the degree of \textsc{Doctor of Philosophy} in the Faculty of Science, School of Physics, Bristol and Faculteit Wetenschappen en Bio-ingenieurswetenschappen, Vakgroep Fysica, Brussel.
@@ -43,15 +43,19 @@ A dissertation submitted to the University of Bristol and Vrije Universiteit Bru
 % \end{SingleSpace}
 \end{titlepage}
 
+% \begin{flushleft}
+% {\small Some Word Count}
+% \end{flushleft}
 
 
-\pagenumbering{gobble}
+
+
+
+
 \newpage\null\thispagestyle{empty}
-\chapter*{Author's declaration}
-
+\newpage\chapter*{Author's declaration}
 \begin{quote}
 I declare that the work in this dissertation was carried out in accordance with the requirements of the University of Bristol and Vrije Universiteit Brussels regulations and Code of Practice for Research Degree Programmes and that it has not been submitted for any other academic award. Except where indicated by specific reference in the text, the work is the candidate's own work. Work done in collaboration with, or with the assistance of, others, is indicated as such. Any views expressed in the dissertation are those of the author.
-
 \vspace{1.5cm}
 \noindent
 \hspace{-0.75cm}\textsc{SIGNED: .................................................... DATE: ....................................}
@@ -61,41 +65,46 @@ I declare that the work in this dissertation was carried out in accordance with 
 
 \newpage\null\thispagestyle{empty}
 \chapter*{Author's contribution}
-
 The research conducted for this thesis has been done in collaboration with the Top Quark Group at the University of Bristol and the Vrije Universiteit Brussel, and all material presented here, unless stated otherwise, has been conducted by the author and collaborators.
 The author has spent time studying at both institutions as well as spending nine months working at CERN.
 
-Contributions of the author include a major update of the pre-existing analysis performed at 7 and 8\TeV{} in order to expand and enhance it for 13\TeV{} data.
-The author contributed to a Physics Analysis Summary of differential top quark cross sections with respect to global event variables, based on the first $71\,\mathrm{pb}^{-1}$ of data collected by CMS in 2015.
+Contributions of the author include a major update of the pre-existing analysis performed at Run I, in order to expand and enhance it for data collected during Run II.
+The author contributed to a preliminary result of differential top quark cross sections with respect to kinematic event variables, based on the first $71\,\mathrm{pb}^{-1}$ of 13\TeV{} data collected by CMS in 2015.
 \begin{quote}
-\bibentry{TOP15013} [7 cites]
+\bibentry{TOP15013}\,\,$\text{[7 cites]}$
 \end{quote}
-The summary incorporates several new event variables.
-The small data sample lead to measurements that were statisitically dominated.
+The preliminary result incorporates several new kinematic event variables, however the small data sample lead to measurements that were statistically dominated.
 
-A second analysis, for which the author was the primary contact person, was performed with much greater rigour.
-This includes, but is not limited to, the inclusion of correlations between the bins of a measurement and the addition of absolute cross section measurements.
-The author was also heavily involved in the update and implementation of systematic uncertainties, including the calculation of the \bquark{} tagging efficiencies, the addition of a new set systematic uncertainties based on the modelling in simulation and the creation of the systematic covariance matrices used for the goodness-of-fit tests. 
-The author has performed many validation tests both on data and simulation during the course of the research and has presented multiple times in working group meetings, including for the preapproval of the analysis.
-The author wrote significant parts of the documentation of the analysis, including for the paper, now published in the June 2018 volume of the Journal for High Energy Physics.
+A new analysis, for which the author was the primary contact person and which forms the basis of this thesis, was performed measuring the \ttbar{} production cross sections with respect to the kinematic event variables used in the preliminary results with all the data collected by CMS in 2016.
+Many aspects were dealt with in more detail with respect to the preliminary results.
+The author was heavily involved in the update and implementation of systematic uncertainties, including the calculation of the \bquark{} tagging efficiencies, the addition of a new set systematic uncertainties based on the modelling in simulation and the creation of systematic covariance matrices used for the goodness-of-fit tests.
+The author included the addition of the absolute cross section measurements.
+% This includes, but is not limited to, the inclusion of correlations between the bins of a measurement and the addition of absolute cross section measurements.
+The author has performed many validation tests both on data and simulation during the course of the research and has presented multiple times in CMS internal meetings, including the first of two approval talks for the analysis.
+The author wrote the bulk of the documentation of the analysis, including on the paper.
+The paper is now published in the June 2018 volume of the Journal for High Energy Physics.
 \begin{quote}
 \bibentry{TOP16014} [2 cites]
 \end{quote}
 The author presented the findings of this research at the International Conference for High Energy Physics in July 2018, as well as summarising the state of top quark physics at CMS at that time.
-All work beyond the scope of the paper has been performed by the author.
+All work in this thesis, beyond the scope of the paper, has been performed solely by the author.
 
-The author has contributed to the CMS experiment by performing Level-1 trigger shifts in the CMS control room during periods of data taking.
-The author was involved in efficiency studies for the High Level triggers used in 2016.
-Further experimental work is ongoing in relation to the so-called `Highly Ionising Particle' effect, prevelant during data taking in 2016.
-This is where a build up of charge on the preamplifier of the readout chip, assumed to originate from a highly ionising particle, caused a loss in gain over subsequent bunch crossings and hence decreased the tracker hit efficiency.
-The problem was finally identified in a parameter controlling the rate at which charge bleeds away from the charge sensitive capacitor and the effect vanished.
-However, the effect of charge build up could become an issue again in the future at the much higher luminosities expected and so the author created a standalone simulation to model the response of the readout chip with respect to the charge buildup.
-In the future this will supply a correction based on measured gain distributions. 
+Besides the physics analysis, the author has contributed to the CMS experiment by performing Level-1 trigger shifts in the CMS control room during periods of data taking and was involved in efficiency studies for the High Level triggers used in 2016.
+Further experimental work is ongoing in relation to the so-called `Highly Ionising Particle' effect.
+This is where a large deposition of charge can cause a loss in gain from the tracker readout chip, decreasing the tracker hit efficiency.
+The author created a standalone simulation to model the response of the readout chip with respect to the charge build up, with the hopes to supply a correction based on measured gain distributions.
+The problem, prevalent during data taking in the first half of 2016, was fixed by allowing the charge to bleed away quicker from the readout chip.
+The effect of charge build up may become an issue again in the future due to the much greater luminosities expected and so the work performed is still very relevant.
+
+% This is where a build up of charge on the preamplifier of the readout chip, assumed to originate from a highly ionising particle, caused a loss in gain over subsequent bunch crossings and hence decreased the tracker hit efficiency.
+% The problem was finally identified in a parameter controlling the rate at which charge bleeds away from the charge sensitive capacitor and the effect vanished.
+% However, the effect of charge build up could become an issue again in the future at the much higher luminosities expected and so the author created a standalone simulation to model the response of the readout chip with respect to the charge buildup.
+% In the future this will supply a correction based on measured gain distributions. 
 
 The author has performed outreach activities during the course of the research studies, in particular the CERN international Masterclass, the London Youth International Science Forum and giving lectures for high school students interested in Physics. 
 The author has also been a demonstrator for degree students 
 % measuring Brewster's angle 
-in the Univeristy of Bristol's experimental laboratory.
+in the University of Bristol's experimental laboratory.
 \clearpage
 
 \chapter*{Abstract}
@@ -119,6 +128,7 @@ Both normalised and absolute cross sections are calculated from the unfolded \tt
 % TOF/TOT
 \newpage\null\thispagestyle{empty}
 \listoffigures
+\newpage\null\thispagestyle{empty}
 \listoftables
 \clearpage
 

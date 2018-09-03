@@ -2,12 +2,12 @@
 \label{ch:MC}
 
 For any measurement in particle physics, sets of simulated samples need to be generated in order to compare the experimental data to theoretical models.  
-These models include well known \SM{} decay processes such as \ttbar{} production, much rarer processes predicted by the \SM{} such as $\mathrm{t}\overline{\mathrm{t}}\mathrm{H}}$ and in the case of a search for new physics a plethora of processes predicted by \BSM{} theories.
+These models include well known \acrshort{sm} decay processes such as \ttbar{} production, much rarer processes predicted by the \acrshort{sm} such as $\mathrm{t}\overline{\mathrm{t}}\mathrm{H}$ and in the case of a search for new physics a plethora of processes predicted by beyond the \acrshort{sm} theories.
 
 These different processes are modelled by event generators in a similar manner, following a sequence of discrete steps.
-First of all, a possible hard scattering interaction is generated for a process at \LO{}, or if possible \NLO{}.
+First of all, a possible hard scattering interaction is generated for a process at \acrshort{lo}, or if possible \acrshort{nlo}.
 If short-lived resonances are formed, their associated decays are also viewed as part of the hard process.
-Additional parton interactions can be included at \LO{} and soft radiation added to the initial and final states, in a process known as the \textit{parton shower}.
+Additional parton interactions can be included at \acrshort{lo} and soft radiation added to the initial and final states, in a process known as the \textit{parton shower}.
 The parton shower is then hadronised into colourless states and decayed, with the proton remnants forming the underlying event.
 Figure~\ref{fig:GenEvent} shows diagrammatically an example simulated collision, where the hard scattering process is shown in red, the soft radiative processes in blue, the additional parton interactions in purple, the fragmentation in light green and hadronisation and decay in dark green.
 Photon radiation is shown in yellow.
@@ -22,17 +22,17 @@ Finally, the interactions of the particles produced with the detector can be mod
 \section{Hard interaction} % (fold)
 \label{sec:hard_interaction}
 The hard scattering process describes the interaction of two partons in the collider.
-It is modelled through Eq~\ref{eq:pdf}, with the \PDF{}s taken from data convoluted with the partonic cross section.
+It is modelled through Eq~\ref{eq:pdf}, with the \acrshort{pdf}s taken from data convoluted with the partonic cross section.
 The partonic cross section is calculated from the matrix-element of the interaction, directly taken from the Feynman diagrams through the Feynman rules.
 If a short-lived resonance is formed as a result of the interaction, then its decay is also considered as part of the hard interaction.
-Many matrix-elements can already be calculated to \NNLO{} or higher, however the generation of the hard scattering processes can currently only be calculated to \LO{} or \NLO{}.
+Many matrix-elements can already be calculated to \acrshort{nnlo} or higher, however the generation of the hard scattering processes can currently only be calculated to \acrshort{lo} or \acrshort{nlo}.
 This is simply due to the combinatorics when taking into account all possible Feynman diagrams.
 
-There are a variety of matrix-element generators available, two of the most popular in high energy particle physics being MadGraph5\_aMC@NLO (\mgamc{})~\cite{Gen:MGamc} and POsitive Weight Hardest Emission Generator (\powheg{})~\cite{Gen:Pow1,Gen:Pow2,Gen:Pow3}.
-The \mgamc{} matrix-element generator can model a process with additional partons.
-The number of additional partons in the process depends on the complexity of the process, \eg{} for \NLO{} \ttbar{} production, an additional two partons can be generated.
-It does this by adding real diagrams based on \LO{} or \NLO{} contributions from lower order processes.
-In \powheg{}, virtual processes are included in the matrix element, up to one loop. 
+There are a variety of matrix-element generators available, two of the most popular in high energy particle physics being \acrfull{mgamc}~\cite{Gen:MGamc} and \acrfull{powheg}~\cite{Gen:Pow1,Gen:Pow2,Gen:Pow3}.
+The \acrshort{mgamc} matrix-element generator can model a process with additional partons.
+The number of additional partons in the process depends on the complexity of the process, \eg{} for \acrshort{nlo} \ttbar{} production, an additional two partons can be generated.
+It does this by adding real diagrams based on \acrshort{lo} or \acrshort{nlo} contributions from lower order processes.
+In \acrshort{powheg}, virtual processes are included in the matrix element, up to one loop. 
 This means that for \ttbar{} production, one less additional parton is able to be produced.
 % Madgraph. Depending on the process a number of additional partons can be generated.
 % at NLO
@@ -55,39 +55,39 @@ Once the hard process has been simulated from the matrix-element calculations, a
 All the hard interactions then present in the simulation must be \textit{dressed} with soft emissions.
 
 The most common hard process at the LHC is elastic gluon-gluon scattering, the cross section of which, diverges as the gluons become soft and collinear.
-This means that below some momentum transfer threshold ($\sim5\GeV$) the inclusive jet production cross section from elastic gluon-gluon scattering is larger than the total inclusive proton-proton cross section~\cite{Gen:MPI_1, Gen:MPI_2}, which infers that for every collision, more than one interaction is occurring.
-These are known as \textit{multiple parton interactions} (\MPI{}).
+This means that below some momentum transfer threshold ($\sim5\GeV$) the inclusive jet production cross section from elastic gluon-gluon scattering is larger than the total inclusive proton-proton cross section~\cite{Gen:MPI_1,Gen:MPI_2}, which infers that for every collision, more than one interaction is occurring.
+These are known as \textit{multiple parton interactions} (\acrshort{mpi}).
 The number of additional interactions present is proportional to the impact parameter of the colliding protons.
 A pair of protons colliding head on contains more additional interactions than a pair that collide obliquely.
 % elastic = total here. dominated by t-channel processes
 
-The extra soft emissions come in the form of \textit{initial} and \textit{final state radiation} (\ISR{} and \FSR{}), where partons split from the hard interactions.
+The extra soft emissions come in the form of \textit{initial} and \textit{final state radiation} (\acrshort{isr} and \acrshort{fsr}), where partons split from the hard interactions.
 Figure~\ref{fig:feyn-ps} shows the four possible ways in which a parton can be radiated.
 Firstly, a quark can radiate a gluon, secondly a gluon can pair-produce a \qqbar{} pair and finally there are two colour configurations of gluon splitting.
 \input{Feynmans/Colour.tex}
 
-For \FSR{}, the partons produced from the matrix-element calculation are split recursively until the energy of each remaining parton reduces to approximately 1\GeV{}, whereupon hadronisation effects become non-negligible.
-In contrast, the \ISR{} is modelled differently.
-The longitudinal momentum fractions, $x_1$ and $x_2$, of the incoming partons are taken from the \PDF{} at the factorisation scale of the process and evolved backwards in time. 
-The factorisation scale of an event is a cutoff where partons that carry a momentum less than the cutoff scale are absorbed into the \PDF{}.
+For \acrshort{fsr}, the partons produced from the matrix-element calculation are split recursively until the energy of each remaining parton reduces to approximately 1\GeV{}, whereupon hadronisation effects become non-negligible.
+In contrast, the \acrshort{isr} is modelled differently.
+The longitudinal momentum fractions, $x_1$ and $x_2$, of the incoming partons are taken from the \acrshort{pdf} at the factorisation scale of the process and evolved backwards in time. 
+The factorisation scale of an event is a cutoff where partons that carry a momentum less than the cutoff scale are absorbed into the \acrshort{pdf}.
 If the momentum carried is above the scale then they participate in the interaction.
 This ensures no divergences in the matrix-element due to collinear or soft gluons.
-For every \ISR{} emission, the parent parton must have the combined energy of the daughter parton and radiation.
-There are however, fewer available partons carrying the increased fraction of the proton momentum, seen in the \PDF{} distribution, and so a suppression weight must be applied.
+For every \acrshort{isr} emission, the parent parton must have the combined energy of the daughter parton and radiation.
+There are however, fewer available partons carrying the increased fraction of the proton momentum, seen in the \acrshort{pdf} distribution, and so a suppression weight must be applied.
 The suppression weight is derived from the \textit{Sudakov form factors}~\cite{Gen:Sudokov}.
-In practice, the application of \ISR{} and \MPI{} occur completely and in tandem, before the \FSR{} is modelled.
+In practice, the application of \acrshort{isr} and \acrshort{mpi} occur completely and in tandem, before the \acrshort{fsr} is modelled.
 
-The collective spray of partons produced by the hard process, \MPI{}, \ISR{} and \FSR{} is called the parton shower.
+The collective spray of partons produced by the hard process, \acrshort{mpi}, \acrshort{isr} and \acrshort{fsr} is called the parton shower.
 The evolution of the splittings in the parton shower is defined by ordering variables.
 One such shower ordering variable is the square of the \pt{} of the shower propagators (\ktsq{}), such that \ktsq{} for a daughter splitting is less than the \ktsq{} for a mother splitting~\cite{Gen:kt}.
-The splittings between \MPI{} can also be interleaved with one another.
+The splittings between \acrshort{mpi} can also be interleaved with one another.
 The \ktsq{} ordering is illustrated in the left panel of Fig.~\ref{fig:feyn-ordering}, where the hard interaction occurs at $Q_{max}$ and the splitting strengths, given by $V_{i}(\ktsq{})$, are ordered $V_{1} > V_{2} > V_{3}$ (The further in time from the hard interaction, the softer and more collinear the splitting). 
 
 Another way to evolve the shower is by using an angular ordering~\cite{Gen:angular}.
 This angular ordering requires any future splitting to occur within a cone defined by the angular radius between the daughter partons from the previous splitting also illustrated in the right panel of Fig.~\ref{fig:feyn-ordering}.
 These showers often produce wide-angle soft splittings before the main hard splitting.
 % as would be the case in a \ktsq{}-ordered shower.
-Two widely used models for the parton shower are \pythia{}~\cite{Gen:Pyth8p2} and \herwig{}~\cite{Gen:Herwigpp}, where \pythia{} uses a \ktsq{}-ordered shower and \herwig{} an angular-ordered shower.
+Two widely used models for the parton shower are \acrshort{pythia}~\cite{Gen:Pyth8p2} and \acrshort{herwig}~\cite{Gen:Herwigpp}, where \acrshort{pythia} uses a \ktsq{}-ordered shower and \acrshort{herwig} an angular-ordered shower.
 \input{Feynmans/Ordering.tex}
 
 % http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.575.1213&rep=rep1&type=pdf
@@ -107,7 +107,7 @@ The soft emissions added from the parton shower should interface with the matrix
 This problem is solved by a process known as \textit{matching}.
 % TODO MERGING?
 
-One method of matching, known as the \MLM{}-method~\cite{Gen:MLM}, after its author M. L. Mangano, matches the final state partons produced by the matrix-element calculation to parton jets created by clustering the showered partons.
+One method of matching, known as the \acrshort{mlm}-method~\cite{Gen:MLM}, after its author M. L. Mangano, matches the final state partons produced by the matrix-element calculation to parton jets created by clustering the showered partons.
 The angular distance from each final state parton to each parton jet, starting from the parton with the leading \pt{}, is calculated and is said to be matched if it is less than a threshold value.
 If the matching is successful the parton jet is removed from further calculations.
 All final state partons must be matched to parton jets, otherwise the event is rejected.
@@ -115,13 +115,13 @@ When simulating the hard interaction process, including contributions with up to
 This is because these events are present and more accurately modelled in the $n+1$ production sample and thus double counting is avoided.
 All the production samples generated using discrete additional parton multiplicities are subsequently \textit{merged}.
 
-When matching and merging at \NLO{} the additional parton jet from the matrix-element calculation is the hardest emission and thus defines the upper shower scale level.
+When matching and merging at \acrshort{nlo} the additional parton jet from the matrix-element calculation is the hardest emission and thus defines the upper shower scale level.
 While it is easy to interface this with showers ordered to some \pt{}, care must be taken with respect to an angular-ordered shower.
 Angular-ordered shower emissions with a \pt{} greater than the additional matrix-element parton jet need to be suppressed.
-The \FxFx{}-method~\cite{Gen:FXFX}, extends the \MLM{}-method of merging to matrix-elements calculated to \NLO{}.
-The \MLM{}-method is used when matching \LO{} \mgamc{} to \pythia{} and the \FxFx{}-method is used when matching \NLO{} \mgamc{} to \pythia{}.
+The \FxFx{}-method~\cite{Gen:FXFX}, extends the \acrshort{mlm}-method of merging to matrix-elements calculated to \acrshort{nlo}.
+The \acrshort{mlm}-method is used when matching \acrshort{lo} \acrshort{mgamc} to \acrshort{pythia} and the \FxFx{}-method is used when matching \acrshort{nlo} \acrshort{mgamc} to \acrshort{pythia}.
 
-When \powheg{} models processes at a large factorisation scale, the number of high-\pt{} soft emissions is overestimated. 
+When \acrshort{powheg} models processes at a large factorisation scale, the number of high-\pt{} soft emissions is overestimated. 
 It is resolved by introducing a \pt{} dependent damping factor, 
 \begin{equation*}
 	D = \frac{\hdamp^2}{\pt^2+\hdamp^2},
@@ -162,43 +162,43 @@ The left panel of Fig.~\ref{fig:Lund} shows the kink in a string produced by the
 \end{figure}
 As time evolves, if \qqbar{} pairs do not have enough potential in the colour field to pair-produce they end up bound to each other forming the colourless mesons of the final state.
 It is also possible for the potential in the colour field to be great enough to produce diquark-diantiquark pair instead of \qqbar{} with the end result being the formation of baryons instead of mesons.
-This approach is used in the \pythia{} parton shower simulation.
+This approach is used in the \acrshort{pythia} parton shower simulation.
 % pg10 https://indico.cern.ch/event/564031/contributions/2279204/attachments/1326142/1990851/16-FNAL-pp.pdf
 
-The string dynamics currently assume that the colour-flow modelled in the evolution of the parton shower from the hard interaction is independent from the colour-flow of the other parton showers produced by the \MPI{}s.
-Indeed, each individual \MPI{} is assumed to operate in independent colour spaces.
+The string dynamics currently assume that the colour-flow modelled in the evolution of the parton shower from the hard interaction is independent from the colour-flow of the other parton showers produced by the \acrshort{mpi}s.
+Indeed, each individual \acrshort{mpi} is assumed to operate in independent colour spaces.
 In reality, all the individual interactions are superimposed on each other, with soft gluons connecting all the final state partons from all sources, redistributing colour across the full parton shower.
 In the Lund string model this can have the effect of reorganising the strings produced in the parton shower.
-This is modelled in simulation by a process known as \textit{colour reconnection} (\CR{}), which reconfigures the colour strings after the parton shower, but before the fragmentation.
-Three different models which can be implemented using \pythia{} are described here.
+This is modelled in simulation by a process known as \textit{colour reconnection} (\acrshort{cr}), which reconfigures the colour strings after the parton shower, but before the fragmentation.
+Three different models which can be implemented using \acrshort{pythia} are described here.
 % MPIs happen between protons radius == transverse size of the qcd string == non independent simulation
 
 \subsubsection{MPI-based model} % (fold)
 \label{sub:mpi_based_model}
 
-The \textit{MPI-based} \CR{} model~\cite{Gen:GluonMove} calculates the reconnection probability for all gluons from lower-\pt{} interactions to be inserted into the colour-flow dipoles of a higher-\pt{} interaction.
-Once all reconnections between \MPI{}s have been identified, the configuration in which the total colour string length is minimised is selected.
-The \pythia{} parton shower simulation uses the \MPI{}-based \CR{} scheme as default, where it is assumed that the lifetime of the top quark is long enough to shield the top decay products from the effects of \CR{}.
-A second \MPI{}-based model exists where the top quark decays before the \CR{} is applied and as such the top decay products are able to reconnect.
-This is known as \MPI{}-based \CR{} with \textit{early resonance decays} (erdON).
+The \textit{MPI-based} \acrshort{cr} model~\cite{Gen:GluonMove} calculates the reconnection probability for all gluons from lower-\pt{} interactions to be inserted into the colour-flow dipoles of a higher-\pt{} interaction.
+Once all reconnections between \acrshort{mpi}s have been identified, the configuration in which the total colour string length is minimised is selected.
+The \acrshort{pythia} parton shower simulation uses the \acrshort{mpi}-based \acrshort{cr} scheme as default, where it is assumed that the lifetime of the top quark is long enough to shield the top decay products from the effects of \acrshort{cr}.
+A second \acrshort{mpi}-based model exists where the top quark decays before the \acrshort{cr} is applied and as such the top decay products are able to reconnect.
+This is known as \acrshort{mpi}-based \acrshort{cr} with \textit{early resonance decays} (erdON).
 % Prob is higher for lower pt MPIs due to increased wavefunctions, which leads to higher spread and chance to interfere.
 % Starting at ordered high-pt, look at colour reconnections to lower MPIs. Gluons are inserted between MPIs in such a way to minimize string length.
 
-% The \MPI{}-based \CR{} model takes \MPI{}s, iterating in order of increasing hardness, and calculates a reconnection probability to \MPI{} with the next highest \pt{}.
-% If no reconnection is found, consecutively harder \MPI{}s are tested.
-% ERD: The \textit{gluon move/flip} model \cite{Gen:GluonMove} of the \CR{} starts from the default \MPI{}-based model. 
-% The top quarks then decay and radiate, from which a second set of \CR{} occurs between radiated gluons from the top decay and those from the rest of the parton shower.
+% The \acrshort{mpi}-based \acrshort{cr} model takes \acrshort{mpi}s, iterating in order of increasing hardness, and calculates a reconnection probability to \acrshort{mpi} with the next highest \pt{}.
+% If no reconnection is found, consecutively harder \acrshort{mpi}s are tested.
+% ERD: The \textit{gluon move/flip} model \cite{Gen:GluonMove} of the \acrshort{cr} starts from the default \acrshort{mpi}-based model. 
+% The top quarks then decay and radiate, from which a second set of \acrshort{cr} occurs between radiated gluons from the top decay and those from the rest of the parton shower.
 % subsubsection mpi_based_model (end)
 
 \subsubsection{QCD-inspired model} % (fold)
 \label{sub:qcd_inspired_model}
 
-An alternative \CR{} model is the \textit{QCD-inspired} model~\cite{Gen:QCDBased}.
+An alternative \acrshort{cr} model is the \textit{QCD-inspired} model~\cite{Gen:QCDBased}.
 In this model, instead of the $\mathrm{SU(3)}$ colour indices ($r,g,b$) being applied to individual partons, a set of nine indices, which describe the possible colour states of 2-parton and 3-parton combinations, are used.
 A corresponding set of anti-colour indices is used for anti-quarks and a gluon contains one of each index.
 Reconnections are possible when two partons have a matching colour and anti-colour index.
-The set of possible reconnections encompasses every possible reconnection from the default \MPI-based \CR{} model as well as reconnections possible between partons with accidentally matching colour indices.
-As with the \MPI-based \CR{} model, a reconnection is performed if it minimises the total \QCD{} string length.
+The set of possible reconnections encompasses every possible reconnection from the default \MPI-based \acrshort{cr} model as well as reconnections possible between partons with accidentally matching colour indices.
+As with the \MPI-based \acrshort{cr} model, a reconnection is performed if it minimises the total \acrshort{qcd} string length.
 % subsubsection qcd_inspired_model (end)
 
 \subsubsection{Gluon move/flip model} % (fold)
@@ -216,7 +216,7 @@ As with moving the gluons, the solution which minimises the total string length 
 \subsection{Cluster fragmentation model} % (fold)
 \label{sub:cluster_fragmentation}
 
-In the cluster model of fragmentation implemented in the \herwig{} parton shower simulation, all partons are showered until they reach an energy scale of $\sim4\GeV$, where hadronisation effects become non-negligible.
+In the cluster model of fragmentation implemented in the \acrshort{herwig} parton shower simulation, all partons are showered until they reach an energy scale of $\sim4\GeV$, where hadronisation effects become non-negligible.
 The final state gluons must have an energy at least twice that of the invariant mass of the lightest quark and are forced to split into a \qqbar{} pair.
 The colour singlet states formed by the resulting colour connected partons are formed into clusters, as shown in Fig.~\ref{fig:Cluster}.
 The cluster model assumes the principle of \textit{colour-preconfinement} which states that the distribution of the mass of the clusters is independent of the centre-of-mass energy and the hard scattering process involved.
@@ -228,7 +228,7 @@ The final process of the fragmentation involves extracting a \qqbar{} or \qqqbar
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.6\textwidth]{Figures/Generator_Cluster}
-	\caption[A sketch of the cluster model of fragmentation and hadronisation. Colour singlet clusters are generated from the final state quarks and gluons forced to split into a \quark{}\antiquark{} pair. These colour singlet clusters can be unnaturally massive and fission occurs until the clusters represent excited hadron resonances which then hadronise. ]{A sketch of the cluster model of fragmentation and hadronisation. Colour singlet clusters are generated from the final state quarks and gluons forced to split into a \quark{}\antiquark{} pair. These colour singlet clusters can be unnaturally massive and fission occurs until the clusters represent excited hadron resonances which then hadronise.  Figure adapted from \cite{Gen:Cluster}.}
+	\caption[A sketch of the cluster model of fragmentation and hadronisation. Colour singlet clusters are generated from the final state quarks and gluons forced to split into a \qqbar{} pair. These colour singlet clusters can be unnaturally massive and fission occurs until the clusters represent excited hadron resonances which then hadronise. ]{A sketch of the cluster model of fragmentation and hadronisation. Colour singlet clusters are generated from the final state quarks and gluons forced to split into a \qqbar{} pair. These colour singlet clusters can be unnaturally massive and fission occurs until the clusters represent excited hadron resonances which then hadronise.  Figure adapted from \cite{Gen:Cluster}.}
 	\label{fig:Cluster}
 \end{figure}
 % For cluster model, to conserve colour - intial partons must come from valence. gluon -> valence and emits anti quark. seaquark -> gluon -> valence. remnent qq collur triplet, valence: colour triplet
@@ -258,56 +258,56 @@ The final process of the fragmentation involves extracting a \qqbar{} or \qqqbar
 So far, only the modelling of the physics process itself has been discussed, before any interaction with the detector has been performed.
 Indeed, it is very useful to compare measurements at this level, the \textit{particle level}, as it allows direct comparisons between theoretical models and experimental measurements which have had the detector response removed.
 The removal of the detector response is discussed in Ch.~\ref{ch:unfolding}.
-This means measurements performed to particle level with different detectors such as \CMS{} and ATLAS can be directly compared with each other and to theoretical predictions.
+This means measurements performed to particle level with different detectors such as \acrshort{cms} and \acrshort{atlas} can be directly compared with each other and to theoretical predictions.
 
 In order to provide the mapping between experiment and particle level, the detector response needs to be modelled accurately.
-To do this a simulation toolkit called \textit{GEometry ANd Tracking} (\GEANT{})~\cite{Gen:GEANT} is used.
-The \GEANT{} package builds the physical layout of the experiment, including all detectors, absorbers, electronics and structural components surrounding the central interaction point.
+To do this a simulation toolkit called \textit{GEometry ANd Tracking} (\acrshort{geant})~\cite{Gen:GEANT} is used.
+The \acrshort{geant} package builds the physical layout of the experiment, including all detectors, absorbers, electronics and structural components surrounding the central interaction point.
 The magnetic field strength at all points in the detector is modelled.
 The particles are tracked from the collision point outwards through the active and non-active material, modelling respective interactions and decays.
 In the active material, the response of all individual components is modelled in a process known as \textit{digitisation}.
 The digitisation takes into account any inefficiencies in the active material and returns an output consistent with that seen from measured data.
-A full description of the \CMS{} detector is given in Ch.~\ref{ch:LHCCMS}.
+A full description of the \acrshort{cms} detector is given in Ch.~\ref{ch:LHCCMS}.
 
 % Not quite -phase space issues.
 % section detector_modelling (end)
 
-\section{Production of $\mathbf{\ttbar}$ and background models}
+\section{Production of $\mathbf{t\overline{t}}$ and background models}
 \label{sec:ttMC}
 
 Table~\ref{tb:Gen} shows the complete set of simulations used for the differential cross section analysis performed.
 There are four different \ttbar{} production models studied.
-Two \ttbar{} samples are simulated with the \powheg{} (v2) matrix element generator~\cite{Gen:PowHVF}, where one sample is interfaced with \pythia{} (v8.212), using the \CUET{} tune~\cite{Gen:CUETP8M2T4}, and the second with the \herwig{} (v2.7.1) using the \herwigtune{} tune~\cite{Gen:EE5C}.
+Two \ttbar{} samples are simulated with the \acrshort{powheg} (v2) matrix element generator~\cite{Gen:PowHVF}, where one sample is interfaced with \acrshort{pythia} (v8.212), using the \CUET{} tune~\cite{Gen:CUETP8M2T4}, and the second with the \acrshort{herwig} (v2.7.1) using the \herwigtune{} tune~\cite{Gen:EE5C}.
 These are labelled \powhegpythia{} and \powhegherwig{} respectively.
-Two additional simulated \ttbar samples are produced with the \mgamc{} (v2.2.2) generator.
-One is used to generate events at \LO{} accuracy with up to three additional partons and the second to \NLO{} accuracy with up to two additional partons.
-Both are interfaced with \pythia{} using the \CUETold{} tune~\cite{Gen:CUETP8M1} and are labelled \mgamcLO{} and \mgamcNLO{} respectively.
-The \MLM{} jet-parton matching algorithm is used to match the matrix-element to the parton shower in the \LO{} simulation and the \FxFx{} algorithm in the \NLO{} simulation.
+Two additional simulated \ttbar samples are produced with the \acrshort{mgamc} (v2.2.2) generator.
+One is used to generate events at \acrshort{lo} accuracy with up to three additional partons and the second to \acrshort{nlo} accuracy with up to two additional partons.
+Both are interfaced with \acrshort{pythia} using the \CUETold{} tune~\cite{Gen:CUETP8M1} and are labelled \mgamcLO{} and \mgamcNLO{} respectively.
+The \acrshort{mlm} jet-parton matching algorithm is used to match the matrix-element to the parton shower in the \acrshort{lo} simulation and the \FxFx{} algorithm in the \acrshort{nlo} simulation.
 The \powhegpythia{} model is taken as the central model used in this thesis.
 
 All \ttbar{} production samples are simulated with the top quark mass set to 172.5\GeV{}.
-For \NLO{} samples the \nnpdf{} \PDF{} set~\cite{Gen:NNPDF} is used, while for \LO{} samples the \nnpdflo{} set is used.
-The samples are normalised to a \NNLO{} \ttbar{} cross section of 832\pb{}, as seen in Sec.~\ref{sub:top_quark_production}.
+For \acrshort{nlo} samples the \nnpdf{} \acrshort{pdf} set~\cite{Gen:NNPDF} is used, while for \acrshort{lo} samples the \nnpdflo{} set is used.
+The samples are normalised to a \acrshort{nnlo} \ttbar{} cross section of 832\pb{}, as seen in Sec.~\ref{sub:top_quark_production}.
 It is important to compare multiple \ttbar{} generators in order to find the current most suitable description of top quark production and decay, and to identify any discrepancies in the models.
 
-Table~\ref{tb:Gen} also shows the dominant background samples from single top quark production, vector boson production with associated jets and multi-jet \QCD{} production.
-All the single top quark processes produced via the $t$-channel and in association with a \Wboson{}~boson are generated with \powheg{}~\cite{Gen:Pow_tchan,Gen:Pow_tWchan} interfaced with \pythia and are normalised to cross sections that are calculated to \NLO{} precision~\cite{Gen:ST_XSECPred_1,Gen:ST_XSECPred_2}.  
-Samples of \Wboson{}{} and \Zboson{}~boson production in association with jets, with leptonic final states, are generated at \LO{} using \mgamc{}. 
+Table~\ref{tb:Gen} also shows the dominant background samples from single top quark production, vector boson production with associated jets and multi-jet \acrshort{qcd} production.
+All the single top quark processes produced via the $t$-channel and in association with a \Wboson{}~boson are generated with \acrshort{powheg}~\cite{Gen:Pow_tchan,Gen:Pow_tWchan} interfaced with \acrshort{pythia} and are normalised to cross sections that are calculated to \acrshort{nlo} precision~\cite{Gen:ST_XSECPred_1,Gen:ST_XSECPred_2}.  
+Samples of \Wboson{}{} and \Zboson{}~boson production in association with jets, with leptonic final states, are generated at \acrshort{lo} using \acrshort{mgamc}. 
 Separate samples are generated with exactly one, two, three, and four additional jets to ensure a large set of background events.
-These samples are normalized to their \NNLO{} cross sections~\cite{Gen:VJets_XSECPred}.
-Multijet \QCD{} events are generated using \pythia{} for both the matrix-element calculations and parton shower/hadronisation.
-Only multijet \QCD{} events with large electromagnetic activity or that contain a muon are generated in order to maximise the available sample size.
+These samples are normalized to their \acrshort{nnlo} cross sections~\cite{Gen:VJets_XSECPred}.
+Multijet \acrshort{qcd} events are generated using \acrshort{pythia} for both the matrix-element calculations and parton shower/hadronisation.
+Only multijet \acrshort{qcd} events with large electromagnetic activity or that contain a muon are generated in order to maximise the available sample size.
 
 The simulated samples need to contain enough events to ensure they are not affected by statistical fluctuations when comparing to the data.
 The luminosity, described in further detail in Sec.~\ref{sec:lumi}, produced for each simulation sample is shown in the final column of Tab.~\ref{tb:Gen} and should ideally be comparable to or larger than the luminosity of the data collected.
 Looking ahead to Tab.~\ref{tb:Data2016}, the total collected data luminosity is 35.9\fbinv{} and so most of the signal and background samples do indeed contain enough events.
-The multijet \QCD{} events are not particularly well modelled and can suffer from a lack of statistics and so a data-driven multijet \QCD{} estimate is employed, which is described in Sec.~\ref{sec:multijet_qcd}.
-The multijet \QCD{} samples are still required in the creation of the estimate however.
+The multijet \acrshort{qcd} events are not particularly well modelled and can suffer from a lack of statistics and so a data-driven multijet \acrshort{qcd} estimate is employed, which is described in Sec.~\ref{sec:multijet_qcd}.
+The multijet \acrshort{qcd} samples are still required in the creation of the estimate however.
 
 Samples are also generated for variations of some of the generator parameters in \powhegpythia{}.
 These are shown in Tab.~\ref{tb:GenSys} and are used as part of the estimation of the theoretical uncertainties due to the modelling.
 Other theoretical uncertainties in the modelling are calculated as event weights and stored in the central \powhegpythia{} sample.
-The CMS detector response for all simulated samples is modelled using \GEANT{}.
+The CMS detector response for all simulated samples is modelled using \acrshort{geant}.
 
 \input{TableCollections/Generators/TTBarGenerators.tex}
 \input{TableCollections/Generators/SystematicGenerators.tex}
@@ -320,11 +320,6 @@ The CMS detector response for all simulated samples is modelled using \GEANT{}.
 
 
 % \begin{itemize}
-% 	\item TODO: ALL OF THE REFS
 % 	\item TODO: LUND MESON-BARYON RATIO
-% 	\item TODO: MATRIX ELEMENT DEF HERE OR PREV CHAP
 % 	\item TODO: LOOPS LEAD TO POSITIVE WEIGHTS? MG5 CAN HAVE -VE
-% 	\item TODO: IS \ISR{} BREHMSSTRAHLUNG?
-% 	\item TODO: pp vs gg cross section
-% 	\item TODO: MATCHING BETWEN POWHEG AND PYTHIA/HERWIG
 % \end{itemize}

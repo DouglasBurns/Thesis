@@ -10,3 +10,10 @@ rm Thesis.out
 rm Thesis.toc
 rm Thesis.run.xml
 rm Thesis.fdb_latexmk
+rm Thesis.acn
+rm Thesis.acr
+rm Thesis.alg
+rm Thesis.glo
+rm Thesis.gls
+rm Thesis.glg
+rm Thesis.ist

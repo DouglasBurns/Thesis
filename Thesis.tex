@@ -2,30 +2,49 @@
 \documentclass[12pt,a4paper]{report}
 \input{Use_Packages.tex}
 \input{Latex_Definitions.tex}
+\makeglossaries
+\input{Acronyms.tex}
 
 
 \begin{document}
 
+
+
 \input{Chapters/00_PreliminaryPages.tex}
 \input{Chapters/01_Introduction.tex}
 \input{Chapters/02_Theory.tex}
+\newpage\null\thispagestyle{empty}
 \input{Chapters/03_GeneratorSimulation.tex}
+\newpage\null\thispagestyle{empty}
 \input{Chapters/04_LHC_CMS.tex}
+\newpage\null\thispagestyle{empty}
 \input{Chapters/05_EventReconstruction.tex}
 \input{Chapters/06_SimulationCorrections.tex}
+\newpage\null\thispagestyle{empty}
 \input{Chapters/07_ParticleLevelUnfolding.tex}
 \input{Chapters/08_Systematics.tex}
+\newpage\null\thispagestyle{empty}
 \input{Chapters/09_Xsection.tex}
+\newpage\null\thispagestyle{empty}
 \input{Chapters/10_Future.tex}
+\newpage\null\thispagestyle{empty}
 \input{Chapters/11_Summary.tex}
+
+\newpage
+\appendix
+\input{Chapters/12_Appendix.tex}
 
 \printbibliography
 \bibliography{Thesis} 
 \bibliographystyle{cms}
 
-\newpage
-% \appendix
-% \input{Chapters/12_Appendix.tex}
+% \glsfindwidesttoplevelname
+\glssetwidest{----------------------------------}
+% \setlength{\glsdescwidth}{0.5\textwidth}
+
+\setglossarystyle{alttree}
+\printglossary
+\printglossary[type=\acronymtype]
 
 % \input{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_X_allFixes_and_PDF_allTau0/tables/chi2/normalised/chi2_combined.tex}
 % \input{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_X_allFixes_and_PDF_allTau0/tables/chi2/absolute/chi2_combined.tex}

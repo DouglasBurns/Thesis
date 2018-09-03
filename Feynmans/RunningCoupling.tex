@@ -1,0 +1,49 @@
+\begin{figure}[h!]
+	\centering
+	\begin{resizedtikzpicture}{0.3\linewidth}
+		\begin{feynman}
+			\vertex (A);
+			\vertex [right=2cm of A](B);
+			\vertex [above right=2cm and 2cm of B](C);
+			\vertex [below right=2cm and 2cm of B](D);
+			\diagram*{
+			(A) -- [photon] (B),
+			(B) -- [anti fermion] (C),
+			(B) -- [fermion] (D)
+			};
+		\end{feynman}
+	\end{resizedtikzpicture}
+	\hspace{0.5cm}
+	\begin{resizedtikzpicture}{0.3\linewidth}
+		\begin{feynman}
+			\vertex (A);
+			\vertex [right=1cm of A](ai);
+			\vertex [right=1cm of ai](B);
+
+			\vertex [right=0.5cm of ai](loopcentre);
+			\vertex [above right =0.35cm and 0.35cm of loopcentre](bi);
+			\vertex [below right =0.35cm and 0.35cm of loopcentre](bii);
+
+			% \vertex [right=1cm of B](Bi);
+			\vertex [above right=1cm and 0.5cm of B](p1);
+			\vertex [below right=1cm and 0.5cm of B](p2);
+			\vertex [below=1.5cm of p1](p3);
+			\vertex [below right=1.25cm and 0.84cm of B](p4);
+			\vertex [above right=2cm and 2cm of B](C);
+			\vertex [below right=2cm and 2cm of B](D);
+			\diagram*{
+			(A) -- [photon] (ai),
+			(ai) -- [fermion, half left] (B),
+			(B) -- [fermion, half left] (ai),
+			(bi) -- [photon] (p1),
+			(bii) -- [photon] (p2),
+			(p1) -- [anti fermion] (C),
+			(p1) -- [fermion] (p2),
+			(p2) -- [fermion] (D),
+			(p3) -- [photon, half left] (p4),
+			};
+		\end{feynman}
+	\end{resizedtikzpicture}
+\caption[A Feynman diagram showing a QED vertex. The left panel shows a simple lepton-antilepton pair production, however as the energy scale increases virtual particles contribute to the interaction vertex, leading to the running of the coupling constant.]{A Feynman diagram showing a QED vertex. The left panel shows a simple lepton-antilepton pair production, however as the energy scale increases virtual particles contribute to the interaction vertex, leading to the running of the coupling constant.}
+\label{fig:feyn-run}
+\end{figure}

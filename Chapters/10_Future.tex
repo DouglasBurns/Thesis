@@ -1,61 +1,68 @@
 \chapter{Conclusions, prospects and outlook}
 \label{ch:outlook}
 
-Conclusions HERE
+Both the normalised and absolute cross sections are measured as a function of several kinematic event variables at particle level in a visible phase space.
+The results are compared to the state-of-the-art \ttbar{} production models: \powhegpythia{}, \powhegherwig{}, \mgamcMLMpythia{} and \mgamcFxFxpythia{}.
+The goodness-of-fit tests performed between the simulations and measured cross section find that the \powhegpythia{} model is generally consistent with the data, with any residual differences covered by theoretical uncertainties within the model.
+The \powhegherwig{} and \mgamcFxFxpythia{} are also consistent with the data for most of the kinematic event variables, whereas the \mgamcMLMpythia{} model is found to not accurately describe any variable.
 
-The measurements presented in this analysis have reached what is known as the \textit{systematic wall}.
-This means without the input of the theory community, improvements...
-These improvements in the systematic uncertainties are being for example in refTODO
+It is widely expected for these measurements to be used in the tuning of future \ttbar{} generators and as such the measurements presented here have been implemented in \acrshort{rivet} and are available to the wider community. 
+In addition, these measurements are able to be used for constraints on the \acrshort{pdf} of the proton, as an accurate background estimate for beyond the \acrshort{sm} or rare \acrshort{sm} searches and as an input to phenomenology studies.
+
+At present, the results are dominated by systematic uncertainties.
+The precision of these measurements can only be increased by lowering the so-called \textit{systematic wall}.
+Methods to lower the impact of the systematic uncertainties, for example from the parton shower TODO REF, are always under study.
 
 It makes sense then to go beyond the bounds of the current analysis into regions that are no longer dominated by the systematic uncertainty.
 This could be in the form of double or even triple differential cross sections.
 The ability to compare a model to two or three different variables simultaneously is an ideal prospect of this analysis for the \ttbar{} generator modelling and tuning community.
-Important distributions, for example the $(\ptTop\,,\,\abs{\eta^{\mathrm{top}}})$ and $(\ptTop\,,\,M_{\ttbar})$ distributions have already been studied by analyses such as TODO.
+Important distributions, for example the $(\ptTop\,,\,\abs{\eta^{\mathrm{top}}})$ and $(\ptTop\,,\,M_{\ttbar})$ distributions have already been studied~\cite{TOP17002}.
 These allow for comparisons to the full kinematic properties of the top quark as well as information on the discrepancies seen between the top \pt{} spectrum and that of the mass of the \ttbar{} system.
-This analysis could provide useful additional distributions with respect to the number of additional jets or missing \pt{} of the system.
+The future of this thesis could provide useful additional distributions with respect to the number of additional jets or missing \pt{} of the system.
 
 Another option is to go beyond the current kinematic event variables used in this thesis.
-The could include additional variables such as the angular separation between the two \bquark{} jets with the highest CSV discriminant, the angular separation between the lepton and closest \bquark{} jet or the \pt{} of additional jets.
-% add jet good for qcd
-New and novel event variables, for example the n-jettiness or sphericity of the event TODOREF, could be measured. 
-Of course, all the event variables currently measured can also be extrapolated to the full phase space and parton level, although perhaps more interesting and useful would be to extend them into the boosted regime, \ie{} the regime where the top decay products become highly collimated due to being produced at high energy.
+The could include additional variables such as the angular separation between the two \bquark{} jets with the highest CSV discriminant, the angular separation between the lepton and closest \bquark{} jet or the \pt{} of additional jets. % add jet good for qcd
+New and novel event variables, for example the N-Jettiness event~\cite{Future:NJettiness}, could also be measured. 
+Of course, all the event variables currently measured can also be extrapolated to parton level in a full phase space, although perhaps more interesting and useful would be to extend them into the boosted regime, \ie{} the regime where the top decay products become highly collimated due to being produced at high energy.
 
-Finally, an option is to reinterpret the analysis as a part of an effective field theory.
+Finally, an option is to reinterpret the analysis as a part of an effective field theory (\acrshort{eft}).
 An effective field theory assumes that any new physics is at an energy scale inaccessible to the standard model and as such is a low energy approximation.
 Any new physics would then be introduced by deviations in the tails of the distributions caused by the interference between the standard model and effective field theory.
-The RIVET toolkit is a powerful tool in the reinterpretation of analyses.
+The \acrshort{rivet} toolkit is a powerful tool in the reinterpretation of analyses.
 
 \section{Double differential cross sections} % (fold)
 \label{sec:double_differential_cross_sections}
 
-Very basic examples for the double differential cross sections are shown in Figs.~\ref{fig:ST_NJET} and~\ref{fig:LPT_LETA}, which show the distributions with respect to \ST{} and \NJET{}, and \LPT{} and \LETA{} respectively.
-Further distributions for \ST{} and \ptmiss{}, and \ptmiss{} and \NJET{} are shown in Figs.~\ref{fig:ST_MET} and~\ref{fig:MET_NJET} in App.~\ref{ch:DD}.
-Firstly, the top two panels of each figure show the data-simulation comparison for the \eJets{} and \muJets{} channels.
-The binning scheme for each variable has been chosen arbitrarily and the yield from multijet \QCD{} measured from simulation.
+A few basic double differential cross section measurements are shown in Figs.~\ref{fig:ST_NJET} and~\ref{fig:LPT_LETA}, which show the distributions with respect to (\ST{}, \NJET{}) and (\LPT{}, \LETA{}) respectively.
+Further distributions for (\ST{}, \ptmiss{}) and (\ptmiss{}, \NJET{}) are shown in Figs.~\ref{fig:ST_MET} and~\ref{fig:MET_NJET} in App.~\ref{ch:DD}.
+
+The top two panels of each figure show the data-simulation comparison for the \eJets{} and \muJets{} channels.
+The binning scheme for each variable has been chosen arbitrarily and the yield from multijet \acrshort{qcd} measured from simulation.
 The \ttbar{} yield is extracted using the background subtraction method, as for the single differential cross section measurements.
-
-The response matrices used in the unfolding of the \ttbar{} yields are created using the \powhegpythia{} sample and use four times the number of bins at reconstruction level than at generator level, achieved by splitting the binning schemes in two for each variable under study.
-The central two panels of each figure show the response matrices used in unfolding the \eJets{} and \muJets{} channels.
-They have been recombined into the bins used at generator level for ease of viewing.
+The migration matrices used in the unfolding of the \ttbar{} yields are created using the \powhegpythia{} sample.
+A global bin number is used as a map between the two variables under study, with the reconstruction-level distributions having finer binning with respect to generator level distributions, as in the single differential cross sections.
+The central two panels of each figure show the migration matrices used in unfolding the \eJets{} and \muJets{} channels, with the bins at reconstruction level recombined for ease of viewing.
 The \ttbar{} yields are unfolded without regularisation and so an unknown amount of bias may be present.
-% A measure of the correlation between the two variables can be seen in these matrices from the strength of the offset diagonals from the leading one.
-
+The bias is thought to be negligible in the case of the (\LPT{}, \LETA{}) double differential measurements.
+% A measure of the migration between the two variables can be seen in these matrices from the strength of the offset diagonals from the leading one.
 The unfolded \ttbar{} yields are used to calculate the normalised and absolute cross sections presented in the lower two panels of each figure.
-A comparison to the \powhegpythia{} \ttbar{} model is also shown.
+A comparison to the \powhegpythia{} \ttbar{} production model is also shown.
 At no point have any systematic uncertainties been introduced or unfolding checks performed.
+
+The next step of this possible future prospect would be to perform a full analysis, for which the most important are the quality tests on the unfolding procedure and the addition of systematic uncertainties.
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_NJets/plots/Normalisation_electron.png} \\
 	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_NJets/plots/Normalisation_muon.png} \\
 	\vspace{0.8cm}
-	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_NJets/unfolding/electron_ProbMatrix.pdf}
-	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_NJets/unfolding/muon_ProbMatrix.pdf} \\
+	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_NJets/unfolding/electron_Response.pdf}
+	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_NJets/unfolding/muon_Response.pdf} \\
 	\vspace{0.8cm}
 	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_NJets/plots/normalised_XSection_combined.png} \\
 	\includegraphics[width=0.825\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/ST_NJets/plots/absolute_XSection_combined.png} \\
 	\vspace{0.4cm}
-	\caption[Double differential \ttbar{} production cross section measurements with respect to \ST{} and \NJET{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the response matrices in terms of global bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.]{Double differential \ttbar{} production cross section measurements with respect to \ST{} and \NJET{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the response matrices in terms of global bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.}
+	\caption[Double differential \ttbar{} production cross section measurements with respect to \ST{} and \NJET{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the migration matrices in terms of the bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.]{Double differential \ttbar{} production cross section measurements with respect to \ST{} and \NJET{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the migration matrices in terms of the bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.}
 	\label{fig:ST_NJET}
 \end{figure}
 
@@ -64,51 +71,46 @@ At no point have any systematic uncertainties been introduced or unfolding check
 	\includegraphics[width=\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/lepton_pt_abs_lepton_eta/plots/Normalisation_electron.png} \\
 	\includegraphics[width=\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/lepton_pt_abs_lepton_eta/plots/Normalisation_muon.png} \\
 	\vspace{0.8cm}
-	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/lepton_pt_abs_lepton_eta/unfolding/electron_ProbMatrix.pdf}
-	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/lepton_pt_abs_lepton_eta/unfolding/muon_ProbMatrix.pdf} \\
+	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/lepton_pt_abs_lepton_eta/unfolding/electron_Response.pdf}
+	\includegraphics[width=0.4\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/lepton_pt_abs_lepton_eta/unfolding/muon_Response.pdf} \\
 	\vspace{0.8cm}
 	\includegraphics[width=\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/lepton_pt_abs_lepton_eta/plots/normalised_XSection_combined.png} \\
 	\includegraphics[width=\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/DoubleDiffs/lepton_pt_abs_lepton_eta/plots/absolute_XSection_combined.png} \\
 	\vspace{0.4cm}
-	\caption[Double differential \ttbar{} production cross section measurements with respect to \LPT{} and \LETA{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the response matrices in terms of global bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.]{Double differential \ttbar{} production cross section measurements with respect to \LPT{} and \LETA{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the response matrices in terms of global bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.}
+	\caption[Double differential \ttbar{} production cross section measurements with respect to \LPT{} and \LETA{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the migration matrices in terms of the bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.]{Double differential \ttbar{} production cross section measurements with respect to \LPT{} and \LETA{}. The upper two panels show the distributions after full event selection for the \eJets{} and \muJets{} channels respectively. The central two panels show the migration matrices in terms of the bin number and the lower two panels show the normalised and absolute cross section measurements in comparison to the \powhegpythia{} model.}
 	\label{fig:LPT_LETA}
 \end{figure}
 
 
-\section{Additional event variables} % (fold)
+\section{Alternative event variables} % (fold)
 \label{sec:additional_event_variables}
 
-Some simple comparisons for the data-simulation agreement for new variables can be seen in Fig.~TODO.
-They include the angle of the \bquark{} quark to the lepton, the 
+A set of possible alternative future variables are presented as simulation-data control plots, shown in Fig.~\ref{fig:FutureVars}.
+These include the \pt{} sum of the signal lepton and its closest \bquark{} quark $M_{b\ell}$, the angle between the signal lepton and its closest \bquark{} quark $\theta_{b\ell}$, the \pt{} sum of the leading three jets $M3$, the \pt{} sum of the 3rd and 4th leading jets $\pt^{\mathrm{j_{3}j_{4}}}$, and the \pt{} of any additional jets.
+Measurements with respect to these additional event variables provide additional information on the kinematic properties of both top quarks and also the soft initial and final state radiation.
+These new kinematic event variables can be included both as standalone or together as part of new double differential cross section measurements.
+
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/electron_M3_2orMoreBtags_with_ratio.png}
-	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/electron_M_bl_2orMoreBtags_with_ratio.png}
-	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/electron_angle_bl_2orMoreBtags_with_ratio.png} \\
-	\vspace{0.4cm}
-	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/electron_tau1_2orMoreBtags_with_ratio.png}
-	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/electron_tau2_2orMoreBtags_with_ratio.png} \\
-	\vspace{0.4cm}
-	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/electron_tau3_2orMoreBtags_with_ratio.png}
-	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/electron_tau4_2orMoreBtags_with_ratio.png} \\
-	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Control/Ref_selection/WithQCDFromControl/electron_JetPt3_2orMoreBtags_with_ratio.png}
-	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Control/Ref_selection/WithQCDFromControl/electron_JetPt4_2orMoreBtags_with_ratio.png} 
-	\includegraphics[width=0.33\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/control_plots//Nominal/Control/Ref_selection/WithQCDFromControl/electron_JetPtAdd_2orMoreBtags_with_ratio.png}\\
-	\caption[]{}
-	\label{fig:LPT_LETA}
+	\includegraphics[width=0.45\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/COMBINED_M_bl_2orMoreBtags_with_ratio.png}
+	\includegraphics[width=0.45\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/COMBINED_angle_bl_2orMoreBtags_with_ratio.png} \\
+	\includegraphics[width=0.45\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/control_plots//Nominal/Variables/Ref_selection/WithQCDFromControl/COMBINED_M3_2orMoreBtags_with_ratio.png}
+	\includegraphics[width=0.45\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/control_plots//Nominal/Control/Ref_selection/WithQCDFromControl/COMBINED_JetPtW_2orMoreBtags_with_ratio.png} \\
+	\includegraphics[width=0.45\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/control_plots//Nominal/Control/Ref_selection/WithQCDFromControl/COMBINED_JetPtAdd_2orMoreBtags_with_ratio.png}\\
+	\caption[The distributions of $M_{b\ell}$, $\theta_{b\ell}$, $M3$, $\pt^{\mathrm{j_{3}j_{4}}}$ and additional $\pt^{\mathrm{jet}}$ after full event selection. The \ttbar{} simulation is normalised to the \acrshort{nnlo} prediction. The ratio of the number of events in data to that in simulation is shown below each of the distributions, with the statistical uncertainty in the data shown by the vertical error bars.]{The distributions of $M_{b\ell}$, $\theta_{b\ell}$, $M3$, $\pt^{\mathrm{j_{3}j_{4}}}$ and additional $\pt^{\mathrm{jet}}$ after full event selection. The \ttbar{} simulation is normalised to the \acrshort{nnlo} prediction. The ratio of the number of events in data to that in simulation is shown below each of the distributions, with the statistical uncertainty in the data shown by the vertical error bars.}
+	\label{fig:FutureVars}
 \end{figure}
 % section additional_event_variables (end)
 
 \section{Effective field theory} % (fold)
 \label{sec:effective_field_theory}
 
-The \SM{} is largely assumed to be a valid effective theory up until an energy scale at which new physics is introduced \NP{}.
-At this point any new field theory describing must satisfy three conditions, namely: The \SM{} gauge group $SU(3)_{C} \otimes SU(2)_{L} \otimes U(1)_{Y}}$ should be contained in the new gauge group, all the degrees of freedom of the \SM{} should still be present and at low energies it should reduce into the \SM{}.
+The \acrshort{sm} is largely assumed to be a valid effective theory up until an energy scale at which new physics is introduced \NP{}.
+At this point any new field theory describing must satisfy three conditions, namely: The \acrshort{sm} gauge group $SU(3)_{C} \otimes SU(2)_{L} \otimes U(1)_{Y}}$ should be contained within the new gauge group, all the degrees of freedom of the \acrshort{sm} should still be present and at low energies it should reduce into the \acrshort{sm}.
 This reduction is likely believed to originate from the decoupling of the massive new particles at \NP{}.
 
-% The new physics is then only expected to contribute virtually to standard model processes and can be modelled perturbatively as higher-dimensional operators $O$, constructed out of \SM{} fields, suppressed by \NP{}.
-
-The new physics can be added to the \SM{} Lagrangian by adding higher-dimensional operators $\mathcal{O}_{i}$, constructed only out of \SM{} fields which maintains gauge invariance and their associated Wilson coefficients $C_{i}$, which describe the strength of the new physics.
+% The new physics is then only expected to contribute virtually to standard model processes and can be modelled perturbatively as higher-dimensional operators $O$, constructed out of \acrshort{sm} fields, suppressed by \NP{}.
+The new physics can be added to the \acrshort{sm} Lagrangian by adding higher-dimensional operators $\mathcal{O}_{i}$, constructed only out of \acrshort{sm} fields which maintains gauge invariance and their associated coupling strengths $C_{i}$, known as Wilson coefficients.
 \begin{equation*}
 	\Lagr_{\mathrm{EFT}} = \Lagr_{\mathrm{SM}} + \sum_{d=5}^{\infty}\frac{1}{\NP^{d-4}}\sum_{i}C^{d}_{i}\mathcal{O}^{d}_{i} 
 \end{equation*}
@@ -116,43 +118,73 @@ The new physics can be added to the \SM{} Lagrangian by adding higher-dimensiona
 	\Lagr_{\mathrm{EFT}} = \Lagr_{\mathrm{SM}} + \frac{1}{\NP}C^{(5)}_{1}\mathcal{O}^{(5)}_{1} + \frac{1}{\NP^{2}}\sum_{i}C^{(6)}_{i}\mathcal{O}^{(6)}_{i} + h.c. + \dots
 \end{equation*}
 The higher-dimensional terms are suppressed by $\NP^{d-4}$, where $d$ is the dimension.
-The dimension 5 operator only contains one operator after gauge symmetry constraints have been applied which violates lepton number and has no relation to top physics.
-It is not considered further.
+At dimension 5 there is only one operator after gauge symmetry constraints have been applied.
+It violates lepton number and has no relation to top physics and so is not considered further.
 At dimension 6 however, there are 16 operators which are relevant for top quark production and decay~\cite{Future:TopEFT}.
-These operators can alter the normalisation and/or shape of various distributions measured in relation to the top quark.
-One particular operator of interest is \OTG{} which modifies the $\mathrm{t\overline{t}g}$ vertex and introduces a new $\mathrm{t\overline{t}gg}$ vertex as shown in Fig.~\ref{fig:feyn-eft} and results in a modification to the \ttbar{} production cross section.
+These operators can alter the normalisation and/or shape of top quark kinematic distributions.
+One particular operator of interest is \OTG{} which modifies the $\mathrm{t\overline{t}g}$ vertex and introduces a new $\mathrm{t\overline{t}gg}$ vertex, as shown in Fig.~\ref{fig:feyn-eft}, and results in a modification to the \ttbar{} production cross section.
 \input{Feynmans/EFT.tex}
 
-A \LO{} model for the \SM{} and top quark related EFT operators is provided including the \OTG{} operator and is described in detail in~\cite{Future:dim6top}.
-The parameter $\sfrac{C_{\mathrm{tG}}}{\NP}$ is calculated following prescriptions given in~\cite{Future:TOP17014,Future:dim6top}.
-
-Events are generated using \mgamc{} (v2.6.2) interfaced with \pythia{} (v8.238), however, it is not reasonable or feasible to generate $N$ different samples depending on $N$ different input values of $\sfrac{C_{\mathrm{tG}}}{\NP}$.
-Instead, the interference contributions can be scaled to the desired value of  $\sfrac{C_{\mathrm{tG}}}{\NP}$ using the following method.
-The \ttbar{} production cross section can be written as a perturbative expansion in terms of $\sfrac{C_{\mathrm{tG}}}{\NP}$
+A \acrshort{lo} model for the \acrshort{sm} and top quark related \acrshort{eft} operators, including the \OTG{} operator, is detailed in~\cite{Future:dim6top}.
+Constraints on the parameter \CTG{} can be calculated following prescriptions given in~\cite{Future:TOP17014,Future:dim6top}.
+Events based on the \acrshort{eft} model are generated using \mgamc{} (v2.6.2) interfaced with \pythia{} (v8.238).
+It is not feasible, however, to generate many different simulated samples depending on different strengths of \CTG{}.
+Instead, the interference contributions can be scaled to the desired value of \CTG{} using the following method.
+The \ttbar{} production cross section can be written as a perturbative expansion in terms of \CTG{}
 \begin{equation}
-	\sigma_{\ttbar} = \sigma_{\ttbar}^{\SM} + \frac{C_{\mathrm{tG}}}{\NP}\,.\,\beta_{1} + \left(\frac{C_{\mathrm{tG}}}{\NP}\right)^{2}\,.\,\beta_{2},
+	\sigma_{\ttbar} = \sigma_{\ttbar}^{\SM} + \frac{C_{\mathrm{tG}}}{\NP^2}\,.\,\beta_{1} + \left(\frac{C_{\mathrm{tG}}}{\NP^2}\right)^{2}\,.\,\beta_{2},
 \end{equation}
-where the $\beta$ terms are \OTG{} contributions to the cross section from linear and quadratic perturbations of $\sfrac{C_{\mathrm{tG}}}{\NP}$.
+where the $\beta$ terms are \OTG{} contributions to the cross section from linear and quadratic perturbations of \CTG{}.
 By taking arbitrary values for this perturbation at $\pm X$ this reduces to
 \begin{equation}
 	\beta_{1} = \frac{\sigma_{\ttbar}(+X) - \sigma_{\ttbar}(-X)}{2X},
 \end{equation}
-which is the interference contribution for the Feynman diagrams containing one \SM{} vertex and one \OtG{} vertex which can be scaled to the desired $\sfrac{C_{\mathrm{tG}}}{\NP}$ and added to the \SM{} prediction ($X=0$) for the final prediction.
-The quadratic contributions to the total \ttbar{} production cross section are negligible for $\sfrac{C_{\mathrm{tG}}}{\NP} < 1\TeV^{-2}$~\cite{Future:CTGNLO}. 
-Thus three simulations are created using $\sfrac{C_{\mathrm{tG}}}{\NP} = +2,\,0,\,-2$, the outcomes of which are shown in Fig.~TODO, which shows a comparison of all three variations to the unfolded data as seen in this thesis.
-This is done using the RIVET plugin.
+which is the interference contribution for the Feynman diagrams containing one \acrshort{sm} vertex and one \OtG{} vertex.
+The interference term is then scaled to the desired \CTG{} strength and added to the \acrshort{sm} prediction ($X=0$) for the final prediction.
+The quadratic contributions to the total \ttbar{} production cross section are negligible for $\CTG < 1\TeV^{-2}$~\cite{Future:CTGNLO}.
 
-The $\sfrac{C_{\mathrm{tG}}}{\NP}$ parameter can then be extracted from a fit of \chisq{} goodness-of-fit tests between the unfolded cross sections and predictions for a given a range of $\sfrac{C_{\mathrm{tG}}}{\NP}$.
-The goodness-of-fit tests proceed in an identical manner as in Sec.~\ref{sec:the_goodness_of_fit_tests}.
+Three \acrshort{eft} simulations are created using coupling strengths of $\CTG = +2,\,0,\,-2$.
+An independent sample of \acrshort{lo} \acrshort{sm} \ttbar{} production is also simulated using the same generator to provide a scaling from \acrshort{lo} to \acrshort{nnlo} which is applied to all three \acrshort{eft} simulations.
+The three \acrshort{eft} simulations are shown in Fig.~\ref{fig:CtG0p2m2HT} and compared, using the \acrshort{rivet} plugin, to the absolute \ttbar{} production cross section with respect to the \HT{} event variable as measured in this thesis.
 
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{/Users/db0268/Mount/SoolinScratch/EFT/CreateSets/RivetPlots/EFTComp/CMS_2018_I1662081/d09-x01-y01.pdf}
+	\caption[The cross sections predicted by setting the \CTG{} parameter to -2 (red), 0 (green) and +2 (blue) respectively. They are compared to the absolute \ttbar{} cross section with respect to the \HT{} variable, as measured in this thesis.]{The cross sections predicted by setting the \CTG{} parameter to -2 (red), 0 (green) and +2 (blue) respectively. They are compared to the absolute \ttbar{} cross section with respect to the \HT{} variable, as measured in this thesis.}
+	\label{fig:CtG0p2m2HT}
+\end{figure}
+
+The \CTG{} parameter can then be extracted from a fit of \chisq{} goodness-of-fit tests between the absolute cross sections and predictions for a given a range of \CTG{}.
+The goodness-of-fit tests follow an identical method to those described in Sec.~\ref{sec:the_goodness_of_fit_tests} and use the covariance matrix of the absolute cross section measurements.
+Figure~\ref{fig:eftHT} shows nominal fit of the $\Delta$ \chisq{} value (the difference between the \chisq{} value and the best fit \chisq{} value) for different \CTG{} strengths when considering the absolute \ttbar{} production cross sections with respect to the \HT{} event variable.
+The \CTG{} strength at the best fit \chisq{} value is shown surrounded by the 68\% \textit{confidence interval} (CI) and the 95\% confidence interval.
+The best fit value for \CTG{} is found to be -0.74 with a 95\% CI $-1.76 < \CTG < 0.28$.
+The preliminary studies for the other event variables along with a summary table of the resulting CIs are shown in App.~\ref{ch:eft}.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{/Users/db0268/Mount/SoolinScratch/EFT/CreateSets/RivetPlots/eftChi2/HT_Chi2.pdf}
+	\caption[The $\Delta \chisq{}$ value for \acrshort{eft} models of differing \CTG{} strengths and the absolute \ttbar{} cross section with respect to the \HT{} event variable. The nominal fit (blue) is shown together with its best fit value (black) and 68\% (green) and 95\% (gold) confidence intervals.]{The $\Delta \chisq{}$ value for \acrshort{eft} models of differing \CTG{} strengths and the absolute \ttbar{} cross section with respect to the \HT{} event variable. The nominal fit (blue) is shown together with its best fit value (black) and 68\% (green) and 95\% (gold) confidence intervals.}
+	\label{fig:eftHT}
+\end{figure}
+
+This basic study provides large confidence intervals well outside the current measurements, for example $-0.06 < \CTG < 0.41$ in~\cite{Future:TOP17014} calculated using a \acrshort{nlo} \acrshort{eft} model.
+Many aspects of this study can, and need, to be improved.
+Several of these aspects include the scaling of the \acrshort{eft} simulations from \acrshort{lo} to \acrshort{nnlo} using \acrshort{sm} simulations may not be valid in an \acrshort{eft} context, the implementation of a \acrshort{nlo} model with an alternative generator to \mgamcMLMpythia{} and the combination of results from the different event variables, which involves calculating the correlations between the event variables.  
+% Does this actually matter?
 
 % The standard model as an effective field theory assumes new physics is introduced at an energy scale \NP, inaccessible at current colliders, from $\sim1\TeV$.
-
-
-
-
 % section effective_field_theory (end)
 
+\section{Final remark} % (fold)
+\label{sec:final_remark}
+
+Due to the nature of the top quark, the field of top quark physics is by necessity a wide one.
+Among the vast array of topics, measurements of the top quark pair production cross section will always be relevant and important, especially so, as the next generation of particle colliders are considered.
+At higher collision energies and instantaneous luminosities, possible hints of new physics in the top sector seem antagonisingly close.
+In future electron-positron colliders, the top quark properties can be measured to an unprecedented degree of precision, and in doing so test the compatibility of the \acrshort{sm} with as greater rigour as possible.
+The field of top quark physics has always been one of the most interesting to study and its future is very bright indeed.
+
+% section final_remark (end)
 
 
 % section double_differential_cross_sections (end)

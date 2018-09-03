@@ -1,29 +1,29 @@
-\chapter{Uncertainty}
+\chapter{Cross section confidence}
 \label{ch:uncertainty}
 
 When performing the cross section measurements, there are many factors which can affect the precision of the measurement. 
 These effects are collectively known as \textit{uncertainties}.
 They are subdivided into statistical and systematic uncertainties, where the statistical uncertainty is reducible by collecting more data and the systematic uncertainty by improvements in theoretical knowledge.
-Many searches for rare \SM{} processes are dominated by the statistical uncertainty, however due to the multitude of \ttbar{} pairs produced the differential cross sections measured in this thesis are dominated by the systematic uncertainties.
+Many searches for rare \acrshort{sm} processes are dominated by the statistical uncertainty, however due to the multitude of \ttbar{} pairs produced the differential cross sections measured in this thesis are dominated by the systematic uncertainties.
 
 \section{Statistical uncertainty} % (fold)
 \label{sec:statistical_uncertainty}
 
 The statistical uncertainties measured in the bins of each event variable in each channel are less than 5.8\%, however for most variables these values are completely negligible at $<0.5\%$.
 The largest statistical uncertainty can be found in the final bins of the \ptmiss{} variable at 5.8\%.
-The statistical uncertainty from the finite size of the simulated \powhegpythia{} sample used in the construction of the response matrix for unfolding is found to be negligible with no contribution larger than 2.2\%.
+The statistical uncertainty from the finite size of the simulated \powhegpythia{} sample used in the construction of the migration matrix for unfolding is found to be negligible with no contribution larger than 2.2\%.
 
 \section{Systematic uncertainties} % (fold)
 \label{sec:systematic_uncertainty}
 
-The systematic uncertainties are evaluated and propagated to the final result by recalculating the response matrix using a modified \ttbar{} simulation and/or by modifying the background predictions.
+The systematic uncertainties are evaluated and propagated to the final result by recalculating the migration matrix using a modified \ttbar{} simulation and/or by modifying the background predictions.
 The resulting systematic uncertainties are then symmetrised according to the average of the upper and lower variations.
 The systematic uncertainties can be split into three discrete categories.
 The first are the experimental uncertainties, which represent our limited understanding on the detector performance.
 The second and third categories are theoretical uncertainties. 
 One is devoted to the modelling of the parton shower and the other to any remaining theoretical uncertainty.
 
-\subsection{Experimental uncertainties} % (fold)
+\subsubsection{Experimental uncertainties} % (fold)
 \label{sub:experimental_uncertainties}
 
 The uncertainty in the integrated luminosity of the data was measured to be $\pm 2.5\%$~\cite{Sys:Lumi}.
@@ -35,19 +35,19 @@ The upper variations and lower variations are then added in quadrature to give a
 
 The uncertainty in the lepton correction factors is estimated from the simultaneous variation of the individual uncertainties in the lepton identification, reconstruction and trigger efficiencies.
 
-The uncertainty in the JES and JER are estimated as functions of jet \pt{} and $\eta$~\cite{Event:JEC} and are propagated to calculation of the \ptmiss{} variable.
-Uncertainties on the \pt{} of electron, muon, tau lepton and unclustered \PF{} candidates are also propagated to variables dependent on \ptmiss{}.
+The uncertainties in the (\acrshort{jes}) and \acrshort{jer} are estimated as functions of jet \pt{} and $\eta$~\cite{Event:JEC} and are propagated to calculation of the \ptmiss{} variable.
+Uncertainties on the \pt{} of electron, muon, tau lepton and unclustered \acrshort{pf} candidates are also propagated to variables dependent on \ptmiss{}.
 These uncertainties are found to be negligible.
-% subsection experimental_uncertainties (end)
+% subsubsection experimental_uncertainties (end)
 
-\subsection{Parton shower uncertainties} % (fold)
+\subsubsection{Parton shower uncertainties} % (fold)
 \label{sub:parton_shower_uncertainties}
 
 The systematic uncertainties in the modelling of the parton shower of the \ttbar{} simulation are given by variations in a complete set of associated parameters incorporated in the \powhegpythia{} simulation.
 
-The uncertainty from the parton shower scale used for the \ISR{} modelling is estimated by varying the scale up and down by a factor of two.
-Similarly the scale used for the \FSR{} modelling is varied up and down by a factor of $\sqrt{2}$.
-The variation is reduced to $\sqrt{2}$ by constraints measured from the LEP collider~\cite{Sys:FSR}.
+The uncertainty from the parton shower scale used for the \acrshort{isr} modelling is estimated by varying the scale up and down by a factor of two.
+Similarly the scale used for the \acrshort{fsr} modelling is varied up and down by a factor of $\sqrt{2}$.
+The variation is reduced to $\sqrt{2}$ by constraints measured from the \acrshort{lep} collider~\cite{Sys:FSR}.
 As well as the uncertainties in the parton shower scale, uncertainties in the matrix-element shower scale are also estimated.
 This is done by varying the factorisation and renormalisation scales independently by a factor of two up and down. 
 Additionally, the scales are varied simultaneously by the same factors.
@@ -70,54 +70,49 @@ The systematic uncertainty introduced by the choice of branching fractions used 
 
 The final set of theoretical uncertainties in the parton shower relate to the modelling of the colour reconnection.
 It is estimated by comparing the cross sections produced when including and excluding the colour reconnection on the top quark decay products (Early resonance decays).
-Two additional uncertainties are included by using the two different colour reconnection models discussed in Sec.~\ref{sub:string_fragmentation}, which are the \QCD{}-based and Gluon move models.
-% subsection parton_shower_uncertainties (end)
+Two additional uncertainties are included by using the two different colour reconnection models discussed in Sec.~\ref{sub:string_fragmentation}, which are the \acrshort{qcd}-based and Gluon move models.
+% subsubsection parton_shower_uncertainties (end)
 
 % section systematic_uncertainty (end)
 
-\subsection{Other theoretical uncertainties} % (fold)
+\subsubsection{Other theoretical uncertainties} % (fold)
 \label{sub:other_theoretical_uncertainties}
 
 The uncertainties in the cross sections for the single top quark and vector boson backgrounds are taken as $\pm30\%$ and $\pm50\%$ respectively.
 These are based on measurements performed in~\cite{Sys:ST, Sys:W, Sys:Z} and take into account an extrapolation to the phase space used in this thesis.
 The uncertainty is typically negligible.
-The uncertainty in the shape and normalisation of the multijet \QCD{} is taken by predicting the \QCD{} in an alternate control region, leading to uncertainties of up to $\pm30\%$ and $\pm60\%$ respectively in any one bin.
+The uncertainty in the shape and normalisation of the multijet \acrshort{qcd} is taken by predicting the \acrshort{qcd} in an alternate control region, leading to uncertainties of up to $\pm30\%$ and $\pm60\%$ respectively in any one bin.
 These typically have a negligible effect on the final results, except at high \LETA{}.
 
-The uncertainty in the \nnpdf{} \PDF{} set used in the \powhegpythia{} simulation is estimated by considering 100 independent replicas.
-The RMS of the uncertainties, taken as the variations produced from each replica, is defined as the \PDF{} uncertainty.
-The uncertainty from the choice of $\alpS = 0.118$ used in the \nnpdf{} set is estimated by varying \alpS{} by $\pm 0.001$ and combined in quadrature to the \PDF{} uncertainty.
+The uncertainty in the \nnpdf{} \acrshort{pdf} set used in the \powhegpythia{} simulation is estimated by considering 100 independent replicas.
+The RMS of the uncertainties, taken as the variations produced from each replica, is defined as the \acrshort{pdf} uncertainty.
+The uncertainty from the choice of $\alpS = 0.118$ used in the \nnpdf{} set is estimated by varying \alpS{} by $\pm 0.001$ and combined in quadrature to the \acrshort{pdf} uncertainty.
 
 The uncertainty introduced by the top quark mass used in the \ttbar{} simulation is estimated by variations from two independent samples simulated with $m_{\mathrm{t}} = 169.5\GeV$ and $175.5\GeV$.
 The variations are scaled down to be comparable with the top quark mass uncertainty of $\pm1\GeV$\cite{PDG}.
 
 The uncertainty originating from the mismodelling of the top quark \pt{} spectrum is estimated by reweighting the \pt{} distribution to that measured by~\cite{TOP16007,TOP16008}.
 The yield of \ttbar{} events is modified by up to 20\% in any one bin and results in a negligible uncertainty.
-% subsection other_theoretical_uncertainties (end)
+% subsubsection other_theoretical_uncertainties (end)
 
 \subsection{Reporting the uncertainties} % (fold)
 \label{sub:reporting_the_uncertainties}
-
-Figures~\ref{fig:Systnorm1} and~\ref{fig:Systnorm2} portray the relative systematic uncertainties in every bin for each variable for the normalised cross section measurements.
-Similarly, Figs.~\ref{fig:Systabs1} and~\ref{fig:Systabs2} show the uncertainty compositions for the absolute cross section measurements.
-The gold band indicates the total systematic uncertainty and the grey band the total statistical uncertainty.
-Shown in bold are the systematic uncertainties which are the leading or subleading contributions to any bin.
-
-In the systematic uncertainties for the normalised cross section measurements, the dominant uncertainty for the hadronic based variables is the JES.
-For the \LETA{} variable the normalisation of the background \QCD{} originating from the \eJets{} channel dominates at high pseudorapidity, however the total uncertainty is small typically at $0.5\%$.
-There is no specific systematic uncertainty which dominates in the \LPT{} measurement.
-
-For the absolute cross section measurements the JES is still among the dominant uncertainties present, however more significant contributions are present from the parton shower uncertainties which are fundamentally reduced in the normalised cross section measurements.
-In particular, the uncertainty from the matrix-element and parton shower scales is large.
-The \bquark{} quark tagging efficiency is large at approximately 3\% in all bins.
 
 A complete breakdown showing the smallest and largest contributions over all bins of each systematic uncertainty for all cross section measurements are shown in Tabs.~\ref{tb:syst_condensed_combined_normalised} and~\ref{tb:syst_condensed_combined_absolute}.
 Similar values are shown for the total statistical uncertainty, total systematic uncertainty and total combined uncertainty.
 Sources of uncertainty that only affect \ptmiss{} are indicated by \NA{} for other variables.
 The typical uncertainty for the normalised cross section measurements is below 5\% but can be as large as 18\%.
 For the measurements of the absolute cross section these are typically 10\% but can be as large as 21\% in the tails of the distributions.
+Figures~\ref{fig:Systnorm1},~\ref{fig:Systnorm2},~\ref{fig:Systabs1} and~\ref{fig:Systabs2} in App.~\ref{ch:systApp} show the largest relative systematic uncertainties in every bin for each event variable.
 
-\input{PlotCollections/Systematics.tex} 
+In the systematic uncertainties for the normalised cross section measurements, the dominant uncertainty for the hadronic based variables is the \acrshort{jes}.
+For the \LETA{} variable the normalisation of the background \acrshort{qcd} originating from the \eJets{} channel dominates at high pseudorapidity, however the total uncertainty is small typically at $0.5\%$.
+There is no specific systematic uncertainty which dominates in the \LPT{} measurement.
+
+For the absolute cross section measurements the \acrshort{jes} is still among the dominant uncertainties present, however more significant contributions are present from the parton shower uncertainties which are fundamentally reduced in the normalised cross section measurements.
+In particular, the uncertainty originating from the matrix-element and parton shower scales is large.
+The \bquark{} quark tagging efficiency is also large at approximately 3\% in all bins.
+
 \input{TableCollections/Systematics/CondensedSystematics.tex}
 % subsection reporting_the_uncertainties (end)
 % section statistical_uncertainty (end)

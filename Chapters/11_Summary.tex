@@ -3,99 +3,32 @@
 
 The field of particle physics sets out to answer two of the greatest, most fundamental questions of our age.
 What is the Universe made of and how does it interact?
-At its beating heart is the standard model, unparalleled in its success at predicting the existence of and confirming all of the observed particles and their interactions.
+At its heart is the standard model, unparalleled in its success at predicting the existence of and confirming all of the observed particles and their interactions.
 It is not without issues though, with its inability to explain gravity or to describe more than the baryonic content of the Universe.
-These and other issues are the lifeblood of particle physicists determined to create a complete picture of our Universe.
+These, and other issues, are the work of particle physicists determined to create a complete picture of our Universe.
 
 The top quark, the most massive particle in the standard model, is expected to be the most sensitive to any new physics beyond the standard model.
-This new physics will directly manifest itself in the \ttbar{} pair production cross section.
-For this reason, and others precise measurements of the inclusive and differential standard model top quark cross sections are vital.
+This new physics will directly manifest itself in the top quark-antiquark pair (\ttbar{}) production cross section.
+For this reason, and others, precise measurements of the inclusive and differential standard model top quark cross sections are vital.
 
-This thesis presents measurements of the differential cross section as a function of several kinematic event variables in the single-lepton decay channel.
+This thesis presented measurements of differential \ttbar{} production cross sections as a function of several kinematic event variables using events with a single electron or muon.
 The kinematic event variables are variables that do not require the reconstruction of the complete \ttbar{} system.
-The event variables considered are the jet multiplicity, \NJET{}, the scalar sum of the jet \pt{}, \HT{}, the scalar sum of the \pt{} of all particles, \ST{}, the magnitudes of the transverse momentum imbalance, \ptmiss{}, the \pt{} of the leptonically decaying \Wboson{} boson, \WPT{}, the \pt{} of the lepton, \LPT{} and lepton pseudorapidity \LETA{}.
+The event variables considered were the jet multiplicity, the scalar sum of the jet transverse momentum and the scalar sum of the transverse momentum of all particles, the magnitudes of the transverse momentum imbalance and the transverse momentum of the leptonically decaying \Wboson{} boson and finally, the magnitudes of the transverse momentum and pseudorapidity of the lepton.
 
-The measurements are performed using collision data collected by the CMS detector at the LHC.
-The total amount of data used in this thesis corresponds to \Lumi.
-Events containing a single, isolated electron or muon and at least four jets, of which two are tagged as originating from the \bquark{} quark, are considered.
-Additional selections on the quality of the leptons and jets are applied.
-The \ttbar{} yield is estimated by subtracting from data the \Vjets{} and single top simulated backgrounds as well as the \QCD{} contribution estimated from data.
-The measurements are presented to \textit{particle level} where the kinematic distributions are constructed with respect to stable particles in the detector (mean lifetime longer than 30\ps{}) in a phase space similar to that accessible to the detector.
-The number of events reconstructed by the detector but not entering the visible phase space are subtracted from the \ttbar{} yield, which are then unfolded to remove the effects of the detector acceptance, efficiency, and migrations between bins induced from the detector resolution. 
+The measurements were performed using collision data collected by the CMS detector at the LHC and the total amount of data used in this thesis corresponds to \Lumi.
+Events containing a single, isolated electron or muon and at least four jets, of which two were tagged as originating from the \bquark{} quark, were considered.
+Additional selections on the quality of the leptons and jets were applied.
+The \ttbar{} yield was estimated by subtracting the \Vjets{} and single top simulated backgrounds as well as the data-driven \acrshort{qcd} contribution from data.
+The measurements were presented to particle level where the kinematic distributions were constructed with respect to stable (mean lifetime longer than 30\ps{}) particles in the detector in a phase space similar to that accessible to the detector.
+The number of events reconstructed by the detector but not entering the visible phase space were subtracted from the \ttbar{} yield and then unfolded to remove the effects of the detector acceptance, efficiency, and migrations between bins induced from the detector resolution. 
 
-Both the normalised and absolute cross sections are calculated with respect to the unfolded yields and compared to several state-of-the-art \ttbar{} models, \powhegpythia{}, \powhegherwig{}, \mgamcLO{} and \mgamcNLO{}.
-Goodness-of-fit tests between the generators and measured cross section are performed and it is found that the \powhegpythia{} model is generally consistent with the data, with any residual differences covered by theoretical uncertainties within the model.
-The \powhegherwig{} and \mgamcNLO{} are consistent with the data for most of the kinematic event variables, whereas the \mgamcLO{} model is found to not accurately describe any variable.
+Both the normalised and absolute cross sections were calculated with respect to the unfolded yields and compared to several state-of-the-art \ttbar{} models: \powhegpythia{}, \powhegherwig{}, \mgamcMLMpythia{} and \mgamcFxFxpythia{}.
+Goodness-of-fit tests between the generators and measured cross section were performed and it was found that the \powhegpythia{} model is generally consistent with the data, with any residual differences covered by theoretical uncertainties within the model.
+The \powhegherwig{} and \mgamcFxFxpythia{} are consistent with the data for most of the kinematic event variables, whereas the \mgamcMLMpythia{} model is found to not accurately describe any variable.
 
-It is widely expected for these measurements to be used in the tuning of future \ttbar{} generators and as such the measurements presented here have been implemented in RIVET and are available to the wider community. 
-% It is also present in the signatures of many rare standard model processes.
+It is widely expected for these measurements to be used in the tuning of future \ttbar{} generators and as such the measurements presented here have been implemented in \acrshort{rivet} and are available to the wider community. 
+In addition, these measurements can be used for constraints on the parton distribution function of the proton, as an accurate background estimate for beyond the standard model or rare standard model searches, and as an input to phenomenology studies.
 
 
 \chapter*{Samenvatting}
-\clearpage
-
-\chapter*{List of abbreviations}
-\begin{abbreviations}
-\item[CMS] Compact Muon Solenoid
-\item[LHC] Large Hadron Collider
-\item[QCD] Quantum chromodynamics
-\item[SM] Standard model of particle physics
-\item[EM] Electromagnetic
-\item[BEH] Brout-Englert-Higgs
-\item[H] Brout-Englert-Higgs boson
-\item[ISR] Initial state radiation
-\item[FSR] Final state radiation
-\item[QED] Quantum electrodynamics
-\item[EWK] Electroweak
-\item[CKM] Cabbibo-Kobayashi-Maskawa
-\item[CP] Charge-Parity
-\item[SNO] Sudbury Neutrino Observatory
-\item[CDF] Collider Detector at Fermilab
-\item[D0] TODO
-\item[NNPDF] TODO
-\item[PDF] TODO
-\item[DGLAP] TODO
-\item[LO] TODO
-\item[NLO] TODO
-\item[NNLO] TODO
-\item[ATLAS] TODO
-\item[LHCb] TODO
-\item[ALICE] TODO
-\item[\powheg] TODO
-\item[MPI] TODO
-\item[MLM] TODO
-\item[FxFX] TODO
-\item[CR] TODO
-\item[\GEANT] TODO
-\item[\tune] TODO
-\item[\oldtune] TODO
-\item[CERN] TODO
-\item[PS] Proton Synchrotron
-\item[PSB] Proton Synchrotron Booster
-\item[SPS] Super Proton Synchrotron
-\item[LINAC2] Linear Accelerator 2.
-\item[ECAL] Electromagnetic calorimeter.
-\item[HCAL] Hadronic calorimeter.
-\item[TIB] Silicon Tracker Inner Barrel detector. 
-\item[TOB] Silicon Tracker Outer Barrel detector. 
-\item[TEC] Silicon Tracker End Cap detector. 
-\item[TID] Silicon Tracker Inner Disk detector. 
-\item[HB] HCAL barrel detector.
-\item[HE] HCAL endcap detector.
-\item[HO] HCAL outer detector.
-\item[HF] HCAL forward detector.
-\item[RPC] Resistive plate chamber muon detector.
-\item[CSC] Cathode strip chamber muon detector.
-\item[DT] Drift tube muon detector.
-\item[L1T] Level-1 trigger.
-\item[HLT] High-level trigger.
-\item[WLCG] Worldwide LHC computing grid.
-\item[PF] Particle flow
-\item[GSF] Gaussian-sum filter.
-\item[] TODO
-\item[] TODO
-\item[] TODO
-\item[] TODO
-\item[] TODO
-\end{abbreviations}
 \clearpage
