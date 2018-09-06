@@ -104,7 +104,7 @@ and
 \end{equation*}
 However, if the jet is not matched then a stochastic smearing is applied
 \begin{equation*}
-	1 + \mathcal N(0,\sigma_\mathrm{JER}^{\mathrm{sim}}) \sqrt{\max(\mathrm{SF}_{\mathrm{JER}}^2 - 1, 0)}.
+	1 + \mathcal{N}(0,\sigma_\mathrm{JER}^{\mathrm{sim}}) \sqrt{\max(\mathrm{SF}_{\mathrm{JER}}^2 - 1, 0)}.
 \end{equation*}
 $\mathcal N(0,\sigma_\mathrm{JER}^{\mathrm{sim}})$ represents a random number sampled from a Gaussian distribution centred on 0 with a standard deviation given by the \acrshort{jer} in simulation.
 
@@ -217,7 +217,7 @@ This new scale factor is only applied for the \LETA{} differential measurements.
 \end{figure}
 % section reweighting_from_leptons (end)
 
-\section{Multijet \acrshort{qcd}} % (fold)
+\section{Multijet QCD} % (fold)
 \label{sec:multijet_qcd}
 
 The multijet \acrshort{qcd} background is notoriously hard to model and as such a data driven approach is used to estimate its contribution in the signal region from an orthogonal control region.
@@ -272,11 +272,11 @@ By reweighting the top quark \pt{} distribution to that measured by~\cite{TOP160
 	\label{fig:combPtReweight}
 \end{figure}
 
-\subsection{Calculating the \ttbar{} yield} % (fold)
+\subsection{Calculating the yield of top quark pairs} % (fold)
 \label{sub:calculating_the_yield}
 
 The \ttbar{} yield can be extracted from data by subtracting off the simulated backgrounds and data-driven multijet \acrshort{qcd} estimate.
-Events that are reconstructed but do not enter the visible phase space at particle level, known as fakes and detailed in Sec.~\ref{sec:particle_level}, are also subtracted.
+Events that are reconstructed but do not enter the visible phase space at particle level, which are detailed in Sec.~\ref{sec:particle_level}, are also subtracted.
 These extracted \ttbar{} yields, shown per bin for each event variable in Tab.~\ref{tb:ttyields} of App.~\ref{ch:extracted_ttbar} and also include the combined total yield, are still dependent on the detector resolution and would make any cross section measurement comparison only valid where both are smeared by the \acrshort{cms} response.
 This is time consuming in terms of simulation and does not allow like-for-like comparisons with other experiments.
 The effects from the detector acceptance, efficiency and bin-to-bin migrations is corrected for by the process known as \textit{unfolding}.

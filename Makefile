@@ -13,7 +13,7 @@ MAIN=Thesis
 SOURCES=$(MAIN).tex Makefile Chapters/*.tex PlotCollections/*.tex TableCollections/*.tex Feynmans/*.tex
 
 # Figures of End_of_year_report
-FIGURES := $(shell find Figures/* Plots/* -type f)
+FIGURES := $(shell find Figures/* -type f)
 
 all:$(MAIN).pdf
 

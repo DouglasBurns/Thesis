@@ -4,7 +4,7 @@
 Whether the components of an event are measured from a detector or simulated from a model, the deposits need to be reconstructed into physics objects. 
 In \acrshort{cms}, the reconstruction of objects from the calorimeter energy deposits and charge deposits in the tracker and muon chambers is done by an algorithm called \textit{particle flow} (\acrshort{pf})~\cite{Event:PFlow}.
 These collections of deposits are reconstructed into likely electrons, photons, muons, charged and neutral hadronic jets and missing \pt{} and are known as \textit{PF candidates}.
-The \acrshort{pf} candidates undergo further, stricter identity cuts depending on the needs of the analysis, into high-purity collections of object candidates.
+The \acrshort{pf} candidates undergo further, stricter identity requirements depending on the needs of the analysis, into high-purity collections of object candidates.
 % The data object need to be corrected depending on the response of the subcomponents in the detector, \eg{} there should be no angular dependence on the energy of a particle.
 % In addition, when comparing the simulation and data there may be differences present. The simulation needs to be corrected to match what is seen in the data.
 
@@ -28,7 +28,7 @@ New track candidates are formed in this process when multiple hits match the ext
 Once the outer tracker layer has been reached, possible duplicates are avoided by requiring each pair of track candidates to be composed of at least 50\% of unique hits.
 If not, then the candidate with the most missing hits is dropped and if they are the same length then the one with the highest \chisq{} is dropped.
 The final track fitting is then performed, using all associated track hits to determine the charged-particle properties (vertex, \pt{}, \etc{}).
-Additional track quality cuts are imposed which include a minimum \pt{} cut of 0.9\GeV{}, the number of missing hits, the goodness-of-fit \chisq{} of the track fit and the distances to the beamline and a reconstructed primary vertex.
+Additional track quality requirements are imposed which include a minimum \pt{} of 0.9\GeV{}, the number of missing hits, the goodness-of-fit \chisq{} of the track fit and the distances to the beamline and a reconstructed primary vertex.
 Once a track candidate is accepted its component hits are removed from the collection of tracker hits, and the process repeats, until no more track candidates can be found.
 % Two fits actually formed. one PV to outer, second outer to PV.
 % TODO iterate through different hit collections.
@@ -115,7 +115,7 @@ Otherwise they are taken from the track fit with the minimum \chisq{}.
 % tracker, tracker + muon chamber 1, global, global minus high occ muon chambers.
 % subsection pf_muons (end)
 
-\subsection{\acrshort{pf} electrons and photons} % (fold)
+\subsection{PF electrons and photons} % (fold)
 \label{sub:pf_electrons_and_photons}
 
 Due to the similarity in the basic properties of electrons and isolated photons (electrons emit brehmstrahlung photons and photons convert to \electronp{}\electronm{} pairs), the \acrshort{pf} algorithm reconstructs isolated \acrshort{pf} photons and \acrshort{pf} electrons simultaneously.
@@ -132,7 +132,7 @@ The \acrshort{ecal}-based track seeds suffer at low-\pt{} due to the large bendi
 The second is the \textit{tracker-based} method and recovers electron tracks missed by the \acrshort{ecal}-based approach.
 It starts from the iterative-based track candidates with a $\pt>2\GeV$, with more specific requirements of the number of missing hits and the \chisq{} of the track fit.
 A reduced \acrshort{gsf} fit is used on the track hits as it is more suitable to electron fitting than a Kalman filter.
-A final cut on a boosted-decision-tree that combines the discriminating power of a number of distributions, \eg{} the \chisq{} of the \acrshort{gsf} fit, the distance between the extrapolated track and the nearest cluster and the energy lost along the \acrshort{gsf} track, is used to select tracker-based track seeds.
+A final selection on a boosted-decision-tree that combines the discriminating power of a number of distributions, \eg{} the \chisq{} of the \acrshort{gsf} fit, the distance between the extrapolated track and the nearest cluster and the energy lost along the \acrshort{gsf} track is used to select tracker-based track seeds.
 The track seeds obtained by the two methods are combined together and a final full \acrshort{gsf} fit processed.
 
 \acrshort{pf} electrons are required to satisfy additional identification criteria on both the track seed and cluster properties.
@@ -212,7 +212,7 @@ Pileup subtraction is discussed further in Sec.~\ref{sub:jet_energy_corrections}
 % photon content ~25% of jet, neutral hadrons only leave 3% in ECAL
 % subsubsection subsection_name (end)
 
-\subsubsection{Identification of \bquark{} quark jets} % (fold)
+\subsubsection{Identification of b quark jets} % (fold)
 \label{ssub:bqj}
 
 The properties of a jet arising from a \bquark{} quark are different enough to those of a jet formed from a \uquark{}\dquark{}\squark{} quark or gluon that it is possible to discriminate between them.
@@ -306,7 +306,7 @@ The relative isolation then becomes
 
 While the \acrshort{pf} algorithm is good at resolving particles, it is sometimes necessary to impose stricter identification criteria.
 By increasing the probability that an analysis object is correctly reconstructed, the selection efficiency for that object decreases correspondingly.
-Where the statistical uncertainty is not an issue or where an analysis requires a high object purity tighter cuts tend to be used.
+When the statistical uncertainty is not an issue or where an analysis requires a high object purity a tighter selection is usually used.
 This is the case for \ttbar{} events produced at the \acrshort{lhc}, having both a high cross section and large data set sizes.
 In the following the identification criteria for all the objects used in this thesis will be detailed.
 
@@ -314,8 +314,8 @@ In the following the identification criteria for all the objects used in this th
 \label{sub:el}
 
 As stated in Sec.~\ref{sub:data_collection_in_2016}, events that pass the \eTrigger{} trigger are selected as the basis of the \eJets{} channel in this thesis.
-A harder \LPT{} cut is chosen at $\LPT>34\GeV$ to operate in a region optimal with respect to the trigger efficiency.
-The $\LETA{}<2.1$ cut is maintained, however electrons falling into the gap between the barrel and endcap ($1.4442<\LETA<1.566$) are discarded.
+A harder \LPT{} requirement is chosen at $\LPT>34\GeV$ to operate in a region optimal with respect to the trigger efficiency.
+The $\LETA{}<2.1$ requirement is maintained, however electrons falling into the gap between the barrel and endcap ($1.4442<\LETA<1.566$) are discarded.
 The signal electron object must pass a set of strict identification requirements (tight \acrshort{id}).
 An additional collection of veto electrons are selected using a lower $\LPT>15\GeV$ and a looser set of identification criteria (veto \acrshort{id}).
 % The collections of objects are discussed in the event selection in Section TODO.
@@ -324,7 +324,7 @@ An additional collection of veto electrons are selected using a lower $\LPT>15\G
 \subsubsection{Electron identification}
 \label{ssub:el}
 Further identification requirements are placed on the \acrshort{pf} electrons to be used as analysis objects. 
-The additional requirements are combined into an electron identification which provides more discrimination for isolated prompt signal electrons against hadronic jets, fake electrons and other background sources of electrons.
+The additional requirements are combined into an electron identification which provides more discrimination for isolated prompt signal electrons against hadronic jets and nonprompt sources of electrons.
 The electron identification criteria are defined in~\cite{Event:eSFMethod} and the tight and veto IDs applied are shown in Tab.~\ref{tb:elID} for both the barrel and endcap regions of the detector. 
 
 The shower shape variable $\sigma_{i\eta i\eta}$ is the root-mean-square of the position of the energy deposited in a $5\times5$ lattice centred in the seed crystal.
@@ -346,7 +346,7 @@ In addition to the electron identification, the electron must originate close to
 \subsection{Muon objects}
 \label{sec:mu}
 
-Signal analysis muons must have a $\LPT>26\GeV$ cut, similarly imposed from the efficient operation region of the \muTrigger{} trigger selection and must pass tight \acrshort{id} requirements.
+Signal analysis muons must have a $\LPT>26\GeV$, similarly imposed from the efficient operation region of the \muTrigger{} trigger selection and must pass tight \acrshort{id} requirements.
 Veto analysis muons have a $\LPT>15\GeV$, aligned with that in the \eJets{} channel and must pass a loose muon \acrshort{id}.
 
 \subsubsection{Muon identification}
@@ -355,7 +355,7 @@ The criteria of the identity are listed in Tab.~\ref{tb:muID}~\cite{Event:MuonSF
 For signal muons, hits are required along the entire path of the muon from the silicon pixel detector to the muon chambers.
 A good \chisndf{} of the track fit is also required.
 Constraints are placed with respect to the primary vertex and beam line as with the electron identification.
-Finally, a more stringent cut on the \acrshort{pf} \Irel{} with $\Delta\beta$ correction using a cone size of $\Delta R < 0.4$ is required.
+Finally, a more stringent selection on the \acrshort{pf} \Irel{} with $\Delta\beta$ correction using a cone size of $\Delta R < 0.4$ is required.
 \input{TableCollections/EventReco/MuonID.tex}
 
 \subsection{Jet Objects}

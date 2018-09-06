@@ -139,13 +139,15 @@ By taking arbitrary values for this perturbation at $\pm X$ this reduces to
 \begin{equation}
 	\beta_{1} = \frac{\sigma_{\ttbar}(+X) - \sigma_{\ttbar}(-X)}{2X},
 \end{equation}
-which is the interference contribution for the Feynman diagrams containing one \acrshort{sm} vertex and one \OtG{} vertex.
+which is the interference contribution for the Feynman diagrams containing one \acrshort{sm} vertex and one \OTG{} vertex.
 The interference term is then scaled to the desired \CTG{} strength and added to the \acrshort{sm} prediction ($X=0$) for the final prediction.
 The quadratic contributions to the total \ttbar{} production cross section are negligible for $\CTG < 1\TeV^{-2}$~\cite{Future:CTGNLO}.
 
 Three \acrshort{eft} simulations are created using coupling strengths of $\CTG = +2,\,0,\,-2$.
-An independent sample of \acrshort{lo} \acrshort{sm} \ttbar{} production is also simulated using the same generator to provide a scaling from \acrshort{lo} to \acrshort{nnlo} which is applied to all three \acrshort{eft} simulations.
+An independent sample of \acrshort{lo} \acrshort{sm} \ttbar{} production is also simulated using the same generator in order to provide a scaling from \acrshort{lo} to \acrshort{nnlo} which is applied to all three \acrshort{eft} simulations.
+The scaling is calculated to be 1.69.
 The three \acrshort{eft} simulations are shown in Fig.~\ref{fig:CtG0p2m2HT} and compared, using the \acrshort{rivet} plugin, to the absolute \ttbar{} production cross section with respect to the \HT{} event variable as measured in this thesis.
+% 1.69291879055
 
 \begin{figure}[htpb]
 	\centering
@@ -167,7 +169,7 @@ The preliminary studies for the other event variables along with a summary table
 	\label{fig:eftHT}
 \end{figure}
 
-This basic study provides large confidence intervals well outside the current measurements, for example $-0.06 < \CTG < 0.41$ in~\cite{Future:TOP17014} calculated using a \acrshort{nlo} \acrshort{eft} model.
+This basic study provides large confidence intervals consistent with current measurements, for example $-0.06 < \CTG < 0.41$ in~\cite{Future:TOP17014} calculated using a \acrshort{nlo} \acrshort{eft} model.
 Many aspects of this study can, and need, to be improved.
 Several of these aspects include the scaling of the \acrshort{eft} simulations from \acrshort{lo} to \acrshort{nnlo} using \acrshort{sm} simulations may not be valid in an \acrshort{eft} context, the implementation of a \acrshort{nlo} model with an alternative generator to \mgamcMLMpythia{} and the combination of results from the different event variables, which involves calculating the correlations between the event variables.  
 % Does this actually matter?

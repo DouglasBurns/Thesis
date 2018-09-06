@@ -29,7 +29,7 @@ The particle-level \ptmiss{} is calculated from all stable visible particles.
 The visible phase space is given by a single particle-level electron or muon with $\LPT>26\GeV$ and $\LETA<2.4$.
 Events with additional leptons of $\LPT>15\GeV$ and $\LETA<2.4$ are not permitted.
 The particle-level jet selection differs slightly from that in data.
-Three particle-level jets must have $\pt>30\GeV$ and the fourth a relaxed cut of $\pt>20\GeV$.
+The three leading particle-level jets must have a $\pt>30\GeV$, however the \pt{} requirement for the fourth jet is relaxed to $>20\GeV$.
 Two of the particle-level jets need to be tagged as originating from a \bquark{} quark.
 The variables \HT{}, \ST{} and \NJET{} are subsequently calculated with respect to all jets with $\pt>20\GeV$. 
 
@@ -60,7 +60,7 @@ where $N^{i}_{\mathrm{rec\&gen}}$ is the number of events generated and reconstr
 Purity measures the effect of migrations into bins and stability migrations out of bins.
 By requiring $p^{i}$ and $s^{i}>0.6$ an acceptable balance between the minimisation of the migration of events between bins and the retention of information is obtained.
 % No migration in fewer bins - but less differential information
-This purity and stability cuts are reduced to 0.5 for \ptmiss{}, due to its naturally low resolution.
+This purity and stability selections are reduced to 0.5 for \ptmiss{}, due to its naturally low resolution.
 Figure~\ref{fig:PurityStability1} shows the purity and stability of bins in the \eJets{} channel and Fig.~\ref{fig:PurityStability2} in the \muJets{} channel.
 \input{PlotCollections/PurityStability.tex}
 
@@ -109,7 +109,7 @@ The unfolding is performed using the TUnfold algorithm~\cite{Unfold:TUnfold}.
 A schematic of the unfolding process is shown in Fig.~\ref{fig:migration}.
 It shows the relation between the true distribution $\vec{x}$ and the measured distribution $\vec{y}$.
 The migration matrix $\mathbf{A}$ describes the migrations from a bin of the true distribution into any of the reconstructed bins.
-The average expected count of events $\overtilde{y}$ differs from the observed event counts due to statistical fluctuations.
+The average expected count of events $\widetilde{y}$ differs from the observed event counts due to statistical fluctuations.
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=0.65\textwidth]{Figures/Unfold_TUnfold.png}
@@ -185,8 +185,8 @@ Each pseudo experiment is unfolded using another varied migration matrix and the
 An example pull distribution in the \eJets{} channel for the \HT{} event variable is shown in Fig.~\ref{fig:pullExample}.
 \begin{figure*}[htpb]
 	\centering
-	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/pulls/new/HT_electron_PullDist.pdf}
-	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/plots/unfolding/pulls/new/HT_muon_PullDist.pdf}
+	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/pulls/HT_electron_PullDist.pdf}
+	\includegraphics[width=0.49\textwidth]{/Users/db0268/Mount/SoolinScratch/DPS/DPSTestingGround/DailyPythonScripts/data_thesis/plots/unfolding/pulls/HT_muon_PullDist.pdf}
 	\caption[Total pull distribution when combining the 5000 pseudo experiments in each bins for the \HT{} variable in the \eJets{} channel on the left and the \muJets{} channel on the right.]{Total pull distribution when combining the 5000 pseudo experiments in each bins for the \HT{} variable in the \eJets{} channel on the left and the \muJets{} channel on the right.}
 	\label{fig:pullExample}
 \end{figure*}
